@@ -24,3 +24,16 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Live Google reviews
+
+The homepage can fetch up to five relevant reviews from Google Places API (New), including reviewer profile photos when available. It uses a server function; the API key is never sent to visitors. Until configured, or if Google is unavailable, the existing dated review excerpts remain visible. This is not a full Google Maps review gallery; photos attached to individual reviews are not returned by this API.
+
+1. Enable Places API (New) in your Google Cloud project and configure billing and request quotas.
+2. Create an API key restricted to Places API (New); apply server/IP restrictions suitable for your hosting environment.
+3. Find the business Place ID with Google's Place ID finder: https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+4. Copy `.env.example` to `.env.local` and fill in `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`. Do not commit the filled file or share the key in chat.
+5. Restart the development server. Configure the same server secrets with your hosting provider before deploying. Verify your host exposes secrets through the server runtime's `process.env`.
+6. Confirm author photos, profile links, review links, ratings and dates appear. Check the Google Cloud quota dashboard to bound usage.
+
+Review requests are shared between the trust bar and review section during a page visit. There is no persistent storage or scheduled polling of Google content. Profile photo failures fall back to initials. Before public launch, provide your site's public Terms of Use and Privacy Policy incorporating Google's required terms/privacy references, and verify attribution against https://developers.google.com/maps/documentation/places/web-service/policies.

@@ -10,6 +10,8 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { FloatingContact } from "@/components/contact-actions";
+
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -77,12 +79,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
+      { name: "theme-color", content: "#00bce8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Vizag Araku Tour Packages" },
-      { name: "description", content: "Premium tour packages across Vizag, Araku, Papikondalu and beyond." },
-      { name: "author", content: "Lovable" },
+      {
+        name: "description",
+        content: "Premium tour packages across Vizag, Araku, Papikondalu and beyond.",
+      },
+      { name: "author", content: "Vizag Araku Tourism" },
       { property: "og:title", content: "Vizag Araku Tour Packages" },
-      { property: "og:description", content: "Premium tour packages across Vizag, Araku, Papikondalu and beyond." },
+      {
+        property: "og:description",
+        content: "Premium tour packages across Vizag, Araku, Papikondalu and beyond.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -92,8 +101,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Manrope:wght@400;500;600;700&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Manrope:wght@400;500;600;700&display=swap",
+      },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,
@@ -104,8 +116,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var dark=localStorage.getItem("vizag-theme")==="dark";document.documentElement.classList.toggle("dark",dark);document.documentElement.style.colorScheme=dark?"dark":"light"}catch(e){}`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -123,6 +140,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <FloatingContact />
     </QueryClientProvider>
   );
 }
