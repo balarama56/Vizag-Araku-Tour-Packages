@@ -233,9 +233,11 @@ export function Nav() {
       className="fixed inset-x-0 top-4 z-50 mx-auto w-[min(1320px,94%)]"
       onKeyDown={(event) => {
         if (event.key === "Escape") {
-          const trigger = dropdown
-            ? document.getElementById(`${dropdown}-trigger`)
-            : document.getElementById("mobile-menu-trigger");
+          event.preventDefault();
+          const trigger =
+            !open && dropdown
+              ? document.getElementById(`${dropdown}-trigger`)
+              : document.getElementById("mobile-menu-trigger");
           close();
           trigger?.focus();
         }
