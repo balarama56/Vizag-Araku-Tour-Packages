@@ -37,15 +37,28 @@ export function ContactActions() {
 
 export function FloatingContact() {
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat with Vizag Araku Tourism on WhatsApp"
-      className="fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-[#087f49] text-white shadow-lg transition hover:scale-105"
+    <div
+      className="fixed right-4 z-40 flex flex-col gap-3"
       style={{ bottom: "max(1rem, env(safe-area-inset-bottom))" }}
     >
-      <WhatsAppIcon className="h-7 w-7" />
-    </a>
+      <a
+        href={callUrl}
+        aria-label={`Call Vizag Araku Tourism on ${contactPhone}`}
+        title="Call us"
+        className="bg-gold flex h-14 w-14 items-center justify-center rounded-full border-2 border-white text-primary-foreground shadow-lg transition hover:scale-105"
+      >
+        <Phone size={25} aria-hidden="true" />
+      </a>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Vizag Araku Tourism on WhatsApp"
+        title="WhatsApp"
+        className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-[#087f49] text-white shadow-lg transition hover:scale-105"
+      >
+        <WhatsAppIcon className="h-7 w-7" />
+      </a>
+    </div>
   );
 }

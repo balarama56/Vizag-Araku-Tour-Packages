@@ -1,4 +1,4 @@
-import { Phone, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { tourCategories, serviceCategories, hotelCategories } from "@/lib/booking-categories";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState, useRef, useId, type ReactNode } from "react";
@@ -255,13 +255,6 @@ export function Nav() {
             <BrandLogo />
           </Link>
           <div className="flex items-center gap-2 xl:hidden">
-            <a
-              href={callUrl}
-              aria-label={`Call us on ${contactPhone}`}
-              className="bg-gold flex h-10 w-10 items-center justify-center rounded-full text-primary-foreground"
-            >
-              <Phone size={19} aria-hidden="true" />
-            </a>
             <button
               id="mobile-menu-trigger"
               type="button"
@@ -382,13 +375,6 @@ export function Nav() {
           >
             Contact us ↗
           </Link>
-          <a
-            href={callUrl}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-3 text-sky-900"
-          >
-            <Phone size={16} aria-hidden="true" />
-            Call us
-          </a>
         </div>
       </nav>
     </header>
