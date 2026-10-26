@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/content-page";
+import { tourCategories } from "@/lib/booking-categories";
 import { tours } from "@/components/site";
 
 export const Route = createFileRoute("/tour-packages")({
@@ -22,6 +23,22 @@ function Packages() {
       title="Find a trip that suits you."
       description="Compare our routes, trip lengths and starting prices. Contact us for an itinerary and a quote for your group."
     >
+      <section aria-label="Browse tours by destination" className="mb-12">
+        <h2 className="text-2xl font-semibold">Browse by destination</h2>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {tourCategories.map((category) => (
+            <Link
+              key={category.slug}
+              to="/tour-packages/$destination"
+              params={{ destination: category.slug }}
+              className="rounded-xl border border-primary/20 bg-secondary px-5 py-4 text-sm font-semibold hover:border-primary"
+            >
+              {category.title} ↗
+            </Link>
+          ))}
+        </div>
+      </section>
+      <h2 className="mb-6 text-2xl font-semibold">Featured packages</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {tours.map((tour) => (
           <article

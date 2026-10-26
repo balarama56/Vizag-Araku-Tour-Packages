@@ -427,3 +427,32 @@ html {
     transform: none !important;
   }
 }
+
+/* A dimensional, transparent logo rather than a flat white image tile. */
+.brand-logo-depth {
+  background: transparent;
+  transform: perspective(650px) rotateY(-7deg) rotateX(5deg);
+  transform-origin: center;
+  transition: transform 350ms ease;
+}
+.site-navigation .brand-logo-depth {
+  width: 185px;
+  height: 58px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .brand-logo-depth:hover {
+    transform: perspective(650px) rotateY(5deg) rotateX(-3deg) translateZ(8px);
+  }
+}
+@media (max-width: 640px) {
+  .site-navigation .brand-logo-depth {
+    width: 142px;
+    height: 50px;
+    transform: perspective(500px) rotateY(-10deg) rotateX(9deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo-depth {
+    transform: none !important;
+  }
+}

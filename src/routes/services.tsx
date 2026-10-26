@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { serviceCategories } from "@/lib/booking-categories";
 import { ContentPage } from "@/components/content-page";
 
 export const Route = createFileRoute("/services")({
@@ -21,6 +22,24 @@ function Services() {
       title="Let’s plan the details."
       description="Tell us what you need for your trip. We’ll discuss the options and confirm what is included in your quote."
     >
+      <section aria-label="Transport booking" className="mb-10 grid gap-6 sm:grid-cols-2">
+        {serviceCategories.map((service) => (
+          <article
+            key={service.slug}
+            className="rounded-3xl border border-primary/20 bg-secondary p-7"
+          >
+            <h2 className="text-2xl font-semibold">{service.title}</h2>
+            <p className="mt-3 leading-7 text-muted-foreground">{service.description}</p>
+            <Link
+              to="/services/$service"
+              params={{ service: service.slug }}
+              className="mt-5 inline-block font-semibold text-primary underline underline-offset-4"
+            >
+              Enquire about {service.title.toLowerCase()} ↗
+            </Link>
+          </article>
+        ))}
+      </section>
       <div className="grid gap-6 sm:grid-cols-2">
         {[
           [

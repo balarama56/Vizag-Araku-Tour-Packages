@@ -1,5 +1,7 @@
+import { Phone, ChevronDown } from "lucide-react";
+import { tourCategories, serviceCategories, hotelCategories } from "@/lib/booking-categories";
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState, useRef, type ReactNode } from "react";
+import { useEffect, useState, useRef, useId, type ReactNode } from "react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ContactActions, contactPhone, callUrl } from "@/components/contact-actions";
@@ -156,35 +158,118 @@ export function Tilt({ children, className = "" }: { children: ReactNode; classN
 }
 
 export function BrandLogo() {
+  const filterId = `logo-depth-${useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
   return (
-    <span className="brand-logo">
-      <img src="/vizag-araku-logo.jpg" alt="Vizag Araku Tourism" width={959} height={560} />
+    <span className="brand-logo brand-logo-depth">
+      <svg width="0" height="0" aria-hidden="true" className="absolute">
+        <defs>
+          <filter id={filterId} colorInterpolationFilters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3 -3 -3 0 9" />
+            <feDropShadow
+              dx="1"
+              dy="2"
+              stdDeviation="0.7"
+              floodColor="#006b82"
+              floodOpacity="0.3"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <img
+        src="/vizag-araku-logo.jpg"
+        alt="Vizag Araku Tourism"
+        width={959}
+        height={560}
+        style={{ filter: `url(#${filterId})` }}
+      />
     </span>
   );
 }
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const close = () => {
+    setOpen(false);
+    setDropdown(null);
+  };
+  useEffect(() => {
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+        setOpen(false);
+        setDropdown(null);
+      }
+    };
+    document.addEventListener("pointerdown", outside);
+    return () => document.removeEventListener("pointerdown", outside);
+  }, []);
+  const groups = [
+    {
+      id: "tours",
+      label: "Tour Packages",
+      overview: "/tour-packages",
+      route: "/tour-packages/$destination",
+      items: tourCategories,
+    },
+    {
+      id: "services",
+      label: "Services",
+      overview: "/services",
+      route: "/services/$service",
+      items: serviceCategories,
+    },
+    {
+      id: "hotels",
+      label: "Hotel booking",
+      overview: "/hotel-booking",
+      route: "/hotel-booking/$destination",
+      items: hotelCategories,
+    },
+  ] as const;
   return (
-    <header className="fixed inset-x-0 top-4 z-50 mx-auto w-[min(1100px,94%)]">
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-4 z-50 mx-auto w-[min(1320px,94%)]"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          const trigger = dropdown
+            ? document.getElementById(`${dropdown}-trigger`)
+            : document.getElementById("mobile-menu-trigger");
+          close();
+          trigger?.focus();
+        }
+      }}
+    >
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
       <nav
         aria-label="Main navigation"
-        className="relative rounded-2xl border border-white/20 bg-white p-3 text-slate-800 shadow-deep lg:flex lg:items-center lg:justify-between lg:px-5"
+        className="site-navigation relative rounded-2xl border border-white/20 bg-white p-3 text-slate-800 shadow-deep xl:flex xl:items-center xl:justify-between xl:px-5"
       >
         <div className="flex items-center justify-between gap-3">
-          <Link to="/" aria-label="Vizag Araku Tourism home">
+          <Link to="/" onClick={close} aria-label="Vizag Araku Tourism home">
             <BrandLogo />
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 xl:hidden">
+            <a
+              href={callUrl}
+              aria-label={`Call us on ${contactPhone}`}
+              className="bg-gold flex h-10 w-10 items-center justify-center rounded-full text-primary-foreground"
+            >
+              <Phone size={19} aria-hidden="true" />
+            </a>
             <button
+              id="mobile-menu-trigger"
               type="button"
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm lg:hidden"
+              className="rounded-lg border border-slate-200 px-3 py-2 text-sm"
               aria-expanded={open}
               aria-controls="primary-menu"
-              onClick={() => setOpen(!open)}
+              onClick={() => {
+                setOpen(!open);
+                setDropdown(null);
+              }}
             >
               {open ? "Close" : "Menu"}
             </button>
@@ -192,40 +277,116 @@ export function Nav() {
         </div>
         <div
           id="primary-menu"
-          className={`${open ? "flex" : "hidden"} mt-4 flex-col gap-1 text-sm font-semibold lg:mt-0 lg:flex lg:flex-row lg:items-center lg:gap-1`}
+          className={`${open ? "flex" : "hidden"} nav-menu mt-4 max-h-[calc(100svh-130px)] flex-col gap-1 overflow-y-auto text-sm font-semibold xl:mt-0 xl:flex xl:max-h-none xl:flex-row xl:items-center xl:overflow-visible`}
         >
-          {(
-            [
-              ["/", "Home"],
-              ["/about", "About us"],
-              ["/tour-packages", "Tour Packages"],
-              ["/services", "Services"],
-              ["/blog", "Blog"],
-            ] as const
-          ).map(([to, label]) => (
-            <Link
-              key={to}
-              to={to}
-              onClick={() => setOpen(false)}
-              activeOptions={{ exact: true }}
-              activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
-              className="rounded-lg px-3 py-2 hover:bg-sky-50"
-            >
-              {label}
-            </Link>
+          <Link
+            to="/"
+            onClick={close}
+            activeOptions={{ exact: true }}
+            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            className="rounded-lg px-3 py-2 hover:bg-sky-50"
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            onClick={close}
+            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            className="rounded-lg px-3 py-2 hover:bg-sky-50"
+          >
+            About us
+          </Link>
+          {groups.map((group) => (
+            <div key={group.id} className="relative">
+              <button
+                id={`${group.id}-trigger`}
+                type="button"
+                className="flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 hover:bg-sky-50"
+                aria-expanded={dropdown === group.id}
+                aria-controls={`${group.id}-submenu`}
+                onClick={() => setDropdown(dropdown === group.id ? null : group.id)}
+              >
+                {group.label}
+                <ChevronDown
+                  size={14}
+                  aria-hidden="true"
+                  className={`transition-transform ${dropdown === group.id ? "rotate-180" : ""}`}
+                />
+              </button>
+              {dropdown === group.id && (
+                <div
+                  id={`${group.id}-submenu`}
+                  className="my-1 grid gap-1 rounded-xl border border-sky-100 bg-sky-50 p-2 xl:absolute xl:left-0 xl:top-full xl:z-10 xl:my-2 xl:w-80 xl:max-w-[85vw] xl:bg-white xl:shadow-xl"
+                >
+                  <Link
+                    to={group.overview}
+                    onClick={close}
+                    className="rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-wide text-sky-800 hover:bg-sky-100"
+                  >
+                    View all {group.label.toLowerCase()} ↗
+                  </Link>
+                  {group.items.map((item) =>
+                    group.id === "services" ? (
+                      <Link
+                        key={item.slug}
+                        to="/services/$service"
+                        params={{ service: item.slug }}
+                        onClick={close}
+                        className="rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100"
+                      >
+                        {item.title}
+                      </Link>
+                    ) : group.id === "hotels" ? (
+                      <Link
+                        key={item.slug}
+                        to="/hotel-booking/$destination"
+                        params={{ destination: item.slug }}
+                        onClick={close}
+                        className="rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100"
+                      >
+                        {item.title}
+                      </Link>
+                    ) : (
+                      <Link
+                        key={item.slug}
+                        to="/tour-packages/$destination"
+                        params={{ destination: item.slug }}
+                        onClick={close}
+                        className="rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100"
+                      >
+                        {item.title}
+                      </Link>
+                    ),
+                  )}
+                </div>
+              )}
+            </div>
           ))}
-          <div className="px-3 py-2 lg:px-1 lg:py-0">
+          <Link
+            to="/blog"
+            onClick={close}
+            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            className="rounded-lg px-3 py-2 hover:bg-sky-50"
+          >
+            Blog
+          </Link>
+          <div className="px-3 py-2 xl:px-1 xl:py-0">
             <ThemeToggle />
           </div>
           <Link
             to="/contact"
-            onClick={() => setOpen(false)}
-            activeOptions={{ exact: true }}
-            activeProps={{ "aria-current": "page" }}
-            className="bg-gold inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-primary-foreground shadow-glow transition hover:brightness-95"
+            onClick={close}
+            className="bg-gold inline-flex items-center justify-center rounded-full px-4 py-3 text-primary-foreground shadow-glow"
           >
             Contact us ↗
           </Link>
+          <a
+            href={callUrl}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-3 text-sky-900"
+          >
+            <Phone size={16} aria-hidden="true" />
+            Call us
+          </a>
         </div>
       </nav>
     </header>
@@ -261,6 +422,7 @@ export function Footer() {
             <Link to="/about">About us</Link>
             <Link to="/tour-packages">Tour Packages</Link>
             <Link to="/services">Services</Link>
+            <Link to="/hotel-booking">Hotel booking</Link>
             <Link to="/blog">Blog</Link>
             <a href="/#destinations">Destinations</a>
             <a href="/#tours">Tour packages</a>
