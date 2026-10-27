@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
@@ -19,6 +20,9 @@ import { Route as TourPackagesRouteImport } from './routes/tour-packages'
 import { Route as HotelBookingDestinationRouteImport } from './routes/hotel-booking_.$destination'
 import { Route as ServicesServiceRouteImport } from './routes/services_.$service'
 import { Route as TourPackagesDestinationRouteImport } from './routes/tour-packages_.$destination'
+import { Route as TourVizagArakuTourPackagesRouteImport } from './routes/tour.vizag-araku-tour-packages'
+import { Route as TourVizagLambasinghiTourPackagesRouteImport } from './routes/tour.vizag-lambasinghi-tour-packages'
+import { Route as TourVizagPapikondalluTourPackagesRouteImport } from './routes/tour.vizag-papikondallu-tour-packages'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,6 +32,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -70,10 +79,29 @@ const TourPackagesDestinationRoute = TourPackagesDestinationRouteImport.update({
   path: '/tour-packages/$destination',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TourVizagArakuTourPackagesRoute =
+  TourVizagArakuTourPackagesRouteImport.update({
+    id: '/tour/vizag-araku-tour-packages',
+    path: '/tour/vizag-araku-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourVizagLambasinghiTourPackagesRoute =
+  TourVizagLambasinghiTourPackagesRouteImport.update({
+    id: '/tour/vizag-lambasinghi-tour-packages',
+    path: '/tour/vizag-lambasinghi-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourVizagPapikondalluTourPackagesRoute =
+  TourVizagPapikondalluTourPackagesRouteImport.update({
+    id: '/tour/vizag-papikondallu-tour-packages',
+    path: '/tour/vizag-papikondallu-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
@@ -82,10 +110,14 @@ export interface FileRoutesByFullPath {
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
   '/tour-packages/$destination': typeof TourPackagesDestinationRoute
+  '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
@@ -94,11 +126,15 @@ export interface FileRoutesByTo {
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
   '/tour-packages/$destination': typeof TourPackagesDestinationRoute
+  '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
@@ -107,12 +143,16 @@ export interface FileRoutesById {
   '/hotel-booking_/$destination': typeof HotelBookingDestinationRoute
   '/services_/$service': typeof ServicesServiceRoute
   '/tour-packages_/$destination': typeof TourPackagesDestinationRoute
+  '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
@@ -121,10 +161,14 @@ export interface FileRouteTypes {
     | '/hotel-booking/$destination'
     | '/services/$service'
     | '/tour-packages/$destination'
+    | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-papikondallu-tour-packages'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
@@ -133,10 +177,14 @@ export interface FileRouteTypes {
     | '/hotel-booking/$destination'
     | '/services/$service'
     | '/tour-packages/$destination'
+    | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-papikondallu-tour-packages'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
@@ -145,11 +193,15 @@ export interface FileRouteTypes {
     | '/hotel-booking_/$destination'
     | '/services_/$service'
     | '/tour-packages_/$destination'
+    | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-papikondallu-tour-packages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   HotelBookingRoute: typeof HotelBookingRoute
@@ -158,6 +210,9 @@ export interface RootRouteChildren {
   HotelBookingDestinationRoute: typeof HotelBookingDestinationRoute
   ServicesServiceRoute: typeof ServicesServiceRoute
   TourPackagesDestinationRoute: typeof TourPackagesDestinationRoute
+  TourVizagArakuTourPackagesRoute: typeof TourVizagArakuTourPackagesRoute
+  TourVizagLambasinghiTourPackagesRoute: typeof TourVizagLambasinghiTourPackagesRoute
+  TourVizagPapikondalluTourPackagesRoute: typeof TourVizagPapikondalluTourPackagesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -174,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -232,12 +294,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TourPackagesDestinationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tour/vizag-araku-tour-packages': {
+      id: '/tour/vizag-araku-tour-packages'
+      path: '/tour/vizag-araku-tour-packages'
+      fullPath: '/tour/vizag-araku-tour-packages'
+      preLoaderRoute: typeof TourVizagArakuTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/vizag-lambasinghi-tour-packages': {
+      id: '/tour/vizag-lambasinghi-tour-packages'
+      path: '/tour/vizag-lambasinghi-tour-packages'
+      fullPath: '/tour/vizag-lambasinghi-tour-packages'
+      preLoaderRoute: typeof TourVizagLambasinghiTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/vizag-papikondallu-tour-packages': {
+      id: '/tour/vizag-papikondallu-tour-packages'
+      path: '/tour/vizag-papikondallu-tour-packages'
+      fullPath: '/tour/vizag-papikondallu-tour-packages'
+      preLoaderRoute: typeof TourVizagPapikondalluTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   HotelBookingRoute: HotelBookingRoute,
@@ -246,6 +330,10 @@ const rootRouteChildren: RootRouteChildren = {
   HotelBookingDestinationRoute: HotelBookingDestinationRoute,
   ServicesServiceRoute: ServicesServiceRoute,
   TourPackagesDestinationRoute: TourPackagesDestinationRoute,
+  TourVizagArakuTourPackagesRoute: TourVizagArakuTourPackagesRoute,
+  TourVizagLambasinghiTourPackagesRoute: TourVizagLambasinghiTourPackagesRoute,
+  TourVizagPapikondalluTourPackagesRoute:
+    TourVizagPapikondalluTourPackagesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
