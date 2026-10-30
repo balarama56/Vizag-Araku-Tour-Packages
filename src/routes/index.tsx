@@ -1,8 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { TrustBar, CustomerReviews, BestTimeToVisit } from "@/components/home/planning-sections";
+import { HomeHero } from "@/components/home/home-hero";
+import {
+  TrustBar,
+  CustomerReviews,
+  BestTimeToVisit,
+} from "@/components/home/planning-sections";
 import hero from "@/assets/hero.jpg";
-import { Nav, Footer, Tilt, useReveal, destinations, tours } from "@/components/site";
+import {
+  Nav,
+  Footer,
+  Tilt,
+  useReveal,
+  destinations,
+  tours,
+} from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,7 +27,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Vizag Araku Tour Packages" },
       {
         property: "og:description",
-        content: "Handcrafted Araku Valley, Papikondalu and temple tours from Vizag.",
+        content:
+          "Handcrafted Araku Valley, Papikondalu and temple tours from Vizag.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -27,85 +39,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useReveal();
-  const [y, setY] = useState(0);
-  const [m, setM] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)").matches) return;
-    const s = () => setY(window.scrollY);
-    const mv = (e: MouseEvent) =>
-      setM({ x: e.clientX / window.innerWidth - 0.5, y: e.clientY / window.innerHeight - 0.5 });
-    window.addEventListener("scroll", s, { passive: true });
-    window.addEventListener("mousemove", mv);
-    return () => {
-      window.removeEventListener("scroll", s);
-      window.removeEventListener("mousemove", mv);
-    };
-  }, []);
-
   return (
     <div className="overflow-x-hidden">
       <Nav />
       <main id="main-content">
-        <section
-          className="image-surface relative flex min-h-[760px] h-[100svh] items-center justify-center overflow-hidden"
-          style={{ perspective: 1200 }}
-        >
-          <img
-            src={hero}
-            alt="Araku Valley at sunrise"
-            width={1920}
-            height={1088}
-            className="absolute inset-0 h-[120%] w-full object-cover"
-            style={{
-              transform: `translateY(${y * 0.35}px) scale(1.1) translate(${m.x * -20}px, ${m.y * -20}px)`,
-            }}
-          />
-          <div className="bg-fade absolute inset-0" />
-          <div
-            className="relative z-10 px-6 py-24 text-center preserve-3d"
-            style={{
-              transform: `rotateY(${m.x * 8}deg) rotateX(${-m.y * 8}deg) translateY(${y * -0.2}px)`,
-              opacity: 1 - y / 700,
-            }}
-          >
-            <p className="glass mx-auto mb-6 w-fit rounded-full px-4 py-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Vizag Araku Tourism
-            </p>
-            <h1 className="text-5xl font-bold leading-[1.05] sm:text-6xl md:text-8xl">
-              Explore Vizag
-              <br />& <span className="text-gold italic">Araku Valley.</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-              Choose a tour, share your dates and plan your trip with us. Explore beaches, hills,
-              rivers and temples.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <a
-                href="#tours"
-                className="bg-gold rounded-full px-8 py-4 font-semibold text-primary-foreground shadow-glow transition hover:scale-105"
-              >
-                Explore tours
-              </a>
-              <Link
-                to="/contact"
-                className="glass rounded-full px-8 py-4 font-semibold transition hover:scale-105"
-              >
-                Plan my trip
-              </Link>
-            </div>
-          </div>
-          <div className="glass animate-floaty absolute bottom-24 left-[8%] hidden rounded-2xl p-4 md:block">
-            <p className="text-2xl font-display text-gold">Group trip specialists</p>
-            <p className="text-xs text-muted-foreground">Packages for 10+ travellers</p>
-          </div>
-          <div
-            className="glass animate-floaty absolute right-[8%] top-1/3 hidden rounded-2xl p-4 md:block"
-            style={{ animationDelay: "-3s" }}
-          >
-            <p className="text-2xl font-display text-gold">15+ years experience</p>
-            <p className="text-xs text-muted-foreground">Helping you plan memorable trips</p>
-          </div>
-        </section>
+        <HomeHero />
 
         <TrustBar />
 
@@ -155,14 +93,18 @@ function Index() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
               About Vizag Araku Tourism
             </p>
-            <h2 id="about-home-title" className="mt-4 text-3xl font-semibold md:text-4xl">
+            <h2
+              id="about-home-title"
+              className="mt-4 text-3xl font-semibold md:text-4xl"
+            >
               Travel together.
               <br />
               We’ll help with the details.
             </h2>
             <p className="mt-5 leading-8 text-muted-foreground">
-              We are a Visakhapatnam travel agency helping you plan transport and stays for Vizag,
-              Araku, Lambasingi, Papikondalu and the Godavari region.
+              We are a Visakhapatnam travel agency helping you plan transport
+              and stays for Vizag, Araku, Lambasingi, Papikondalu and the
+              Godavari region.
             </p>
             <div className="mt-7 grid gap-5 sm:grid-cols-2">
               <div className="border-l-2 border-primary pl-4">
@@ -174,7 +116,8 @@ function Index() {
               <div className="border-l-2 border-primary pl-4">
                 <h3 className="text-lg font-semibold">Vehicle options</h3>
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                  Ask about 4–40 seater vehicles. Availability is confirmed with your quote.
+                  Ask about 4–40 seater vehicles. Availability is confirmed with
+                  your quote.
                 </p>
               </div>
             </div>
@@ -187,9 +130,16 @@ function Index() {
           </div>
         </section>
 
-        <section id="destinations" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <p className="reveal text-sm uppercase tracking-[0.3em] text-primary">Places to go</p>
-          <h2 className="reveal mt-3 text-5xl font-semibold">Places to visit</h2>
+        <section
+          id="destinations"
+          className="mx-auto max-w-6xl px-6 py-20 md:py-28"
+        >
+          <p className="reveal text-sm uppercase tracking-[0.3em] text-primary">
+            Places to go
+          </p>
+          <h2 className="reveal mt-3 text-5xl font-semibold">
+            Places to visit
+          </h2>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.map((d, i) => (
               <Tilt key={d.name} className="reveal">
@@ -204,7 +154,10 @@ function Index() {
                     className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
                   />
                   <div className="bg-fade absolute inset-0" />
-                  <div className="absolute bottom-0 p-6" style={{ transform: "translateZ(50px)" }}>
+                  <div
+                    className="absolute bottom-0 p-6"
+                    style={{ transform: "translateZ(50px)" }}
+                  >
                     <h3 className="text-2xl font-semibold">{d.name}</h3>
                     <p className="text-sm text-primary">{d.tours} tours</p>
                   </div>
@@ -215,8 +168,12 @@ function Index() {
         </section>
 
         <section id="tours" className="mx-auto max-w-6xl px-6 pb-28">
-          <p className="reveal text-sm uppercase tracking-[0.3em] text-primary">Most popular</p>
-          <h2 className="reveal mt-3 text-5xl font-semibold">Popular tour packages</h2>
+          <p className="reveal text-sm uppercase tracking-[0.3em] text-primary">
+            Most popular
+          </p>
+          <h2 className="reveal mt-3 text-5xl font-semibold">
+            Popular tour packages
+          </h2>
           <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {tours.map((t) => (
               <Tilt key={t.title} className="reveal">
@@ -234,7 +191,10 @@ function Index() {
                       </span>
                     )}
                   </div>
-                  <div className="p-6" style={{ transform: "translateZ(30px)" }}>
+                  <div
+                    className="p-6"
+                    style={{ transform: "translateZ(30px)" }}
+                  >
                     <p className="text-xs uppercase tracking-widest text-muted-foreground">
                       {t.dur}
                     </p>
@@ -260,9 +220,14 @@ function Index() {
           </div>
         </section>
 
-        <section id="why-us" className="border-y border-border bg-card/60 px-6 py-20">
+        <section
+          id="why-us"
+          className="border-y border-border bg-card/60 px-6 py-20"
+        >
           <div className="mx-auto max-w-6xl">
-            <p className="text-sm uppercase tracking-[0.25em] text-primary">Why choose us</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-primary">
+              Why choose us
+            </p>
             <div className="mt-4 grid gap-6 md:grid-cols-2 md:items-end">
               <h2 className="text-4xl font-semibold md:text-5xl">
                 Why choose
@@ -270,7 +235,8 @@ function Index() {
                 Vizag Araku Tourism?
               </h2>
               <p className="max-w-md leading-7 text-muted-foreground">
-                Choose the places you want to see. Tell us your dates, group size and budget.
+                Choose the places you want to see. Tell us your dates, group
+                size and budget.
               </p>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -299,7 +265,9 @@ function Index() {
                 <article key={n} className="border-t border-primary/30 pt-6">
                   <span className="text-sm text-primary">{n}</span>
                   <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {copy}
+                  </p>
                 </article>
               ))}
             </div>
@@ -308,11 +276,16 @@ function Index() {
 
         <CustomerReviews />
 
-        <section id="travel-guide" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <section
+          id="travel-guide"
+          className="mx-auto max-w-6xl px-6 py-20 md:py-28"
+        >
           <p className="text-sm uppercase tracking-[0.25em] text-primary">
             Find your kind of escape
           </p>
-          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Choose your type of trip</h2>
+          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">
+            Choose your type of trip
+          </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               [
@@ -334,10 +307,17 @@ function Index() {
                 "Annavaram · Puri · Konark",
               ],
             ].map(([tag, title, copy, places]) => (
-              <article key={title} className="glass flex flex-col rounded-3xl p-7">
-                <p className="text-xs uppercase tracking-widest text-primary">{tag}</p>
+              <article
+                key={title}
+                className="glass flex flex-col rounded-3xl p-7"
+              >
+                <p className="text-xs uppercase tracking-widest text-primary">
+                  {tag}
+                </p>
                 <h3 className="mt-4 text-2xl font-semibold">{title}</h3>
-                <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground">{copy}</p>
+                <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground">
+                  {copy}
+                </p>
                 <p className="mt-6 border-t border-border pt-5 text-xs leading-6 text-primary">
                   {places}
                 </p>
@@ -351,10 +331,15 @@ function Index() {
 
         <BestTimeToVisit />
 
-        <section id="how-it-works" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <section
+          id="how-it-works"
+          className="mx-auto max-w-6xl px-6 py-20 md:py-28"
+        >
           <div className="grid gap-10 rounded-3xl border border-primary/20 bg-card p-7 md:grid-cols-[1fr_1.2fr] md:p-12">
             <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-primary">How it works</p>
+              <p className="text-sm uppercase tracking-[0.25em] text-primary">
+                How it works
+              </p>
               <h2 className="mt-4 text-4xl font-semibold">
                 Plan your trip
                 <br />
@@ -388,7 +373,9 @@ function Index() {
                   </span>
                   <div>
                     <h3 className="text-xl font-semibold">{title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{copy}</p>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                      {copy}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -401,10 +388,15 @@ function Index() {
           className="mx-auto grid max-w-6xl gap-10 px-6 pb-20 md:grid-cols-[1fr_1.5fr] md:pb-28"
         >
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-primary">FAQs · Before you go</p>
-            <h2 className="mt-3 text-4xl font-semibold">Frequently asked questions.</h2>
+            <p className="text-sm uppercase tracking-[0.25em] text-primary">
+              FAQs · Before you go
+            </p>
+            <h2 className="mt-3 text-4xl font-semibold">
+              Frequently asked questions.
+            </h2>
             <p className="mt-5 leading-7 text-muted-foreground">
-              Every group is different. Bring your questions when discussing your travel plans.
+              Every group is different. Bring your questions when discussing
+              your travel plans.
             </p>
           </div>
           <div className="divide-y divide-border">
@@ -438,7 +430,9 @@ function Index() {
                 <summary className="cursor-pointer text-base font-semibold leading-7 marker:text-primary">
                   {question}
                 </summary>
-                <p className="mt-3 pl-4 text-sm leading-7 text-muted-foreground">{answer}</p>
+                <p className="mt-3 pl-4 text-sm leading-7 text-muted-foreground">
+                  {answer}
+                </p>
               </details>
             ))}
           </div>
@@ -450,8 +444,13 @@ function Index() {
           className="mx-auto mb-20 max-w-6xl px-6 md:mb-28"
         >
           <div className="reveal bg-gold relative overflow-hidden rounded-[2.5rem] p-7 sm:p-14 text-primary-foreground shadow-glow">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em]">Contact us</p>
-            <h2 id="cta-title" className="max-w-2xl text-4xl font-semibold sm:text-5xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em]">
+              Contact us
+            </p>
+            <h2
+              id="cta-title"
+              className="max-w-2xl text-4xl font-semibold sm:text-5xl"
+            >
               Ready to plan
               <br />
               your trip?

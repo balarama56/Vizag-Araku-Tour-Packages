@@ -29,8 +29,7 @@ function Packages() {
           {tourCategories.map((category) => (
             <Link
               key={category.slug}
-              to="/tour-packages/$destination"
-              params={{ destination: category.slug }}
+              to={category.path}
               className="rounded-xl border border-primary/20 bg-secondary px-5 py-4 text-sm font-semibold hover:border-primary"
             >
               {category.title} ↗
@@ -71,8 +70,9 @@ function Packages() {
         ))}
       </div>
       <p className="mt-6 text-sm leading-7 text-muted-foreground">
-        Starting prices are indicative. Confirm the price per person or group, travel dates,
-        accommodation, transport, meals and tickets in your written quote.
+        Starting prices are indicative. Confirm the price per person or group,
+        travel dates, accommodation, transport, meals and tickets in your
+        written quote.
       </p>
     </ContentPage>
   );

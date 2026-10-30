@@ -1,10 +1,18 @@
 import { ChevronDown } from "lucide-react";
-import { tourCategories, serviceCategories, hotelCategories } from "@/lib/booking-categories";
+import {
+  tourCategories,
+  serviceCategories,
+  hotelCategories,
+} from "@/lib/booking-categories";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState, useRef, useId, type ReactNode } from "react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ContactActions, contactPhone, callUrl } from "@/components/contact-actions";
+import {
+  ContactActions,
+  contactPhone,
+  callUrl,
+} from "@/components/contact-actions";
 
 const U = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 export const destinations = [
@@ -70,11 +78,19 @@ export function useReveal() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting || reduced.matches) return;
           const element = entry.target as HTMLElement;
-          const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
+          const siblings = element.parentElement
+            ? Array.from(element.parentElement.children)
+            : [];
           const animation = element.animate(
             [
-              { opacity: 0.2, transform: "perspective(1000px) translateY(28px) rotateX(5deg)" },
-              { opacity: 1, transform: "perspective(1000px) translateY(0) rotateX(0)" },
+              {
+                opacity: 0.2,
+                transform: "perspective(1000px) translateY(28px) rotateX(5deg)",
+              },
+              {
+                opacity: 1,
+                transform: "perspective(1000px) translateY(0) rotateX(0)",
+              },
             ],
             {
               duration: 700,
@@ -134,7 +150,13 @@ export function useReveal() {
   }, []);
 }
 
-export function Tilt({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function Tilt({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   return (
     <div style={{ perspective: 1000 }} className={className}>
@@ -142,7 +164,11 @@ export function Tilt({ children, className = "" }: { children: ReactNode; classN
         ref={ref}
         className="preserve-3d h-full transition-transform duration-300 ease-out will-change-transform"
         onMouseMove={(e) => {
-          if (window.matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)").matches)
+          if (
+            window.matchMedia(
+              "(prefers-reduced-motion: reduce), (pointer: coarse)",
+            ).matches
+          )
             return;
           const r = e.currentTarget.getBoundingClientRect();
           const x = (e.clientX - r.left) / r.width - 0.5;
@@ -164,7 +190,10 @@ export function BrandLogo() {
       <svg width="0" height="0" aria-hidden="true" className="absolute">
         <defs>
           <filter id={filterId} colorInterpolationFilters="sRGB">
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3 -3 -3 0 9" />
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3 -3 -3 0 9"
+            />
             <feDropShadow
               dx="1"
               dy="2"
@@ -196,7 +225,10 @@ export function Nav() {
   };
   useEffect(() => {
     const outside = (event: PointerEvent) => {
-      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+      if (
+        event.target instanceof Node &&
+        !headerRef.current?.contains(event.target)
+      ) {
         setOpen(false);
         setDropdown(null);
       }
@@ -209,7 +241,7 @@ export function Nav() {
       id: "tours",
       label: "Tour Packages",
       overview: "/tour-packages",
-      route: "/tour-packages/$destination",
+
       items: tourCategories,
     },
     {
@@ -278,7 +310,10 @@ export function Nav() {
             to="/"
             onClick={close}
             activeOptions={{ exact: true }}
-            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            activeProps={{
+              "aria-current": "page",
+              className: "bg-sky-100 text-sky-900",
+            }}
             className="rounded-lg px-3 py-2 hover:bg-sky-50"
           >
             Home
@@ -286,7 +321,10 @@ export function Nav() {
           <Link
             to="/about"
             onClick={close}
-            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            activeProps={{
+              "aria-current": "page",
+              className: "bg-sky-100 text-sky-900",
+            }}
             className="rounded-lg px-3 py-2 hover:bg-sky-50"
           >
             About us
@@ -299,7 +337,9 @@ export function Nav() {
                 className="flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 hover:bg-sky-50"
                 aria-expanded={dropdown === group.id}
                 aria-controls={`${group.id}-submenu`}
-                onClick={() => setDropdown(dropdown === group.id ? null : group.id)}
+                onClick={() =>
+                  setDropdown(dropdown === group.id ? null : group.id)
+                }
               >
                 {group.label}
                 <ChevronDown
@@ -344,8 +384,7 @@ export function Nav() {
                     ) : (
                       <Link
                         key={item.slug}
-                        to="/tour-packages/$destination"
-                        params={{ destination: item.slug }}
+                        to={"path" in item ? item.path : "/tour-packages"}
                         onClick={close}
                         className="rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100"
                       >
@@ -360,7 +399,10 @@ export function Nav() {
           <Link
             to="/blog"
             onClick={close}
-            activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }}
+            activeProps={{
+              "aria-current": "page",
+              className: "bg-sky-100 text-sky-900",
+            }}
             className="rounded-lg px-3 py-2 hover:bg-sky-50"
           >
             Blog
@@ -394,10 +436,13 @@ export function Footer() {
             <BrandLogo />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">
-            From the shores of Vizag to the hills of Araku. Find a journey that brings you closer to
-            the Eastern Ghats.
+            From the shores of Vizag to the hills of Araku. Find a journey that
+            brings you closer to the Eastern Ghats.
           </p>
-          <a href={callUrl} className="mt-4 inline-block font-semibold text-primary">
+          <a
+            href={callUrl}
+            className="mt-4 inline-block font-semibold text-primary"
+          >
             {contactPhone}
           </a>
           <div className="mt-4">
@@ -430,7 +475,8 @@ export function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Vizag Araku Tourism. Crafted journeys across the Eastern Ghats.
+        © {new Date().getFullYear()} Vizag Araku Tourism. Crafted journeys
+        across the Eastern Ghats.
       </p>
     </footer>
   );

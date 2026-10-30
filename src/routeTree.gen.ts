@@ -12,16 +12,26 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as ArakuHotelsRouteImport } from './routes/araku-hotels'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TourPackagesRouteImport } from './routes/tour-packages'
+import { Route as VizagHotelsRouteImport } from './routes/vizag-hotels'
 import { Route as HotelBookingDestinationRouteImport } from './routes/hotel-booking_.$destination'
 import { Route as ServicesServiceRouteImport } from './routes/services_.$service'
 import { Route as TourPackagesDestinationRouteImport } from './routes/tour-packages_.$destination'
+import { Route as TourBhubaneswarPuriKonarkTourPackagesRouteImport } from './routes/tour.bhubaneswar-puri-konark-tour-packages'
+import { Route as TourPancharamaTourPackagesRouteImport } from './routes/tour.pancharama-tour-packages'
+import { Route as TourPuriKonarkTourPackagesRouteImport } from './routes/tour.puri-konark-tour-packages'
+import { Route as TourTempleTourPackagesRouteImport } from './routes/tour.temple-tour-packages'
+import { Route as TourVizagAnnavaramTourPackagesRouteImport } from './routes/tour.vizag-annavaram-tour-packages'
 import { Route as TourVizagArakuTourPackagesRouteImport } from './routes/tour.vizag-araku-tour-packages'
+import { Route as TourVizagDeomaliTourPackagesRouteImport } from './routes/tour.vizag-deomali-tour-packages'
+import { Route as TourVizagJagdalpurTourPackagesRouteImport } from './routes/tour.vizag-jagdalpur-tour-packages'
 import { Route as TourVizagLambasinghiTourPackagesRouteImport } from './routes/tour.vizag-lambasinghi-tour-packages'
+import { Route as TourVizagMaredumilliTourPackagesRouteImport } from './routes/tour.vizag-maredumilli-tour-packages'
 import { Route as TourVizagPapikondalluTourPackagesRouteImport } from './routes/tour.vizag-papikondallu-tour-packages'
 
 const IndexRoute = IndexRouteImport.update({
@@ -37,6 +47,11 @@ const AboutRoute = AboutRouteImport.update({
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArakuHotelsRoute = ArakuHotelsRouteImport.update({
+  id: '/araku-hotels',
+  path: '/araku-hotels',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -64,6 +79,11 @@ const TourPackagesRoute = TourPackagesRouteImport.update({
   path: '/tour-packages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VizagHotelsRoute = VizagHotelsRouteImport.update({
+  id: '/vizag-hotels',
+  path: '/vizag-hotels',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HotelBookingDestinationRoute = HotelBookingDestinationRouteImport.update({
   id: '/hotel-booking_/$destination',
   path: '/hotel-booking/$destination',
@@ -79,16 +99,63 @@ const TourPackagesDestinationRoute = TourPackagesDestinationRouteImport.update({
   path: '/tour-packages/$destination',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TourBhubaneswarPuriKonarkTourPackagesRoute =
+  TourBhubaneswarPuriKonarkTourPackagesRouteImport.update({
+    id: '/tour/bhubaneswar-puri-konark-tour-packages',
+    path: '/tour/bhubaneswar-puri-konark-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourPancharamaTourPackagesRoute =
+  TourPancharamaTourPackagesRouteImport.update({
+    id: '/tour/pancharama-tour-packages',
+    path: '/tour/pancharama-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourPuriKonarkTourPackagesRoute =
+  TourPuriKonarkTourPackagesRouteImport.update({
+    id: '/tour/puri-konark-tour-packages',
+    path: '/tour/puri-konark-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourTempleTourPackagesRoute = TourTempleTourPackagesRouteImport.update({
+  id: '/tour/temple-tour-packages',
+  path: '/tour/temple-tour-packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TourVizagAnnavaramTourPackagesRoute =
+  TourVizagAnnavaramTourPackagesRouteImport.update({
+    id: '/tour/vizag-annavaram-tour-packages',
+    path: '/tour/vizag-annavaram-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TourVizagArakuTourPackagesRoute =
   TourVizagArakuTourPackagesRouteImport.update({
     id: '/tour/vizag-araku-tour-packages',
     path: '/tour/vizag-araku-tour-packages',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TourVizagDeomaliTourPackagesRoute =
+  TourVizagDeomaliTourPackagesRouteImport.update({
+    id: '/tour/vizag-deomali-tour-packages',
+    path: '/tour/vizag-deomali-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourVizagJagdalpurTourPackagesRoute =
+  TourVizagJagdalpurTourPackagesRouteImport.update({
+    id: '/tour/vizag-jagdalpur-tour-packages',
+    path: '/tour/vizag-jagdalpur-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TourVizagLambasinghiTourPackagesRoute =
   TourVizagLambasinghiTourPackagesRouteImport.update({
     id: '/tour/vizag-lambasinghi-tour-packages',
     path: '/tour/vizag-lambasinghi-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TourVizagMaredumilliTourPackagesRoute =
+  TourVizagMaredumilliTourPackagesRouteImport.update({
+    id: '/tour/vizag-maredumilli-tour-packages',
+    path: '/tour/vizag-maredumilli-tour-packages',
     getParentRoute: () => rootRouteImport,
   } as any)
 const TourVizagPapikondalluTourPackagesRoute =
@@ -102,32 +169,52 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/services': typeof ServicesRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
   '/tour-packages/$destination': typeof TourPackagesDestinationRoute
+  '/tour/bhubaneswar-puri-konark-tour-packages': typeof TourBhubaneswarPuriKonarkTourPackagesRoute
+  '/tour/pancharama-tour-packages': typeof TourPancharamaTourPackagesRoute
+  '/tour/puri-konark-tour-packages': typeof TourPuriKonarkTourPackagesRoute
+  '/tour/temple-tour-packages': typeof TourTempleTourPackagesRoute
+  '/tour/vizag-annavaram-tour-packages': typeof TourVizagAnnavaramTourPackagesRoute
   '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-deomali-tour-packages': typeof TourVizagDeomaliTourPackagesRoute
+  '/tour/vizag-jagdalpur-tour-packages': typeof TourVizagJagdalpurTourPackagesRoute
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/services': typeof ServicesRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
   '/tour-packages/$destination': typeof TourPackagesDestinationRoute
+  '/tour/bhubaneswar-puri-konark-tour-packages': typeof TourBhubaneswarPuriKonarkTourPackagesRoute
+  '/tour/pancharama-tour-packages': typeof TourPancharamaTourPackagesRoute
+  '/tour/puri-konark-tour-packages': typeof TourPuriKonarkTourPackagesRoute
+  '/tour/temple-tour-packages': typeof TourTempleTourPackagesRoute
+  '/tour/vizag-annavaram-tour-packages': typeof TourVizagAnnavaramTourPackagesRoute
   '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-deomali-tour-packages': typeof TourVizagDeomaliTourPackagesRoute
+  '/tour/vizag-jagdalpur-tour-packages': typeof TourVizagJagdalpurTourPackagesRoute
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRoutesById {
@@ -135,16 +222,26 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/services': typeof ServicesRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking_/$destination': typeof HotelBookingDestinationRoute
   '/services_/$service': typeof ServicesServiceRoute
   '/tour-packages_/$destination': typeof TourPackagesDestinationRoute
+  '/tour/bhubaneswar-puri-konark-tour-packages': typeof TourBhubaneswarPuriKonarkTourPackagesRoute
+  '/tour/pancharama-tour-packages': typeof TourPancharamaTourPackagesRoute
+  '/tour/puri-konark-tour-packages': typeof TourPuriKonarkTourPackagesRoute
+  '/tour/temple-tour-packages': typeof TourTempleTourPackagesRoute
+  '/tour/vizag-annavaram-tour-packages': typeof TourVizagAnnavaramTourPackagesRoute
   '/tour/vizag-araku-tour-packages': typeof TourVizagArakuTourPackagesRoute
+  '/tour/vizag-deomali-tour-packages': typeof TourVizagDeomaliTourPackagesRoute
+  '/tour/vizag-jagdalpur-tour-packages': typeof TourVizagJagdalpurTourPackagesRoute
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
+  '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
 }
 export interface FileRouteTypes {
@@ -153,48 +250,78 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/about-us'
+    | '/araku-hotels'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
     | '/services'
     | '/tour-packages'
+    | '/vizag-hotels'
     | '/hotel-booking/$destination'
     | '/services/$service'
     | '/tour-packages/$destination'
+    | '/tour/bhubaneswar-puri-konark-tour-packages'
+    | '/tour/pancharama-tour-packages'
+    | '/tour/puri-konark-tour-packages'
+    | '/tour/temple-tour-packages'
+    | '/tour/vizag-annavaram-tour-packages'
     | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-deomali-tour-packages'
+    | '/tour/vizag-jagdalpur-tour-packages'
     | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/about-us'
+    | '/araku-hotels'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
     | '/services'
     | '/tour-packages'
+    | '/vizag-hotels'
     | '/hotel-booking/$destination'
     | '/services/$service'
     | '/tour-packages/$destination'
+    | '/tour/bhubaneswar-puri-konark-tour-packages'
+    | '/tour/pancharama-tour-packages'
+    | '/tour/puri-konark-tour-packages'
+    | '/tour/temple-tour-packages'
+    | '/tour/vizag-annavaram-tour-packages'
     | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-deomali-tour-packages'
+    | '/tour/vizag-jagdalpur-tour-packages'
     | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/about-us'
+    | '/araku-hotels'
     | '/blog'
     | '/contact'
     | '/hotel-booking'
     | '/services'
     | '/tour-packages'
+    | '/vizag-hotels'
     | '/hotel-booking_/$destination'
     | '/services_/$service'
     | '/tour-packages_/$destination'
+    | '/tour/bhubaneswar-puri-konark-tour-packages'
+    | '/tour/pancharama-tour-packages'
+    | '/tour/puri-konark-tour-packages'
+    | '/tour/temple-tour-packages'
+    | '/tour/vizag-annavaram-tour-packages'
     | '/tour/vizag-araku-tour-packages'
+    | '/tour/vizag-deomali-tour-packages'
+    | '/tour/vizag-jagdalpur-tour-packages'
     | '/tour/vizag-lambasinghi-tour-packages'
+    | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
   fileRoutesById: FileRoutesById
 }
@@ -202,16 +329,26 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AboutUsRoute: typeof AboutUsRoute
+  ArakuHotelsRoute: typeof ArakuHotelsRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   HotelBookingRoute: typeof HotelBookingRoute
   ServicesRoute: typeof ServicesRoute
   TourPackagesRoute: typeof TourPackagesRoute
+  VizagHotelsRoute: typeof VizagHotelsRoute
   HotelBookingDestinationRoute: typeof HotelBookingDestinationRoute
   ServicesServiceRoute: typeof ServicesServiceRoute
   TourPackagesDestinationRoute: typeof TourPackagesDestinationRoute
+  TourBhubaneswarPuriKonarkTourPackagesRoute: typeof TourBhubaneswarPuriKonarkTourPackagesRoute
+  TourPancharamaTourPackagesRoute: typeof TourPancharamaTourPackagesRoute
+  TourPuriKonarkTourPackagesRoute: typeof TourPuriKonarkTourPackagesRoute
+  TourTempleTourPackagesRoute: typeof TourTempleTourPackagesRoute
+  TourVizagAnnavaramTourPackagesRoute: typeof TourVizagAnnavaramTourPackagesRoute
   TourVizagArakuTourPackagesRoute: typeof TourVizagArakuTourPackagesRoute
+  TourVizagDeomaliTourPackagesRoute: typeof TourVizagDeomaliTourPackagesRoute
+  TourVizagJagdalpurTourPackagesRoute: typeof TourVizagJagdalpurTourPackagesRoute
   TourVizagLambasinghiTourPackagesRoute: typeof TourVizagLambasinghiTourPackagesRoute
+  TourVizagMaredumilliTourPackagesRoute: typeof TourVizagMaredumilliTourPackagesRoute
   TourVizagPapikondalluTourPackagesRoute: typeof TourVizagPapikondalluTourPackagesRoute
 }
 
@@ -236,6 +373,13 @@ declare module '@tanstack/react-router' {
       path: '/about-us'
       fullPath: '/about-us'
       preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/araku-hotels': {
+      id: '/araku-hotels'
+      path: '/araku-hotels'
+      fullPath: '/araku-hotels'
+      preLoaderRoute: typeof ArakuHotelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -273,6 +417,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TourPackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vizag-hotels': {
+      id: '/vizag-hotels'
+      path: '/vizag-hotels'
+      fullPath: '/vizag-hotels'
+      preLoaderRoute: typeof VizagHotelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hotel-booking_/$destination': {
       id: '/hotel-booking_/$destination'
       path: '/hotel-booking/$destination'
@@ -294,6 +445,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TourPackagesDestinationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tour/bhubaneswar-puri-konark-tour-packages': {
+      id: '/tour/bhubaneswar-puri-konark-tour-packages'
+      path: '/tour/bhubaneswar-puri-konark-tour-packages'
+      fullPath: '/tour/bhubaneswar-puri-konark-tour-packages'
+      preLoaderRoute: typeof TourBhubaneswarPuriKonarkTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/pancharama-tour-packages': {
+      id: '/tour/pancharama-tour-packages'
+      path: '/tour/pancharama-tour-packages'
+      fullPath: '/tour/pancharama-tour-packages'
+      preLoaderRoute: typeof TourPancharamaTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/puri-konark-tour-packages': {
+      id: '/tour/puri-konark-tour-packages'
+      path: '/tour/puri-konark-tour-packages'
+      fullPath: '/tour/puri-konark-tour-packages'
+      preLoaderRoute: typeof TourPuriKonarkTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/temple-tour-packages': {
+      id: '/tour/temple-tour-packages'
+      path: '/tour/temple-tour-packages'
+      fullPath: '/tour/temple-tour-packages'
+      preLoaderRoute: typeof TourTempleTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/vizag-annavaram-tour-packages': {
+      id: '/tour/vizag-annavaram-tour-packages'
+      path: '/tour/vizag-annavaram-tour-packages'
+      fullPath: '/tour/vizag-annavaram-tour-packages'
+      preLoaderRoute: typeof TourVizagAnnavaramTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tour/vizag-araku-tour-packages': {
       id: '/tour/vizag-araku-tour-packages'
       path: '/tour/vizag-araku-tour-packages'
@@ -301,11 +487,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TourVizagArakuTourPackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tour/vizag-deomali-tour-packages': {
+      id: '/tour/vizag-deomali-tour-packages'
+      path: '/tour/vizag-deomali-tour-packages'
+      fullPath: '/tour/vizag-deomali-tour-packages'
+      preLoaderRoute: typeof TourVizagDeomaliTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/vizag-jagdalpur-tour-packages': {
+      id: '/tour/vizag-jagdalpur-tour-packages'
+      path: '/tour/vizag-jagdalpur-tour-packages'
+      fullPath: '/tour/vizag-jagdalpur-tour-packages'
+      preLoaderRoute: typeof TourVizagJagdalpurTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tour/vizag-lambasinghi-tour-packages': {
       id: '/tour/vizag-lambasinghi-tour-packages'
       path: '/tour/vizag-lambasinghi-tour-packages'
       fullPath: '/tour/vizag-lambasinghi-tour-packages'
       preLoaderRoute: typeof TourVizagLambasinghiTourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tour/vizag-maredumilli-tour-packages': {
+      id: '/tour/vizag-maredumilli-tour-packages'
+      path: '/tour/vizag-maredumilli-tour-packages'
+      fullPath: '/tour/vizag-maredumilli-tour-packages'
+      preLoaderRoute: typeof TourVizagMaredumilliTourPackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tour/vizag-papikondallu-tour-packages': {
@@ -322,16 +529,27 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AboutUsRoute: AboutUsRoute,
+  ArakuHotelsRoute: ArakuHotelsRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   HotelBookingRoute: HotelBookingRoute,
   ServicesRoute: ServicesRoute,
   TourPackagesRoute: TourPackagesRoute,
+  VizagHotelsRoute: VizagHotelsRoute,
   HotelBookingDestinationRoute: HotelBookingDestinationRoute,
   ServicesServiceRoute: ServicesServiceRoute,
   TourPackagesDestinationRoute: TourPackagesDestinationRoute,
+  TourBhubaneswarPuriKonarkTourPackagesRoute:
+    TourBhubaneswarPuriKonarkTourPackagesRoute,
+  TourPancharamaTourPackagesRoute: TourPancharamaTourPackagesRoute,
+  TourPuriKonarkTourPackagesRoute: TourPuriKonarkTourPackagesRoute,
+  TourTempleTourPackagesRoute: TourTempleTourPackagesRoute,
+  TourVizagAnnavaramTourPackagesRoute: TourVizagAnnavaramTourPackagesRoute,
   TourVizagArakuTourPackagesRoute: TourVizagArakuTourPackagesRoute,
+  TourVizagDeomaliTourPackagesRoute: TourVizagDeomaliTourPackagesRoute,
+  TourVizagJagdalpurTourPackagesRoute: TourVizagJagdalpurTourPackagesRoute,
   TourVizagLambasinghiTourPackagesRoute: TourVizagLambasinghiTourPackagesRoute,
+  TourVizagMaredumilliTourPackagesRoute: TourVizagMaredumilliTourPackagesRoute,
   TourVizagPapikondalluTourPackagesRoute:
     TourVizagPapikondalluTourPackagesRoute,
 }

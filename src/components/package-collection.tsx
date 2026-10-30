@@ -21,7 +21,13 @@ export type TourPackage = {
   image: string;
   description: string;
   route: string;
+  priceBasis?: string;
 };
+export function packageDuration(p: TourPackage) {
+  return p.nights === 0
+    ? `${p.days} ${p.days === 1 ? "day" : "days"} tour`
+    : `${p.days} days / ${p.nights} ${p.nights === 1 ? "night" : "nights"}`;
+}
 export function PackageCollection({
   packages,
   title,
@@ -188,7 +194,7 @@ export function PackageCollection({
             {packages.length === 1 ? "package" : "packages"}
           </p>
           <div
-            className={`mt-6 grid gap-8 ${packages.length > 1 ? "md:grid-cols-2 lg:grid-cols-3" : ""}`}
+            className={`mt-6 grid gap-8 ${packages.length > 2 ? "md:grid-cols-2 lg:grid-cols-3" : packages.length === 2 ? "md:grid-cols-2" : ""}`}
           >
             {visible.map((p) => (
               <Tilt key={p.id}>
@@ -210,7 +216,7 @@ export function PackageCollection({
                       }}
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                     />
-                    <span className="absolute left-4 top-4 rounded-full bg-background/95 px-3 py-1.5 text-xs font-semibold text-foreground">
+                    <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-800">
                       {p.label}
                     </span>
                   </div>
@@ -220,8 +226,7 @@ export function PackageCollection({
                   >
                     <p className="flex items-center gap-2 text-xs uppercase tracking-widest text-primary">
                       <CalendarDays size={14} />
-                      {p.days} days / {p.nights}{" "}
-                      {p.nights === 1 ? "night" : "nights"}
+                      {packageDuration(p)}
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold leading-tight">
                       {p.title}
@@ -243,14 +248,19 @@ export function PackageCollection({
                       <p className="mt-1 font-display text-3xl text-gold">
                         ₹{p.price.toLocaleString("en-IN")}
                       </p>
+                      {p.priceBasis && (
+                        <p className="mt-1 text-sm text-primary">
+                          {p.priceBasis}
+                        </p>
+                      )}
                       <p className="mt-2 text-xs text-muted-foreground">
                         Request pricing for your dates and group.
                       </p>
                       <a
-                        href={`${whatsappUrl}?text=${encodeURIComponent(`Hello! I’m interested in ${p.title} (${p.days} days / ${p.nights} ${p.nights === 1 ? "night" : "nights"}), listed from ₹${p.price.toLocaleString("en-IN")}. Please confirm availability, price basis and inclusions. My dates: My group size:`)}`}
+                        href={`${whatsappUrl}?text=${encodeURIComponent(`Hello! I’m interested in ${p.title} (${packageDuration(p)}), listed from ₹${p.price.toLocaleString("en-IN")}. Please confirm availability, price basis and inclusions. My dates: My group size:`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`Enquire about ${p.title}, ${p.days} days, from ₹${p.price.toLocaleString("en-IN")}`}
+                        aria-label={`Enquire about ${p.title}, ${packageDuration(p)}, from ₹${p.price.toLocaleString("en-IN")}`}
                         className="bg-gold mt-5 flex items-center justify-between rounded-full px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:scale-[1.02]"
                       >
                         Enquire about this package <ArrowUpRight size={17} />
@@ -335,3 +345,4 @@ export function PackageCollection({
     </div>
   );
 }
+
