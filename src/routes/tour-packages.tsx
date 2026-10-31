@@ -2,6 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/content-page";
 import { tourCategories } from "@/lib/booking-categories";
 import { tours } from "@/components/site";
+import { itineraryPackages } from "@/lib/itinerary-packages";
+import { packageDuration } from "@/components/package-collection";
+
+const packageCards = [
+  ...itineraryPackages.map((tour) => ({
+    title: tour.title,
+    dur: packageDuration(tour),
+    price: tour.price,
+    img: tour.image,
+    itineraryUrl: tour.itineraryUrl,
+  })),
+  ...tours.filter((tour) => !tour.itineraryUrl),
+];
 
 export const Route = createFileRoute("/tour-packages")({
   head: () => ({
@@ -37,11 +50,11 @@ function Packages() {
           ))}
         </div>
       </section>
-      <h2 className="mb-6 text-2xl font-semibold">Featured packages</h2>
+      <h2 className="mb-6 text-2xl font-semibold">Explore tour packages</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {tours.map((tour) => (
+        {packageCards.map((tour) => (
           <article
-            key={tour.title}
+            key={`${tour.title}-${tour.dur}`}
             className="overflow-hidden rounded-3xl border border-border bg-card"
           >
             <img
@@ -52,13 +65,33 @@ function Packages() {
             />
             <div className="p-6">
               <p className="text-sm text-primary">{tour.dur}</p>
-              <h2 className="mt-3 text-2xl font-semibold">{tour.title}</h2>
+              <h2 className="mt-3 text-2xl font-semibold">
+                {tour.itineraryUrl ? (
+                  <a
+                    href={tour.itineraryUrl}
+                    className="hover:text-primary focus-visible:underline"
+                  >
+                    {tour.title}
+                  </a>
+                ) : (
+                  tour.title
+                )}
+              </h2>
               <p className="mt-5 text-sm text-muted-foreground">
                 Starting from{" "}
                 <strong className="text-xl text-foreground">
                   ₹{tour.price.toLocaleString("en-IN")}
                 </strong>
               </p>
+              {tour.itineraryUrl && (
+                <a
+                  href={tour.itineraryUrl}
+                  aria-label={`View itinerary for ${tour.title}, ${tour.dur}`}
+                  className="mt-5 flex items-center justify-between gap-2 rounded-full border border-primary/30 px-5 py-3 text-sm font-semibold text-primary transition hover:bg-secondary"
+                >
+                  View day-by-day itinerary ↗
+                </a>
+              )}
               <Link
                 to="/contact"
                 className="bg-gold mt-6 inline-block rounded-full px-5 py-3 text-sm font-semibold text-primary-foreground"

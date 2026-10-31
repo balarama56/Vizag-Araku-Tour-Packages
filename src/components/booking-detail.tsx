@@ -15,7 +15,9 @@ export function BookingDetail({
   checklist?: string[];
   match?: string[];
 }) {
-  const related = tours.filter((tour) => match.some((word) => tour.title.includes(word)));
+  const related = tours.filter((tour) =>
+    match.some((word) => tour.title.includes(word)),
+  );
   return (
     <ContentPage eyebrow={kind} title={title} description={description}>
       <section className="rounded-3xl border border-primary/20 bg-card p-7 sm:p-10">
@@ -33,8 +35,8 @@ export function BookingDetail({
           ))}
         </ul>
         <p className="mt-6 text-sm leading-7 text-muted-foreground">
-          Availability and prices are confirmed in your quote. Review the inclusions and booking
-          terms before making a payment.
+          Availability and prices are confirmed in your quote. Review the
+          inclusions and booking terms before making a payment.
         </p>
         <Link
           to="/contact"
@@ -48,18 +50,30 @@ export function BookingDetail({
           <h2 className="text-2xl font-semibold">Related tour options</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {related.map((tour) => (
-              <article className="rounded-2xl border border-border bg-card p-6" key={tour.title}>
+              <article
+                className="rounded-2xl border border-border bg-card p-6"
+                key={tour.title}
+              >
                 <p className="text-sm text-primary">{tour.dur}</p>
                 <h3 className="mt-2 text-xl font-semibold">{tour.title}</h3>
                 <p className="mt-3 text-muted-foreground">
                   Starting from ₹{tour.price.toLocaleString("en-IN")}
                 </p>
-                <Link
-                  to="/contact"
-                  className="mt-4 inline-block text-sm font-semibold text-primary underline underline-offset-4"
-                >
-                  Ask for an itinerary
-                </Link>
+                {tour.itineraryUrl ? (
+                  <a
+                    href={tour.itineraryUrl}
+                    className="mt-4 inline-block text-sm font-semibold text-primary underline underline-offset-4"
+                  >
+                    View day-by-day itinerary ↗
+                  </a>
+                ) : (
+                  <Link
+                    to="/contact"
+                    className="mt-4 inline-block text-sm font-semibold text-primary underline underline-offset-4"
+                  >
+                    Ask for an itinerary
+                  </Link>
+                )}
               </article>
             ))}
           </div>

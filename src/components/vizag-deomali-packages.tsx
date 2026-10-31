@@ -7,6 +7,7 @@ const deomaliImage =
 export const vizagDeomaliPackages: TourPackage[] = [
   {
     id: "vdd-1d",
+    itineraryUrl: "/tours/visakhapatnam-deomali-duduma-1-day-tour/",
     title: "Vizag, Deomali & Duduma",
     days: 1,
     nights: 0,
@@ -34,4 +35,3 @@ export function VizagDeomaliPackages() {
     />
   );
 }
-

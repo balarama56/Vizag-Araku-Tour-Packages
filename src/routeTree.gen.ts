@@ -33,6 +33,20 @@ import { Route as TourVizagJagdalpurTourPackagesRouteImport } from './routes/tou
 import { Route as TourVizagLambasinghiTourPackagesRouteImport } from './routes/tour.vizag-lambasinghi-tour-packages'
 import { Route as TourVizagMaredumilliTourPackagesRouteImport } from './routes/tour.vizag-maredumilli-tour-packages'
 import { Route as TourVizagPapikondalluTourPackagesRouteImport } from './routes/tour.vizag-papikondallu-tour-packages'
+import { Route as ToursArakuLambasingiTour3D2NRouteImport } from './routes/tours.araku-lambasingi-tour-3-d-2-n'
+import { Route as ToursArakuValleyJagadalpurTour5D4NRouteImport } from './routes/tours.araku-valley-jagadalpur-tour-5-d-4-n'
+import { Route as ToursArakuValleyTour2D1NRouteImport } from './routes/tours.araku-valley-tour-2-d-1-n'
+import { Route as ToursVisakapatanamArakuLambasingiTour4d3nRouteImport } from './routes/tours.visakapatanam-araku-lambasingi-tour-4d-3n'
+import { Route as ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRouteImport } from './routes/tours.visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+import { Route as ToursVisakapatanamArakuValleyLammasingiTour3d2nRouteImport } from './routes/tours.visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+import { Route as ToursVisakapatanamToMaredumilli2Nights3DaysTourRouteImport } from './routes/tours.visakapatanam-to-maredumilli-2-nights-3-days-tour'
+import { Route as ToursVisakapatanamToPapikondaluTour2D1NRouteImport } from './routes/tours.visakapatanam-to-papikondalu-tour-2-d-1-n'
+import { Route as ToursVisakhapatnamArakuAnnavaramTour4D3NRouteImport } from './routes/tours.visakhapatnam-araku-annavaram-tour-4-d-3-n'
+import { Route as ToursVisakhapatnamArakuJagdalpurTour5D4NRouteImport } from './routes/tours.visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+import { Route as ToursVisakhapatnamArakuValleyTour2D1NRouteImport } from './routes/tours.visakhapatnam-araku-valley-tour-2-d-1-n'
+import { Route as ToursVisakhapatnamArakuValleyTour3D2NRouteImport } from './routes/tours.visakhapatnam-araku-valley-tour-3-d-2-n'
+import { Route as ToursVisakhapatnamArakuValleyTour4D3NRouteImport } from './routes/tours.visakhapatnam-araku-valley-tour-4-d-3-n'
+import { Route as ToursVisakhapatnamDeomaliDuduma1DayTourRouteImport } from './routes/tours.visakhapatnam-deomali-duduma-1-day-tour'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -164,6 +178,90 @@ const TourVizagPapikondalluTourPackagesRoute =
     path: '/tour/vizag-papikondallu-tour-packages',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ToursArakuLambasingiTour3D2NRoute =
+  ToursArakuLambasingiTour3D2NRouteImport.update({
+    id: '/tours/araku-lambasingi-tour-3-d-2-n',
+    path: '/tours/araku-lambasingi-tour-3-d-2-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursArakuValleyJagadalpurTour5D4NRoute =
+  ToursArakuValleyJagadalpurTour5D4NRouteImport.update({
+    id: '/tours/araku-valley-jagadalpur-tour-5-d-4-n',
+    path: '/tours/araku-valley-jagadalpur-tour-5-d-4-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursArakuValleyTour2D1NRoute =
+  ToursArakuValleyTour2D1NRouteImport.update({
+    id: '/tours/araku-valley-tour-2-d-1-n',
+    path: '/tours/araku-valley-tour-2-d-1-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakapatanamArakuLambasingiTour4d3nRoute =
+  ToursVisakapatanamArakuLambasingiTour4d3nRouteImport.update({
+    id: '/tours/visakapatanam-araku-lambasingi-tour-4d-3n',
+    path: '/tours/visakapatanam-araku-lambasingi-tour-4d-3n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute =
+  ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRouteImport.update({
+    id: '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n',
+    path: '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute =
+  ToursVisakapatanamArakuValleyLammasingiTour3d2nRouteImport.update({
+    id: '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n',
+    path: '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute =
+  ToursVisakapatanamToMaredumilli2Nights3DaysTourRouteImport.update({
+    id: '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour',
+    path: '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakapatanamToPapikondaluTour2D1NRoute =
+  ToursVisakapatanamToPapikondaluTour2D1NRouteImport.update({
+    id: '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n',
+    path: '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamArakuAnnavaramTour4D3NRoute =
+  ToursVisakhapatnamArakuAnnavaramTour4D3NRouteImport.update({
+    id: '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n',
+    path: '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamArakuJagdalpurTour5D4NRoute =
+  ToursVisakhapatnamArakuJagdalpurTour5D4NRouteImport.update({
+    id: '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n',
+    path: '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamArakuValleyTour2D1NRoute =
+  ToursVisakhapatnamArakuValleyTour2D1NRouteImport.update({
+    id: '/tours/visakhapatnam-araku-valley-tour-2-d-1-n',
+    path: '/tours/visakhapatnam-araku-valley-tour-2-d-1-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamArakuValleyTour3D2NRoute =
+  ToursVisakhapatnamArakuValleyTour3D2NRouteImport.update({
+    id: '/tours/visakhapatnam-araku-valley-tour-3-d-2-n',
+    path: '/tours/visakhapatnam-araku-valley-tour-3-d-2-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamArakuValleyTour4D3NRoute =
+  ToursVisakhapatnamArakuValleyTour4D3NRouteImport.update({
+    id: '/tours/visakhapatnam-araku-valley-tour-4-d-3-n',
+    path: '/tours/visakhapatnam-araku-valley-tour-4-d-3-n',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursVisakhapatnamDeomaliDuduma1DayTourRoute =
+  ToursVisakhapatnamDeomaliDuduma1DayTourRouteImport.update({
+    id: '/tours/visakhapatnam-deomali-duduma-1-day-tour',
+    path: '/tours/visakhapatnam-deomali-duduma-1-day-tour',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -190,6 +288,20 @@ export interface FileRoutesByFullPath {
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
   '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
+  '/tours/araku-lambasingi-tour-3-d-2-n': typeof ToursArakuLambasingiTour3D2NRoute
+  '/tours/araku-valley-jagadalpur-tour-5-d-4-n': typeof ToursArakuValleyJagadalpurTour5D4NRoute
+  '/tours/araku-valley-tour-2-d-1-n': typeof ToursArakuValleyTour2D1NRoute
+  '/tours/visakapatanam-araku-lambasingi-tour-4d-3n': typeof ToursVisakapatanamArakuLambasingiTour4d3nRoute
+  '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n': typeof ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute
+  '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n': typeof ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute
+  '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour': typeof ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute
+  '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n': typeof ToursVisakapatanamToPapikondaluTour2D1NRoute
+  '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n': typeof ToursVisakhapatnamArakuAnnavaramTour4D3NRoute
+  '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n': typeof ToursVisakhapatnamArakuJagdalpurTour5D4NRoute
+  '/tours/visakhapatnam-araku-valley-tour-2-d-1-n': typeof ToursVisakhapatnamArakuValleyTour2D1NRoute
+  '/tours/visakhapatnam-araku-valley-tour-3-d-2-n': typeof ToursVisakhapatnamArakuValleyTour3D2NRoute
+  '/tours/visakhapatnam-araku-valley-tour-4-d-3-n': typeof ToursVisakhapatnamArakuValleyTour4D3NRoute
+  '/tours/visakhapatnam-deomali-duduma-1-day-tour': typeof ToursVisakhapatnamDeomaliDuduma1DayTourRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -216,6 +328,20 @@ export interface FileRoutesByTo {
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
   '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
+  '/tours/araku-lambasingi-tour-3-d-2-n': typeof ToursArakuLambasingiTour3D2NRoute
+  '/tours/araku-valley-jagadalpur-tour-5-d-4-n': typeof ToursArakuValleyJagadalpurTour5D4NRoute
+  '/tours/araku-valley-tour-2-d-1-n': typeof ToursArakuValleyTour2D1NRoute
+  '/tours/visakapatanam-araku-lambasingi-tour-4d-3n': typeof ToursVisakapatanamArakuLambasingiTour4d3nRoute
+  '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n': typeof ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute
+  '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n': typeof ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute
+  '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour': typeof ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute
+  '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n': typeof ToursVisakapatanamToPapikondaluTour2D1NRoute
+  '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n': typeof ToursVisakhapatnamArakuAnnavaramTour4D3NRoute
+  '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n': typeof ToursVisakhapatnamArakuJagdalpurTour5D4NRoute
+  '/tours/visakhapatnam-araku-valley-tour-2-d-1-n': typeof ToursVisakhapatnamArakuValleyTour2D1NRoute
+  '/tours/visakhapatnam-araku-valley-tour-3-d-2-n': typeof ToursVisakhapatnamArakuValleyTour3D2NRoute
+  '/tours/visakhapatnam-araku-valley-tour-4-d-3-n': typeof ToursVisakhapatnamArakuValleyTour4D3NRoute
+  '/tours/visakhapatnam-deomali-duduma-1-day-tour': typeof ToursVisakhapatnamDeomaliDuduma1DayTourRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -243,6 +369,20 @@ export interface FileRoutesById {
   '/tour/vizag-lambasinghi-tour-packages': typeof TourVizagLambasinghiTourPackagesRoute
   '/tour/vizag-maredumilli-tour-packages': typeof TourVizagMaredumilliTourPackagesRoute
   '/tour/vizag-papikondallu-tour-packages': typeof TourVizagPapikondalluTourPackagesRoute
+  '/tours/araku-lambasingi-tour-3-d-2-n': typeof ToursArakuLambasingiTour3D2NRoute
+  '/tours/araku-valley-jagadalpur-tour-5-d-4-n': typeof ToursArakuValleyJagadalpurTour5D4NRoute
+  '/tours/araku-valley-tour-2-d-1-n': typeof ToursArakuValleyTour2D1NRoute
+  '/tours/visakapatanam-araku-lambasingi-tour-4d-3n': typeof ToursVisakapatanamArakuLambasingiTour4d3nRoute
+  '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n': typeof ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute
+  '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n': typeof ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute
+  '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour': typeof ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute
+  '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n': typeof ToursVisakapatanamToPapikondaluTour2D1NRoute
+  '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n': typeof ToursVisakhapatnamArakuAnnavaramTour4D3NRoute
+  '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n': typeof ToursVisakhapatnamArakuJagdalpurTour5D4NRoute
+  '/tours/visakhapatnam-araku-valley-tour-2-d-1-n': typeof ToursVisakhapatnamArakuValleyTour2D1NRoute
+  '/tours/visakhapatnam-araku-valley-tour-3-d-2-n': typeof ToursVisakhapatnamArakuValleyTour3D2NRoute
+  '/tours/visakhapatnam-araku-valley-tour-4-d-3-n': typeof ToursVisakhapatnamArakuValleyTour4D3NRoute
+  '/tours/visakhapatnam-deomali-duduma-1-day-tour': typeof ToursVisakhapatnamDeomaliDuduma1DayTourRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -271,6 +411,20 @@ export interface FileRouteTypes {
     | '/tour/vizag-lambasinghi-tour-packages'
     | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
+    | '/tours/araku-lambasingi-tour-3-d-2-n'
+    | '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+    | '/tours/araku-valley-tour-2-d-1-n'
+    | '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+    | '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+    | '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+    | '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+    | '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+    | '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+    | '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+    | '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+    | '/tours/visakhapatnam-deomali-duduma-1-day-tour'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -297,6 +451,20 @@ export interface FileRouteTypes {
     | '/tour/vizag-lambasinghi-tour-packages'
     | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
+    | '/tours/araku-lambasingi-tour-3-d-2-n'
+    | '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+    | '/tours/araku-valley-tour-2-d-1-n'
+    | '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+    | '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+    | '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+    | '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+    | '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+    | '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+    | '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+    | '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+    | '/tours/visakhapatnam-deomali-duduma-1-day-tour'
   id:
     | '__root__'
     | '/'
@@ -323,6 +491,20 @@ export interface FileRouteTypes {
     | '/tour/vizag-lambasinghi-tour-packages'
     | '/tour/vizag-maredumilli-tour-packages'
     | '/tour/vizag-papikondallu-tour-packages'
+    | '/tours/araku-lambasingi-tour-3-d-2-n'
+    | '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+    | '/tours/araku-valley-tour-2-d-1-n'
+    | '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+    | '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+    | '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+    | '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+    | '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+    | '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+    | '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+    | '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+    | '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+    | '/tours/visakhapatnam-deomali-duduma-1-day-tour'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -350,6 +532,20 @@ export interface RootRouteChildren {
   TourVizagLambasinghiTourPackagesRoute: typeof TourVizagLambasinghiTourPackagesRoute
   TourVizagMaredumilliTourPackagesRoute: typeof TourVizagMaredumilliTourPackagesRoute
   TourVizagPapikondalluTourPackagesRoute: typeof TourVizagPapikondalluTourPackagesRoute
+  ToursArakuLambasingiTour3D2NRoute: typeof ToursArakuLambasingiTour3D2NRoute
+  ToursArakuValleyJagadalpurTour5D4NRoute: typeof ToursArakuValleyJagadalpurTour5D4NRoute
+  ToursArakuValleyTour2D1NRoute: typeof ToursArakuValleyTour2D1NRoute
+  ToursVisakapatanamArakuLambasingiTour4d3nRoute: typeof ToursVisakapatanamArakuLambasingiTour4d3nRoute
+  ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute: typeof ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute
+  ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute: typeof ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute
+  ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute: typeof ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute
+  ToursVisakapatanamToPapikondaluTour2D1NRoute: typeof ToursVisakapatanamToPapikondaluTour2D1NRoute
+  ToursVisakhapatnamArakuAnnavaramTour4D3NRoute: typeof ToursVisakhapatnamArakuAnnavaramTour4D3NRoute
+  ToursVisakhapatnamArakuJagdalpurTour5D4NRoute: typeof ToursVisakhapatnamArakuJagdalpurTour5D4NRoute
+  ToursVisakhapatnamArakuValleyTour2D1NRoute: typeof ToursVisakhapatnamArakuValleyTour2D1NRoute
+  ToursVisakhapatnamArakuValleyTour3D2NRoute: typeof ToursVisakhapatnamArakuValleyTour3D2NRoute
+  ToursVisakhapatnamArakuValleyTour4D3NRoute: typeof ToursVisakhapatnamArakuValleyTour4D3NRoute
+  ToursVisakhapatnamDeomaliDuduma1DayTourRoute: typeof ToursVisakhapatnamDeomaliDuduma1DayTourRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -522,6 +718,104 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TourVizagPapikondalluTourPackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tours/araku-lambasingi-tour-3-d-2-n': {
+      id: '/tours/araku-lambasingi-tour-3-d-2-n'
+      path: '/tours/araku-lambasingi-tour-3-d-2-n'
+      fullPath: '/tours/araku-lambasingi-tour-3-d-2-n'
+      preLoaderRoute: typeof ToursArakuLambasingiTour3D2NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/araku-valley-jagadalpur-tour-5-d-4-n': {
+      id: '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+      path: '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+      fullPath: '/tours/araku-valley-jagadalpur-tour-5-d-4-n'
+      preLoaderRoute: typeof ToursArakuValleyJagadalpurTour5D4NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/araku-valley-tour-2-d-1-n': {
+      id: '/tours/araku-valley-tour-2-d-1-n'
+      path: '/tours/araku-valley-tour-2-d-1-n'
+      fullPath: '/tours/araku-valley-tour-2-d-1-n'
+      preLoaderRoute: typeof ToursArakuValleyTour2D1NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakapatanam-araku-lambasingi-tour-4d-3n': {
+      id: '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+      path: '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+      fullPath: '/tours/visakapatanam-araku-lambasingi-tour-4d-3n'
+      preLoaderRoute: typeof ToursVisakapatanamArakuLambasingiTour4d3nRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n': {
+      id: '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+      path: '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+      fullPath: '/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n'
+      preLoaderRoute: typeof ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n': {
+      id: '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+      path: '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+      fullPath: '/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n'
+      preLoaderRoute: typeof ToursVisakapatanamArakuValleyLammasingiTour3d2nRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour': {
+      id: '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+      path: '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+      fullPath: '/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour'
+      preLoaderRoute: typeof ToursVisakapatanamToMaredumilli2Nights3DaysTourRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n': {
+      id: '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+      path: '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+      fullPath: '/tours/visakapatanam-to-papikondalu-tour-2-d-1-n'
+      preLoaderRoute: typeof ToursVisakapatanamToPapikondaluTour2D1NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n': {
+      id: '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+      path: '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+      fullPath: '/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n'
+      preLoaderRoute: typeof ToursVisakhapatnamArakuAnnavaramTour4D3NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n': {
+      id: '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+      path: '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+      fullPath: '/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n'
+      preLoaderRoute: typeof ToursVisakhapatnamArakuJagdalpurTour5D4NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-araku-valley-tour-2-d-1-n': {
+      id: '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+      path: '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+      fullPath: '/tours/visakhapatnam-araku-valley-tour-2-d-1-n'
+      preLoaderRoute: typeof ToursVisakhapatnamArakuValleyTour2D1NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-araku-valley-tour-3-d-2-n': {
+      id: '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+      path: '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+      fullPath: '/tours/visakhapatnam-araku-valley-tour-3-d-2-n'
+      preLoaderRoute: typeof ToursVisakhapatnamArakuValleyTour3D2NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-araku-valley-tour-4-d-3-n': {
+      id: '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+      path: '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+      fullPath: '/tours/visakhapatnam-araku-valley-tour-4-d-3-n'
+      preLoaderRoute: typeof ToursVisakhapatnamArakuValleyTour4D3NRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/visakhapatnam-deomali-duduma-1-day-tour': {
+      id: '/tours/visakhapatnam-deomali-duduma-1-day-tour'
+      path: '/tours/visakhapatnam-deomali-duduma-1-day-tour'
+      fullPath: '/tours/visakhapatnam-deomali-duduma-1-day-tour'
+      preLoaderRoute: typeof ToursVisakhapatnamDeomaliDuduma1DayTourRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -552,6 +846,32 @@ const rootRouteChildren: RootRouteChildren = {
   TourVizagMaredumilliTourPackagesRoute: TourVizagMaredumilliTourPackagesRoute,
   TourVizagPapikondalluTourPackagesRoute:
     TourVizagPapikondalluTourPackagesRoute,
+  ToursArakuLambasingiTour3D2NRoute: ToursArakuLambasingiTour3D2NRoute,
+  ToursArakuValleyJagadalpurTour5D4NRoute:
+    ToursArakuValleyJagadalpurTour5D4NRoute,
+  ToursArakuValleyTour2D1NRoute: ToursArakuValleyTour2D1NRoute,
+  ToursVisakapatanamArakuLambasingiTour4d3nRoute:
+    ToursVisakapatanamArakuLambasingiTour4d3nRoute,
+  ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute:
+    ToursVisakapatanamArakuLambasingiVanjangiTour5d4nRoute,
+  ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute:
+    ToursVisakapatanamArakuValleyLammasingiTour3d2nRoute,
+  ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute:
+    ToursVisakapatanamToMaredumilli2Nights3DaysTourRoute,
+  ToursVisakapatanamToPapikondaluTour2D1NRoute:
+    ToursVisakapatanamToPapikondaluTour2D1NRoute,
+  ToursVisakhapatnamArakuAnnavaramTour4D3NRoute:
+    ToursVisakhapatnamArakuAnnavaramTour4D3NRoute,
+  ToursVisakhapatnamArakuJagdalpurTour5D4NRoute:
+    ToursVisakhapatnamArakuJagdalpurTour5D4NRoute,
+  ToursVisakhapatnamArakuValleyTour2D1NRoute:
+    ToursVisakhapatnamArakuValleyTour2D1NRoute,
+  ToursVisakhapatnamArakuValleyTour3D2NRoute:
+    ToursVisakhapatnamArakuValleyTour3D2NRoute,
+  ToursVisakhapatnamArakuValleyTour4D3NRoute:
+    ToursVisakhapatnamArakuValleyTour4D3NRoute,
+  ToursVisakhapatnamDeomaliDuduma1DayTourRoute:
+    ToursVisakhapatnamDeomaliDuduma1DayTourRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

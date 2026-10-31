@@ -21,15 +21,24 @@ export const destinations = [
   { name: "Maredumilli", tours: 1, img: `${U}/2024/01/maredu.jpg` },
   { name: "Temple Tours", tours: 4, img: `${U}/2024/01/temple.jpg` },
 ];
-export const tours = [
+export const tours: {
+  title: string;
+  dur: string;
+  price: number;
+  img: string;
+  featured?: boolean;
+  itineraryUrl?: string;
+}[] = [
   {
     title: "Visakhapatnam to Papikondalu",
+    itineraryUrl: "/tours/visakapatanam-to-papikondalu-tour-2-d-1-n/",
     dur: "2D / 1N",
     price: 15900,
     img: `${U}/2020/11/papi-820x520.jpg`,
   },
   {
     title: "Araku · Lambasingi · Vanjangi",
+    itineraryUrl: "/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n/",
     dur: "5D / 4N",
     price: 32500,
     img: `${U}/2020/11/Sunset-Beach-720x571-1-720x520.jpg`,
@@ -37,6 +46,7 @@ export const tours = [
   },
   {
     title: "Araku Valley Tour",
+    itineraryUrl: "/tours/araku-valley-tour-2-d-1-n/",
     dur: "2D / 1N",
     price: 10900,
     img: `${U}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
@@ -49,6 +59,7 @@ export const tours = [
   },
   {
     title: "Araku & Annavaram",
+    itineraryUrl: "/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n/",
     dur: "4D / 3N",
     price: 24500,
     img: `${U}/2024/01/araku-annvaram-820x520.jpg`,

@@ -4,6 +4,7 @@ const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 export const vizagArakuPackages = [
   {
     id: "va-3d",
+    itineraryUrl: "/tours/visakhapatnam-araku-valley-tour-3-d-2-n/",
     title: "Visakhapatnam–Araku Valley",
     days: 3,
     nights: 2,
@@ -15,6 +16,7 @@ export const vizagArakuPackages = [
   },
   {
     id: "va-2d",
+    itineraryUrl: "/tours/visakhapatnam-araku-valley-tour-2-d-1-n/",
     title: "Visakhapatnam–Araku Valley",
     days: 2,
     nights: 1,
@@ -26,6 +28,7 @@ export const vizagArakuPackages = [
   },
   {
     id: "va-4d",
+    itineraryUrl: "/tours/visakhapatnam-araku-valley-tour-4-d-3-n/",
     title: "Visakhapatnam–Araku Valley",
     days: 4,
     nights: 3,
@@ -38,6 +41,7 @@ export const vizagArakuPackages = [
   },
   {
     id: "vaa-4d",
+    itineraryUrl: "/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n/",
     title: "Vizag, Araku & Annavaram",
     days: 4,
     nights: 3,
@@ -49,6 +53,7 @@ export const vizagArakuPackages = [
   },
   {
     id: "a-2d",
+    itineraryUrl: "/tours/araku-valley-tour-2-d-1-n/",
     title: "Araku Valley Tour",
     days: 2,
     nights: 1,

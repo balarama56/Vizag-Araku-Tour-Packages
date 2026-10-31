@@ -7,6 +7,7 @@ const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 export const vizagLambasingiPackages: TourPackage[] = [
   {
     id: "val-3d",
+    itineraryUrl: "/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n/",
     title: "Vizag, Araku & Lambasingi",
     days: 3,
     nights: 2,
@@ -19,6 +20,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
   },
   {
     id: "al-3d",
+    itineraryUrl: "/tours/araku-lambasingi-tour-3-d-2-n/",
     title: "Araku & Lambasingi",
     days: 3,
     nights: 2,
@@ -31,6 +33,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
   },
   {
     id: "val-4d",
+    itineraryUrl: "/tours/visakapatanam-araku-lambasingi-tour-4d-3n/",
     title: "Vizag, Araku & Lambasingi",
     days: 4,
     nights: 3,
@@ -44,6 +47,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
   // The category listing shows an inconsistent ₹33; the linked package detail confirms ₹32,500.
   {
     id: "valv-5d",
+    itineraryUrl: "/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n/",
     title: "Vizag, Araku, Lambasingi & Vanjangi",
     days: 5,
     nights: 4,

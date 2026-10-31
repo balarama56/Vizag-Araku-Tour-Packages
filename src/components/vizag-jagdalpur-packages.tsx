@@ -8,6 +8,7 @@ const waterfallImage =
 export const vizagJagdalpurPackages: TourPackage[] = [
   {
     id: "aj-5d",
+    itineraryUrl: "/tours/araku-valley-jagadalpur-tour-5-d-4-n/",
     title: "Araku Valley & Jagdalpur",
     days: 5,
     nights: 4,
@@ -20,6 +21,7 @@ export const vizagJagdalpurPackages: TourPackage[] = [
   },
   {
     id: "vaj-5d",
+    itineraryUrl: "/tours/visakhapatnam-araku-jagdalpur-tour-5-d-4-n/",
     title: "Vizag, Araku & Jagdalpur",
     days: 5,
     nights: 4,

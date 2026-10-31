@@ -7,6 +7,7 @@ const forestImage =
 export const vizagMaredumilliPackages: TourPackage[] = [
   {
     id: "vm-3d",
+    itineraryUrl: "/tours/visakapatanam-to-maredumilli-2-nights-3-days-tour/",
     title: "Visakhapatnam to Maredumilli",
     days: 3,
     nights: 2,

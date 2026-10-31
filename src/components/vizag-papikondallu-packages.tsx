@@ -7,6 +7,7 @@ const riverImage =
 export const vizagPapikondalluPackages: TourPackage[] = [
   {
     id: "vp-2d",
+    itineraryUrl: "/tours/visakapatanam-to-papikondalu-tour-2-d-1-n/",
     title: "Visakhapatnam to Papikondalu",
     days: 2,
     nights: 1,

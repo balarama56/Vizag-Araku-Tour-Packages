@@ -199,6 +199,15 @@ function Index() {
                       {t.dur}
                     </p>
                     <h3 className="mt-2 text-xl font-semibold">{t.title}</h3>
+                    {t.itineraryUrl && (
+                      <a
+                        href={t.itineraryUrl}
+                        aria-label={`View itinerary for ${t.title}`}
+                        className="mt-4 inline-flex text-sm font-semibold text-primary underline underline-offset-4"
+                      >
+                        View day-by-day itinerary ↗
+                      </a>
+                    )}
                     <div className="mt-6 flex items-end justify-between">
                       <p className="text-sm text-muted-foreground">
                         From{" "}

@@ -191,6 +191,22 @@ export function HomeHero() {
                   <p className="mt-3 text-sm leading-6 text-slate-600">
                     {trip.description}
                   </p>
+                  {(selected.id === "araku" ||
+                    selected.id === "lambasingi" ||
+                    selected.id === "papikondalu") && (
+                    <a
+                      href={
+                        selected.id === "araku"
+                          ? "/tours/araku-valley-tour-2-d-1-n/"
+                          : selected.id === "papikondalu"
+                            ? "/tours/visakapatanam-to-papikondalu-tour-2-d-1-n/"
+                            : "/tours/visakapatanam-araku-valley-lammasingi-tour-3d-2n/"
+                      }
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sky-800 underline underline-offset-4"
+                    >
+                      View {selected.label} itinerary <ArrowUpRight size={16} />
+                    </a>
+                  )}
                   <div className="mt-5 flex items-end justify-between gap-3 border-t border-slate-200 pt-5">
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-slate-500">

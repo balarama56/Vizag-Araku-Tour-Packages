@@ -22,6 +22,7 @@ export type TourPackage = {
   description: string;
   route: string;
   priceBasis?: string;
+  itineraryUrl?: string;
 };
 export function packageDuration(p: TourPackage) {
   return p.nights === 0
@@ -229,7 +230,16 @@ export function PackageCollection({
                       {packageDuration(p)}
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold leading-tight">
-                      {p.title}
+                      {p.itineraryUrl ? (
+                        <a
+                          href={p.itineraryUrl}
+                          className="hover:text-primary focus-visible:underline"
+                        >
+                          {p.title}
+                        </a>
+                      ) : (
+                        p.title
+                      )}
                     </h3>
                     <p className="mt-3 flex items-start gap-2 text-xs leading-6 text-muted-foreground">
                       <MapPin
@@ -256,6 +266,15 @@ export function PackageCollection({
                       <p className="mt-2 text-xs text-muted-foreground">
                         Request pricing for your dates and group.
                       </p>
+                      {p.itineraryUrl && (
+                        <a
+                          href={p.itineraryUrl}
+                          aria-label={`View itinerary for ${p.title}, ${packageDuration(p)}`}
+                          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4"
+                        >
+                          View day-by-day itinerary <ArrowUpRight size={16} />
+                        </a>
+                      )}
                       <a
                         href={`${whatsappUrl}?text=${encodeURIComponent(`Hello! I’m interested in ${p.title} (${packageDuration(p)}), listed from ₹${p.price.toLocaleString("en-IN")}. Please confirm availability, price basis and inclusions. My dates: My group size:`)}`}
                         target="_blank"
@@ -345,4 +364,3 @@ export function PackageCollection({
     </div>
   );
 }
-

@@ -51,7 +51,7 @@ describe("Vizag Araku package cards", () => {
     expect(within(first).getByRole("heading")).toHaveTextContent(
       "Araku Valley Tour",
     );
-    const enquiry = within(first).getByRole("link");
+    const enquiry = within(first).getByRole("link", { name: /Enquire about/ });
     const url = new URL(enquiry.getAttribute("href")!);
     expect(url.hostname).toBe("wa.me");
     expect(url.searchParams.get("text")).toContain(
@@ -157,7 +157,7 @@ describe("Vizag Jagdalpur package cards", () => {
     expect(within(first).getByRole("heading")).toHaveTextContent(
       "Vizag, Araku & Jagdalpur",
     );
-    const enquiry = within(first).getByRole("link");
+    const enquiry = within(first).getByRole("link", { name: /Enquire about/ });
     const message = new URL(enquiry.getAttribute("href")!).searchParams.get(
       "text",
     );
