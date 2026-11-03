@@ -230,16 +230,6 @@ export function HotelCollection({
                         Share your guest and room requirements
                       </p>
                     </div>
-                    {option.sourceUrl && (
-                      <a
-                        href={option.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 text-sm font-semibold text-primary underline underline-offset-4"
-                      >
-                        Hotel details & photo source ↗
-                      </a>
-                    )}
                     <p className="mt-6 font-display text-2xl text-gold">
                       Request a stay quote
                     </p>
