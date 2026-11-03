@@ -33,13 +33,21 @@ function Services() {
               key={service.slug}
               className="rounded-3xl border border-primary/20 bg-secondary p-7"
             >
-              {service.slug === "cab-booking" && (
+              {service.slug === "cab-booking" ? (
                 <img
                   src="/images/cab-services/sedan.jpg"
                   alt="Cab from our Google Maps gallery"
                   width={800}
                   height={600}
                   className="mb-6 h-52 w-full rounded-2xl object-cover"
+                />
+              ) : (
+                <img
+                  src="/images/bus-services/miniBus.jpg"
+                  alt="Mini bus from our Google Maps gallery"
+                  width={800}
+                  height={600}
+                  className="mb-6 h-52 w-full rounded-2xl object-contain"
                 />
               )}
               <h2 className="text-2xl font-semibold">{service.title}</h2>

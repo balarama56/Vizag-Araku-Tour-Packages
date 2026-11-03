@@ -105,7 +105,7 @@ export const serviceCategories = [
     slug: "bus-booking",
     title: "Bus Booking",
     description:
-      "Enquire about transport for your group. Share your route and passenger count to discuss suitable vehicle options.",
+      "Plan group travel with 12-, 24- or 40-seat preferences. Share your route, passenger count and luggage needs to confirm the right vehicle and a clear quote.",
     checklist: [
       "Group size and preferred seating",
       "Pickup points and travel schedule",

@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { BookingDetail } from "@/components/booking-detail";
 import { serviceCategories } from "@/lib/booking-categories";
 import { CabServices } from "@/components/cab-services";
+import { BusServices } from "@/components/bus-services";
 export const Route = createFileRoute("/services_/$service")({
   loader: ({ params }) => {
     const item = serviceCategories.find((item) => item.slug === params.service);
@@ -24,5 +25,6 @@ export const Route = createFileRoute("/services_/$service")({
 function Detail() {
   const item = Route.useLoaderData();
   if (item.slug === "cab-booking") return <CabServices />;
+  if (item.slug === "bus-booking") return <BusServices />;
   return <BookingDetail {...item} kind="Services" />;
 }
