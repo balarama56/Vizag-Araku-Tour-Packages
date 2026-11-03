@@ -39,6 +39,14 @@ const photos = [
     caption: "Traveller · group journeys",
     credit: "Photo: Google Maps business gallery",
   },
+  {
+    src: "/images/cab-services/innova.jpg",
+    alt: "White Toyota Innova Crysta — representative SUV / MUV photo",
+    title: "More room for the journey.",
+    caption: "SUV / MUV · Innova Crysta",
+    credit:
+      "Representative vehicle photo · Justdial. Exact vehicle confirmed with your quote.",
+  },
 ];
 const tripTypes = [
   {
@@ -111,6 +119,7 @@ export function CabServices() {
   const [trip, setTrip] = useState(0);
   const [photo, setPhoto] = useState(0);
   const [vehicle, setVehicle] = useState("Sedan");
+  const vehiclePhoto = photos[vehicle === "SUV / MUV" ? 2 : vehicle === "Tempo traveller" ? 1 : 0];
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -130,6 +139,9 @@ export function CabServices() {
   }
   function chooseVehicle(value: string) {
     setVehicle(value);
+    if (value === "Sedan") setPhoto(0);
+    if (value === "Tempo traveller") setPhoto(1);
+    if (value === "SUV / MUV") setPhoto(2);
     resetQuote();
   }
   function prepare(event: FormEvent<HTMLFormElement>) {
@@ -228,8 +240,8 @@ export function CabServices() {
               <Tilt>
                 <div className="pancharama-postcard rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
                   <img
-                    src={photos[0].src}
-                    alt={photos[0].alt}
+                    src={vehiclePhoto.src}
+                    alt={vehiclePhoto.alt}
                     width={1000}
                     height={750}
                     fetchPriority="high"
@@ -372,8 +384,9 @@ export function CabServices() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-7 text-muted-foreground">
-                Photographs from our Google Maps listing. Confirm the current
-                vehicle, model and condition for your travel dates.
+                Sedan and traveller photos from our Google Maps listing, plus a
+                representative Innova image. Confirm the vehicle, model and
+                condition for your travel dates.
               </p>
             </div>
             <div className="mt-9 grid gap-7 lg:grid-cols-[1.2fr_.8fr]">
@@ -746,7 +759,7 @@ export function CabServices() {
               ],
               [
                 "Is the photographed vehicle guaranteed?",
-                "The gallery contains photographs from the business’s Google Maps listing. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
+                "The gallery includes Google Maps photographs and a representative Innova image. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
               ],
               [
                 "Does sending an enquiry confirm my cab?",

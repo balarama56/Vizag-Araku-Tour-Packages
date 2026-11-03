@@ -106,3 +106,33 @@ it("browses real Google Maps photos with buttons and keyboard", () => {
     "/images/cab-services/sedan.jpg",
   );
 });
+
+it("shows the matching photo from vehicle cards and the enquiry dropdown", () => {
+  render(<CabServices />);
+  const gallery = screen.getByRole("region", { name: "Cab photo gallery" });
+  fireEvent.click(screen.getByRole("button", { name: /^SUV \/ MUV/ }));
+  expect(within(gallery).getByRole("img")).toHaveAttribute(
+    "src",
+    "/images/cab-services/innova.jpg",
+  );
+  expect(screen.getByLabelText("Vehicle preference")).toHaveValue("SUV / MUV");
+  fireEvent.click(screen.getByRole("button", { name: /^Tempo traveller/ }));
+  expect(within(gallery).getByRole("img")).toHaveAttribute(
+    "src",
+    "/images/cab-services/traveller.jpg",
+  );
+  fireEvent.change(screen.getByLabelText("Vehicle preference"), {
+    target: { value: "SUV / MUV" },
+  });
+  expect(within(gallery).getByRole("img")).toHaveAttribute(
+    "src",
+    "/images/cab-services/innova.jpg",
+  );
+  fireEvent.change(screen.getByLabelText("Vehicle preference"), {
+    target: { value: "Sedan" },
+  });
+  expect(within(gallery).getByRole("img")).toHaveAttribute(
+    "src",
+    "/images/cab-services/sedan.jpg",
+  );
+});
