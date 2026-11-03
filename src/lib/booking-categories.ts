@@ -139,4 +139,16 @@ export const hotelCategories = [
       "Room availability, inclusions and cancellation terms",
     ],
   },
+  {
+    slug: "lambasingi-hotels",
+    title: "Lambasingi Hotels",
+    description:
+      "Explore Horizon, Brundavanam, RRR and Raghu resort stays in Lambasingi. Share dates, guests and room preferences for a stay quote.",
+    checklist: [
+      "Check-in and check-out dates",
+      "Number of guests and rooms",
+      "Preferred resort and room category",
+      "Availability, meals and cancellation terms",
+    ],
+  },
 ];

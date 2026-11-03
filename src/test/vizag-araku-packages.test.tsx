@@ -261,7 +261,9 @@ describe("Temple tour package cards", () => {
     });
     const highest = screen.getAllByRole("article")[0]!;
     const message = new URL(
-      within(highest).getByRole("link").getAttribute("href")!,
+      within(highest)
+        .getByRole("link", { name: /Enquire about/ })
+        .getAttribute("href")!,
     ).searchParams.get("text");
     expect(message).toContain(
       "Vizag, Puri & Konark · Option 2 (3 days / 2 nights)",
@@ -291,7 +293,9 @@ describe("Pancharama vehicle package cards", () => {
       "Vizag to Pancharamam · 24-seater",
     );
     const message = new URL(
-      within(first).getByRole("link").getAttribute("href")!,
+      within(first)
+        .getByRole("link", { name: /Enquire about Vizag to Pancharamam/ })
+        .getAttribute("href")!,
     ).searchParams.get("text");
     expect(message).toContain(
       "Vizag to Pancharamam · 24-seater (2 days / 1 night)",
@@ -328,7 +332,9 @@ describe("Vizag Annavaram package cards", () => {
       "Vizag, Araku & Annavaram · Option 2",
     );
     const message = new URL(
-      within(first).getByRole("link").getAttribute("href")!,
+      within(first)
+        .getByRole("link", { name: /Enquire about/ })
+        .getAttribute("href")!,
     ).searchParams.get("text");
     expect(message).toContain(
       "Vizag, Araku & Annavaram · Option 2 (4 days / 3 nights)",
@@ -394,7 +400,9 @@ describe("Puri Konark package cards", () => {
       "Vizag, Puri & Konark · Option 2",
     );
     const message = new URL(
-      within(first).getByRole("link").getAttribute("href")!,
+      within(first)
+        .getByRole("link", { name: /Enquire about/ })
+        .getAttribute("href")!,
     ).searchParams.get("text");
     expect(message).toContain(
       "Vizag, Puri & Konark · Option 2 (3 days / 2 nights)",
@@ -411,6 +419,54 @@ describe("Puri Konark package cards", () => {
 import { VizagHotels } from "@/components/vizag-hotels";
 
 describe("Vizag hotel stay enquiry", () => {
+  it("shows the requested hotels and switches photos before selecting a hotel", () => {
+    render(<VizagHotels />);
+    expect(
+      within(document.getElementById("hotels")!).getAllByRole("article"),
+    ).toHaveLength(9);
+    const gallery = screen.getByRole("region", {
+      name: "Casa Lorven Hotel photos",
+    });
+    const first = within(gallery).getByRole("img").getAttribute("src");
+    fireEvent.click(
+      within(gallery).getByRole("button", {
+        name: "Next photo of Casa Lorven Hotel",
+      }),
+    );
+    expect(within(gallery).getByRole("img").getAttribute("src")).not.toBe(
+      first,
+    );
+    fireEvent.keyDown(
+      within(gallery).getByRole("button", {
+        name: "Previous photo of Casa Lorven Hotel",
+      }),
+      { key: "ArrowLeft" },
+    );
+    expect(within(gallery).getByRole("img").getAttribute("src")).toBe(first);
+    const hotelEnquiry = screen.getByRole("link", {
+      name: "Enquire about Bay View Hotel",
+    });
+    const whatsapp = new URL(hotelEnquiry.getAttribute("href")!);
+    expect(whatsapp.origin + whatsapp.pathname).toBe(
+      "https://wa.me/918341146226",
+    );
+    expect(whatsapp.searchParams.get("text")).toContain(
+      "Bay View Hotel in Vizag",
+    );
+    expect(hotelEnquiry).toHaveAttribute("target", "_blank");
+    fireEvent.click(hotelEnquiry);
+    expect(screen.getByLabelText("Hotel preference")).toHaveValue(
+      "Bay View Hotel",
+    );
+    for (const removed of ["Sea Star", "Hotel Lotus Park"]) {
+      expect(
+        screen.queryByRole("heading", { name: removed, exact: true }),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("option", { name: removed, exact: true }),
+      ).not.toBeInTheDocument();
+    }
+  });
   function fillDates(checkOut = "2099-11-03") {
     fireEvent.change(screen.getByLabelText("Check-in", { exact: true }), {
       target: { value: "2099-11-01" },
@@ -441,7 +497,7 @@ describe("Vizag hotel stay enquiry", () => {
     const message = new URL(link.getAttribute("href")!).searchParams.get(
       "text",
     );
-    expect(message).toContain("Hotel Lotus Park in Vizag");
+    expect(message).toContain("Casa Lorven Hotel in Vizag");
     expect(message).toContain("2099-11-03 (2 nights)");
     expect(message).toContain("Guests: 3. Rooms: 1.");
     expect(message).toContain("Twin beds please");
@@ -478,11 +534,17 @@ describe("Vizag hotel stay enquiry", () => {
 import { ArakuHotels } from "@/components/araku-hotels";
 
 describe("Araku hotel booking cards", () => {
-  it("features Akshaya Inn alongside the two reference hotels", () => {
+  it("features all requested Araku hotels alongside Rajadhani Grand", () => {
     render(<ArakuHotels />);
     for (const name of [
       "Akshaya Inn",
       "Hotel Rajadhani Grand",
+      "Hotel Aaradhya",
+      "Casa Woods",
+      "Cloud 9 Resorts & Refreshment",
+      "Haritha Valley Resort",
+      "Alluri Resort",
+      "Good Morning Resort",
       "Apple Resort",
     ]) {
       expect(screen.getByRole("heading", { name })).toBeInTheDocument();
@@ -494,10 +556,28 @@ describe("Araku hotel booking cards", () => {
     }
     expect(
       screen.getAllByText("Araku Valley · destination image"),
-    ).toHaveLength(3);
+    ).toHaveLength(1);
     expect(screen.getByLabelText("Hotel preference")).toHaveValue(
       "Akshaya Inn",
     );
+  });
+  it("switches Araku hotel photos and links directly to WhatsApp", () => {
+    render(<ArakuHotels />);
+    const gallery = screen.getByRole("region", { name: "Casa Woods photos" });
+    const first = within(gallery).getByRole("img").getAttribute("src");
+    fireEvent.click(
+      within(gallery).getByRole("button", { name: "Next photo of Casa Woods" }),
+    );
+    expect(within(gallery).getByRole("img").getAttribute("src")).not.toBe(
+      first,
+    );
+    const enquiry = screen.getByRole("link", {
+      name: "Enquire about Cloud 9 Resorts & Refreshment",
+    });
+    expect(
+      new URL(enquiry.getAttribute("href")!).searchParams.get("text"),
+    ).toContain("Cloud 9 Resorts & Refreshment in Araku");
+    expect(enquiry).toHaveAttribute("target", "_blank");
   });
   it("prepares an Akshaya Inn enquiry in Araku and selects another hotel from its card", () => {
     render(<ArakuHotels />);
@@ -636,5 +716,69 @@ describe("Home hero package spotlight", () => {
     expect(
       screen.getByRole("link", { name: /Stay enquiries/ }),
     ).toHaveAttribute("href", "/hotel-booking");
+  });
+});
+
+import { LambasingiHotels } from "@/components/lambasingi-hotels";
+import { hotelCategories } from "@/lib/booking-categories";
+describe("Lambasingi resort stays", () => {
+  it("lists four resorts with two-photo galleries and hotel-specific WhatsApp links", () => {
+    render(<LambasingiHotels />);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+      "Stay in Lambasingi.",
+    );
+    expect(
+      hotelCategories.find((hotel) => hotel.slug === "lambasingi-hotels"),
+    ).toBeDefined();
+    for (const name of [
+      "Horizon Resort Lambasingi",
+      "Brundavanam Resort",
+      "RRR Resort",
+      "Raghu Resort",
+    ]) {
+      expect(
+        screen.getByRole("heading", { name, exact: true }),
+      ).toBeInTheDocument();
+      const gallery = screen.getByRole("region", { name: name + " photos" });
+      const first = within(gallery).getByRole("img").getAttribute("src");
+      fireEvent.click(
+        within(gallery).getByRole("button", { name: "Next photo of " + name }),
+      );
+      expect(within(gallery).getByRole("img").getAttribute("src")).not.toBe(
+        first,
+      );
+      const enquiry = screen.getByRole("link", {
+        name: "Enquire about " + name,
+      });
+      const url = new URL(enquiry.getAttribute("href")!);
+      expect(url.origin + url.pathname).toBe("https://wa.me/918341146226");
+      expect(url.searchParams.get("text")).toContain(name + " in Lambasingi");
+    }
+  });
+  it("prepares a dated Lambasingi resort enquiry", () => {
+    render(<LambasingiHotels />);
+    fireEvent.change(screen.getByLabelText("Hotel preference"), {
+      target: { value: "Raghu Resort" },
+    });
+    fireEvent.change(screen.getByLabelText("Check-in", { exact: true }), {
+      target: { value: "2099-11-01" },
+    });
+    fireEvent.change(screen.getByLabelText("Check-out", { exact: true }), {
+      target: { value: "2099-11-03" },
+    });
+    fireEvent.submit(
+      screen
+        .getByRole("button", { name: "Prepare my stay enquiry" })
+        .closest("form")!,
+    );
+    const url = new URL(
+      screen
+        .getByRole("link", { name: "Send enquiry on WhatsApp" })
+        .getAttribute("href")!,
+    );
+    expect(url.searchParams.get("text")).toContain(
+      "Raghu Resort in Lambasingi",
+    );
+    expect(url.searchParams.get("text")).toContain("2 nights");
   });
 });

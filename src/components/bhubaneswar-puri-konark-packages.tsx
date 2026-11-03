@@ -7,6 +7,8 @@ const heritageImage =
 export const bhubaneswarPuriKonarkPackages: TourPackage[] = [
   {
     id: "bpk-3d",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n",
     title: "Vizag to Bhubaneswar, Puri & Konark",
     days: 3,
     nights: 2,

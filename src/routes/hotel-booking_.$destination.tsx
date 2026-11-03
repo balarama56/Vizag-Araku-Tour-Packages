@@ -1,3 +1,4 @@
+import { LambasingiHotels } from "@/components/lambasingi-hotels";
 import { ArakuHotels } from "@/components/araku-hotels";
 import { VizagHotels } from "@/components/vizag-hotels";
 import { createFileRoute, notFound } from "@tanstack/react-router";
@@ -30,5 +31,6 @@ function Detail() {
   const item = Route.useLoaderData();
   if (item.slug === "vizag-hotels") return <VizagHotels />;
   if (item.slug === "araku-hotels") return <ArakuHotels />;
+  if (item.slug === "lambasingi-hotels") return <LambasingiHotels />;
   return <BookingDetail {...item} kind="Hotel booking" />;
 }

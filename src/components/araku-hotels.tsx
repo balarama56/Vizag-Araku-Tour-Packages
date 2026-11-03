@@ -3,30 +3,16 @@ import {
   type HotelOption,
 } from "@/components/hotel-collection";
 import hero from "@/assets/hero.jpg";
+import { arakuHotelOptions as researchedHotels } from "@/components/araku-hotel-data";
 export const arakuHotelOptions: HotelOption[] = [
-  {
-    name: "Akshaya Inn",
-    image: hero,
-    imageAlt: "Araku Valley landscape",
-    imageCaption: "Araku Valley · destination image",
-    description:
-      "Planning an Araku stay? Ask about Akshaya Inn for your dates. Share your preferred room setup, guest count and any requirements so our team can request availability and a quote.",
-  },
+  ...researchedHotels,
   {
     name: "Hotel Rajadhani Grand",
     image: hero,
     imageAlt: "Green hills in Araku Valley",
     imageCaption: "Araku Valley · destination image",
     description:
-      "Explore a stay at Hotel Rajadhani Grand, listed in our Araku collection. Discuss room types, meal preferences and arrangements for your group before confirming.",
-  },
-  {
-    name: "Apple Resort",
-    image: hero,
-    imageAlt: "Araku Valley scenery at sunrise",
-    imageCaption: "Araku Valley · destination image",
-    description:
-      "Considering Apple Resort for your valley break? Ask our team to check current rooms, rates and inclusions for your travel dates and group.",
+      "Explore a stay at Hotel Rajadhani Grand. Discuss room types, meal preferences and arrangements for your group before confirming.",
   },
 ];
 export function ArakuHotels() {

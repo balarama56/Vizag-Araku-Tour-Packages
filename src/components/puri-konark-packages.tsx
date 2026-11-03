@@ -14,7 +14,7 @@ export function PuriKonarkPackages() {
     <PackageCollection
       packages={puriKonarkPackages}
       title="Puri & Konark"
-      tagline="Sacred places. Coastal pauses."
+      tagline="Spiritual places. Coastal pauses."
       description="Explore Odisha’s temples and coast from Vizag. Compare two three-day Puri and Konark options, then discuss the stays, travel pace and visiting arrangements with our local team."
       range="3 days · 2 nights"
       heading="Two options. Your kind of journey."

@@ -1,0 +1,181 @@
+[
+  {
+    "name": "Akshaya Inn",
+    "location": "Main Road · opposite MRO Office",
+    "description": "A convenient base near Araku’s museums. Ask for an AC or non-AC room and share your bed and guest preferences.",
+    "roomTypes": [
+      "AC rooms",
+      "Non-AC rooms"
+    ],
+    "sourceUrl": "https://www.google.com/travel/hotels/entity/ChoIv4TVvODl8oDbARoNL2cvMTFoMDBjX2YxNhAB",
+    "image": "https://araku-valley.com/wp-content/uploads/2025/11/photo_6070916529391340561_y-1024x768.jpg",
+    "imageAlt": "Akshaya Inn exterior and entrance",
+    "images": [
+      {
+        "src": "https://www.vizagtoursandtravels.in/uploads/27ff7a034fe43f8275d06282f46e5090.jpg",
+        "alt": "Akshaya Inn accommodation from the travel agency listing"
+      },
+      {
+        "src": "https://img3.restaurantguru.com/c5a3-Restaurant-AKSHAYA-INN-photo.jpg",
+        "alt": "Akshaya Inn room and accommodation photos"
+      }
+    ]
+  },
+  {
+    "name": "Hotel Aaradhya",
+    "location": "Padmapuram Junction · beside Cinema Hall",
+    "description": "A town stay at Padmapuram Junction. Enquire about an air-conditioned room, current inclusions and arrangements for your group.",
+    "roomTypes": [
+      "AC Room · category confirmed with quote"
+    ],
+    "sourceUrl": "https://www.google.com/travel/hotels/entity/ChkIuazIoO7ohMUDGg0vZy8xMWZwM3JuX18wEAE",
+    "image": "https://b2bzend.s3.ap-south-1.amazonaws.com/img/hotel/hoteId_804427/8411_eedcd5761f4168cdf63d7b60e73f9ca41787809925.jpg",
+    "imageAlt": "Hotel Aaradhya in Araku, from its travel listing",
+    "images": [
+      {
+        "src": "https://b2bzend.s3.ap-south-1.amazonaws.com/img/hotel/hoteId_804427/8411_eedcd5761f4168cdf63d7b60e73f9ca41787809925.jpg",
+        "alt": "Hotel Aaradhya in Araku, from its travel listing"
+      }
+    ]
+  },
+  {
+    "name": "Casa Woods",
+    "location": "Ravvalaguda · Araku–Visakhapatnam Road",
+    "description": "A garden retreat with compact mini rooms, air-conditioned standard and premium rooms, and an executive suite with a separate mini lounge.",
+    "roomTypes": [
+      "Casa Mini · Non-AC",
+      "Casa Standard · AC",
+      "Casa Premium · AC",
+      "Casa Executive Suite · AC"
+    ],
+    "sourceUrl": "https://www.casahotels.in/hotel/casa-woods",
+    "image": "https://www.casahotels.in/uploads/1749793004_497ea4158202eb9f3159.jpg",
+    "imageAlt": "Casa Woods resort in Araku Valley",
+    "images": [
+      {
+        "src": "https://www.casahotels.in/uploads/1749793004_497ea4158202eb9f3159.jpg",
+        "alt": "Casa Woods resort in Araku Valley"
+      },
+      {
+        "src": "https://www.casahotels.in/uploads/1750091405_2dffdcf9e8cdc0879c45.jpg",
+        "alt": "Casa Woods accommodation interior"
+      }
+    ]
+  },
+  {
+    "name": "Cloud 9 Resorts & Refreshment",
+    "location": "Ravvalaguda · Araku Valley",
+    "description": "A Ravvalaguda stay with double-bed accommodation shown in the property’s Google Maps room gallery. Share your dates and preferred room setup; our team will confirm the room category, amenities and inclusions.",
+    "roomTypes": [
+      "Double-bed accommodation · category on request"
+    ],
+    "image": "/images/araku-hotels/3-0.jpg",
+    "imageAlt": "Cloud 9 Resorts & Refreshment double-bed room with red accents",
+    "images": [
+      {
+        "src": "/images/araku-hotels/3-0.jpg",
+        "alt": "Cloud 9 Resorts & Refreshment double-bed room with red accents",
+        "sourceListing": "https://www.google.com/maps?cid=3867326258001251019"
+      },
+      {
+        "src": "/images/araku-hotels/3-1.jpg",
+        "alt": "Cloud 9 Resorts & Refreshment double-bed room with dark cushions",
+        "sourceListing": "https://www.google.com/maps?cid=3867326258001251019"
+      }
+    ],
+    "sourceUrl": "https://share.google/P0OSayDYAqSlrBmbz",
+    "photoCredit": "Google Maps visitor photos by Varambabu Burli"
+  },
+  {
+    "name": "Haritha Valley Resort",
+    "location": "Araku Valley · Main Road",
+    "description": "An APTDC valley stay with AC and non-AC accommodation. Ask about premium suite options and the room category available for your dates.",
+    "roomTypes": [
+      "AC Premium Suite",
+      "AC Room",
+      "Non-AC Room"
+    ],
+    "sourceUrl": "https://visakhapatnam.ap.gov.in/accommodation/",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/94/fa/36/aptdc-haritha-valley.jpg?h=900&s=1&w=1200",
+    "imageAlt": "APTDC Haritha Valley Resort entrance",
+    "images": [
+      {
+        "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/94/fa/36/aptdc-haritha-valley.jpg?h=900&s=1&w=1200",
+        "alt": "APTDC Haritha Valley Resort entrance"
+      },
+      {
+        "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/c7/a8/f4/aptdc-haritha-valley.jpg?h=900&s=1&w=1200",
+        "alt": "Haritha Valley Resort buildings and landscaped grounds"
+      }
+    ]
+  },
+  {
+    "name": "Alluri Resort",
+    "location": "Ravvalaguda · opposite Government ITI",
+    "description": "Choose non-AC or air-conditioned rooms, or ask for a deluxe room with more space. Confirm the exact room layout and inclusions before booking.",
+    "roomTypes": [
+      "Non-AC Room",
+      "AC Room",
+      "Deluxe AC Room"
+    ],
+    "sourceUrl": "https://www.alluriresorts.com/user/rooms.php",
+    "image": "https://r1imghtlak.mmtcdn.com/6976644a7e1c11eeae0d0a58a9feac02.jpg",
+    "imageAlt": "Alluri Resorts exterior in Araku",
+    "images": [
+      {
+        "src": "https://r1imghtlak.mmtcdn.com/6976644a7e1c11eeae0d0a58a9feac02.jpg",
+        "alt": "Alluri Resorts exterior in Araku"
+      },
+      {
+        "src": "https://r1imghtlak.ibcdn.com/6f4831547e1d11ee85f00a58a9feac02.jpg",
+        "alt": "Alluri Resorts room from its property gallery"
+      }
+    ]
+  },
+  {
+    "name": "Good Morning Resort",
+    "location": "Bosubeda · Araku Valley",
+    "description": "A valley resort with a swimming pool and space for family or group stays. Discuss standard, deluxe and premium AC room preferences with our team.",
+    "roomTypes": [
+      "Standard AC Room",
+      "Deluxe AC Room",
+      "Premium AC Room"
+    ],
+    "sourceUrl": "https://araku-valley.com/resorts/good-morning-resort",
+    "image": "https://r1imghtlak.mmtcdn.com/062d66268e6711eeb4ee0a58a9feac02.jpeg",
+    "imageAlt": "Good Morning Resorts entrance",
+    "images": [
+      {
+        "src": "https://r1imghtlak.mmtcdn.com/062d66268e6711eeb4ee0a58a9feac02.jpeg",
+        "alt": "Good Morning Resorts entrance"
+      },
+      {
+        "src": "https://aptourismresorts.in/images/gallery/goodmorning-resorts-araku13.jpg",
+        "alt": "Good Morning Resorts guest room"
+      }
+    ]
+  },
+  {
+    "name": "Apple Resort",
+    "location": "Main Road · opposite Government ITI",
+    "description": "A relaxed garden stay with AC rooms, standard non-AC rooms and tree huts. Share your preferred accommodation style when requesting a quote.",
+    "roomTypes": [
+      "AC Room",
+      "Standard Non-AC Room",
+      "Tree Hut"
+    ],
+    "sourceUrl": "https://www.appleresortsaraku.com/suits-rooms.php",
+    "image": "https://www.appleresortsaraku.com/images/gallery-two/1.jpg",
+    "imageAlt": "Apple Resorts accommodation beside the garden",
+    "images": [
+      {
+        "src": "https://www.arakutourpackages.com/apple-resorts/cottages.jpg",
+        "alt": "Apple Resorts thatched cottages on stilts"
+      },
+      {
+        "src": "https://www.arakutourpackages.com/apple-resorts/cottage-front.jpg",
+        "alt": "Apple Resorts cottage and front porch"
+      }
+    ]
+  }
+]

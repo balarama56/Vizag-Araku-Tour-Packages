@@ -17,6 +17,7 @@ export const pancharamaPackages: TourPackage[] = vehicleOptions.map((v) => ({
   title: `Vizag to Pancharamam · ${v.name}`,
   days: 2,
   nights: 1,
+  itineraryUrl: "/tours/visakapatanam-pancharamam-tour-2d-1n",
   price: v.price,
   priceBasis: "Vehicle option · confirm final quote",
   label: `${v.name} option`,

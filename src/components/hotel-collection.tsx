@@ -17,6 +17,10 @@ export type HotelOption = {
   imageAlt: string;
   description: string;
   imageCaption?: string;
+  images?: { src: string; alt: string }[];
+  roomTypes?: string[];
+  sourceUrl?: string;
+  location?: string;
 };
 export function HotelCollection({
   region,
@@ -25,7 +29,7 @@ export function HotelCollection({
   heroAlt,
   intro,
 }: {
-  region: "Vizag" | "Araku";
+  region: "Vizag" | "Araku" | "Lambasingi";
   hotels: HotelOption[];
   heroImage: string;
   heroAlt: string;
@@ -180,18 +184,7 @@ export function HotelCollection({
                   <div
                     className={`relative overflow-hidden ${hotels.length === 1 ? "min-h-72" : "h-56 shrink-0"}`}
                   >
-                    <img
-                      src={option.image}
-                      alt={option.imageAlt}
-                      width={1024}
-                      height={768}
-                      loading="lazy"
-                      onError={(e) => {
-                        if (e.currentTarget.getAttribute("src") !== hero)
-                          e.currentTarget.src = hero;
-                      }}
-                      className="h-full w-full object-cover"
-                    />
+                    <HotelGallery hotel={option} />
                     <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-800">
                       {option.name === hotels[0]!.name
                         ? "Featured hotel"
@@ -209,7 +202,12 @@ export function HotelCollection({
                   >
                     <p className="flex items-center gap-2 text-xs uppercase tracking-widest text-primary">
                       <MapPin size={15} />
-                      {region === "Vizag" ? "Visakhapatnam" : "Araku Valley"}
+                      {option.location ||
+                        (region === "Vizag"
+                          ? "Visakhapatnam"
+                          : region === "Araku"
+                            ? "Araku Valley"
+                            : "Lambasingi")}
                     </p>
                     <h3 className="mt-4 text-3xl font-semibold">
                       {option.name}
@@ -220,7 +218,8 @@ export function HotelCollection({
                     <div className="mt-6 grid gap-3 border-y border-border py-5 text-sm text-muted-foreground">
                       <p className="flex items-center gap-3">
                         <BedDouble size={18} className="text-primary" />
-                        Room type confirmed with your quote
+                        {option.roomTypes?.join(" · ") ||
+                          "Room type confirmed with your quote"}
                       </p>
                       <p className="flex items-center gap-3">
                         <CalendarDays size={18} className="text-primary" />
@@ -231,6 +230,16 @@ export function HotelCollection({
                         Share your guest and room requirements
                       </p>
                     </div>
+                    {option.sourceUrl && (
+                      <a
+                        href={option.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 text-sm font-semibold text-primary underline underline-offset-4"
+                      >
+                        Hotel details & photo source ↗
+                      </a>
+                    )}
                     <p className="mt-6 font-display text-2xl text-gold">
                       Request a stay quote
                     </p>
@@ -239,7 +248,9 @@ export function HotelCollection({
                       terms.
                     </p>
                     <a
-                      href="#stay-enquiry"
+                      href={`${whatsappUrl}?text=${encodeURIComponent(`Hello! I would like to enquire about ${option.name} in ${region}. Please share available room types, rates including taxes, meal options and booking terms for my stay.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={`Enquire about ${option.name}`}
                       onClick={() => {
                         setHotel(option.name);
@@ -489,6 +500,107 @@ export function HotelCollection({
         </section>
       </main>
       <Footer />
+    </div>
+  );
+}
+
+function HotelGallery({ hotel }: { hotel: HotelOption }) {
+  const images = hotel.images?.length
+    ? hotel.images
+    : [{ src: hotel.image, alt: hotel.imageAlt }];
+  const [active, setActive] = useState(0);
+  const [failed, setFailed] = useState<Record<number, boolean>>({});
+  const move = (step: number) =>
+    setActive((current) => (current + step + images.length) % images.length);
+  return (
+    <div
+      className="relative h-full w-full bg-secondary"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={hotel.name + " photos"}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          move(1);
+        }
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          move(-1);
+        }
+      }}
+      onTouchStart={(e) => {
+        e.currentTarget.dataset.start = String(e.touches[0].clientX);
+      }}
+      onTouchEnd={(e) => {
+        const distance =
+          e.changedTouches[0].clientX - Number(e.currentTarget.dataset.start);
+        if (Math.abs(distance) > 40) move(distance < 0 ? 1 : -1);
+      }}
+    >
+      {failed[active] || !images[active].src ? (
+        <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-muted-foreground">
+          <BedDouble size={32} />
+          <p className="text-sm">Hotel photos awaiting confirmation</p>
+        </div>
+      ) : (
+        <img
+          key={images[active].src}
+          src={images[active].src}
+          alt={images[active].alt}
+          width={1024}
+          height={768}
+          loading="lazy"
+          onError={() =>
+            setFailed((previous) => ({ ...previous, [active]: true }))
+          }
+          className="h-full w-full object-cover"
+        />
+      )}
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={() => move(-1)}
+            aria-label={"Previous photo of " + hotel.name}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/80 h-11 w-11 text-xl text-white focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={() => move(1)}
+            aria-label={"Next photo of " + hotel.name}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/80 h-11 w-11 text-xl text-white focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            ›
+          </button>
+          <div className="absolute bottom-3 inset-x-0 flex justify-center gap-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={"Show photo " + (index + 1) + " of " + hotel.name}
+                aria-pressed={active === index}
+                onClick={() => setActive(index)}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-950/70"
+              >
+                <span
+                  className={
+                    "h-2 rounded-full " +
+                    (active === index ? "w-4 bg-white" : "w-2 bg-white/50")
+                  }
+                />
+              </button>
+            ))}
+          </div>
+          <span
+            aria-live="polite"
+            className="absolute right-3 top-3 rounded-full bg-slate-950/80 px-3 py-1 text-xs text-white"
+          >
+            {active + 1} / {images.length}
+          </span>
+        </>
+      )}
     </div>
   );
 }

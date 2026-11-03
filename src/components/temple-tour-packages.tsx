@@ -4,18 +4,18 @@ import {
 } from "@/components/package-collection";
 const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 const templeImage = `${uploads}/2024/11/Ksheerarama-Palakollu-820x520.jpg`;
-const annavaramImage = `${uploads}/2024/01/araku-annvaram-820x520.jpg`;
 const puriImage = `${uploads}/2024/01/temple.jpg`;
 export const templeTourPackages: TourPackage[] = [
   {
     id: "vadapalli-2d",
+    itineraryUrl: "/tours/visakapatanam-vadapalli-temple-tour-1n-2d",
     title: "Vizag to Vadapalli Temple",
     days: 2,
     nights: 1,
     price: 1600,
     priceBasis: "Per person · subject to confirmation",
     label: "A devotional short break",
-    image: templeImage,
+    image: "/images/vadapalli/vadapalli.jpg",
     route: "Visakhapatnam · Vadapalli",
     description:
       "Plan a short temple journey with your family or group. Confirm the visiting route, transport and any additional charges before booking.",
@@ -34,18 +34,24 @@ export const templeTourPackages: TourPackage[] = [
   },
   {
     id: "annavaram-4d-a",
+    itineraryUrl: "/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n-2",
+    priceBasis: "Reference couple rate · confirm final quote",
     title: "Vizag, Araku & Annavaram · Option 1",
     days: 4,
     nights: 3,
     price: 25500,
     label: "Valley views & temple visits",
-    image: annavaramImage,
+    image: "/images/vadapalli/annavaram.jpg",
     route: "Visakhapatnam · Araku · Annavaram",
     description:
       "Pair a valley escape with a temple visit. Ask our team to explain this option’s accommodation, transport and inclusions.",
   },
   {
     id: "puri-3d-a",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n-2",
+    priceBasis: "Per couple · subject to confirmation",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n-2",
+    priceBasis: "Per couple · subject to confirmation",
     title: "Vizag, Puri & Konark · Option 1",
     days: 3,
     nights: 2,
@@ -58,6 +64,10 @@ export const templeTourPackages: TourPackage[] = [
   },
   {
     id: "puri-3d-b",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n",
+    priceBasis: "Per couple · subject to confirmation",
+    itineraryUrl: "/tours/visakapatanam-puri-konark-3d-2n",
+    priceBasis: "Per couple · subject to confirmation",
     title: "Vizag, Puri & Konark · Option 2",
     days: 3,
     nights: 2,
@@ -70,12 +80,14 @@ export const templeTourPackages: TourPackage[] = [
   },
   {
     id: "annavaram-4d-b",
+    itineraryUrl: "/tours/visakapatanam-araku-annavaram-tour-4d-3n",
+    priceBasis: "Reference couple rate · confirm final quote",
     title: "Vizag, Araku & Annavaram · Option 2",
     days: 4,
     nights: 3,
     price: 20500,
     label: "Nature meets devotion",
-    image: annavaramImage,
+    image: "/images/vadapalli/annavaram.jpg",
     route: "Visakhapatnam · Araku · Annavaram",
     description:
       "Consider another coast, valley and temple combination. Request a written quote to compare the arrangements for your travel dates.",
