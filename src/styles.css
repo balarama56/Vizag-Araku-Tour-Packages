@@ -500,6 +500,10 @@ html {
 @media (prefers-reduced-motion: reduce) { .home-hero-intro, .home-hero-spotlight { animation:none; } }
 
 /* Pancharama: layered travel postcards, with motion respecting visitor preferences. */
+.cab-road { height: 1px; position: relative; background: repeating-linear-gradient(to right, #ffffff70 0 5px, transparent 5px 10px); }
+.cab-road::after { content: ""; position: absolute; top: -3px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: #67e8f9; box-shadow: 0 0 14px #67e8f9; }
+@media (prefers-reduced-motion: no-preference) { .cab-road::after { animation: cab-progress 5s ease-in-out infinite alternate; } }
+@keyframes cab-progress { to { left: calc(100% - 7px); } }
 .pancharama-hero { background: #0d202c; }
 .pancharama-backdrop { opacity: .48; }
 .pancharama-pill { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #ffffff24; border-radius: 999px; padding: .65rem .9rem; background: #ffffff08; }
