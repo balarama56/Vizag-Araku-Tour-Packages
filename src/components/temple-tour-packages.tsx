@@ -2,9 +2,8 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
-const templeImage = `${uploads}/2024/11/Ksheerarama-Palakollu-820x520.jpg`;
-const puriImage = `${uploads}/2024/01/temple.jpg`;
+const templeImage = "/images/pancharama/ksheerarama.jpg";
+const puriImage = "/images/puri-konark/heritage.jpg";
 export const templeTourPackages: TourPackage[] = [
   {
     id: "vadapalli-2d",
@@ -73,7 +72,7 @@ export const templeTourPackages: TourPackage[] = [
     nights: 2,
     price: 30000,
     label: "Another way to explore",
-    image: puriImage,
+    image: "/images/puri-konark/puri1.jpg",
     route: "Visakhapatnam · Puri · Konark",
     description:
       "Compare this Puri and Konark option with our team. Confirm the differences in stays, transport and final inclusions before choosing.",
@@ -87,7 +86,7 @@ export const templeTourPackages: TourPackage[] = [
     nights: 3,
     price: 20500,
     label: "Nature meets devotion",
-    image: "/images/vadapalli/annavaram.jpg",
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     route: "Visakhapatnam · Araku · Annavaram",
     description:
       "Consider another coast, valley and temple combination. Request a written quote to compare the arrangements for your travel dates.",

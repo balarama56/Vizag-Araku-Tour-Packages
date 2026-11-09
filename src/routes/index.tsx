@@ -149,6 +149,10 @@ function Index() {
                 >
                   <img
                     src={d.img}
+                    onError={(event) => {
+                      if (event.currentTarget.getAttribute("src") !== hero)
+                        event.currentTarget.src = hero;
+                    }}
                     alt={d.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
@@ -167,6 +171,15 @@ function Index() {
           </div>
         </section>
 
+        <p className="mx-auto max-w-6xl px-6 pb-8 text-xs text-muted-foreground">
+          Maredumilli photo: {" "}
+          <a href="https://commons.wikimedia.org/wiki/File:MAREDUMILLI_-_waterfalls.jpg" className="underline">
+            S. Sri Harsha
+          </a>{" "}
+          / <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline">CC BY-SA 4.0</a>
+          {" "}(cropped to fit).
+        </p>
+
         <section id="tours" className="mx-auto max-w-6xl px-6 pb-28">
           <p className="reveal text-sm uppercase tracking-[0.3em] text-primary">
             Most popular
@@ -181,6 +194,10 @@ function Index() {
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={t.img}
+                      onError={(event) => {
+                        if (event.currentTarget.getAttribute("src") !== hero)
+                          event.currentTarget.src = hero;
+                      }}
                       alt={t.title}
                       loading="lazy"
                       className="h-full w-full object-cover"
@@ -228,6 +245,15 @@ function Index() {
             ))}
           </div>
         </section>
+
+        <p className="mx-auto max-w-6xl px-6 pb-8 text-xs text-muted-foreground">
+          Papikondalu photo: {" "}
+          <a href="https://commons.wikimedia.org/wiki/File:Papikondalu-Andhra_Pradesh-India.jpg" className="underline">
+            Geetha Grandhe
+          </a>{" "}
+          / <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline">CC BY-SA 4.0</a>
+          {" "}(cropped to fit).
+        </p>
 
         <section
           id="why-us"

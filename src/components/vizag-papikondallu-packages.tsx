@@ -2,8 +2,7 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const riverImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/papi-820x520.jpg";
+const riverImage = "/images/destinations/papikondalu.jpg";
 export const vizagPapikondalluPackages: TourPackage[] = [
   {
     id: "vp-2d",

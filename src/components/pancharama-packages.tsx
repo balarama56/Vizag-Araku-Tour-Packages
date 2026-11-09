@@ -2,8 +2,15 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const templeImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/11/Ksheerarama-Palakollu-820x520.jpg";
+const templeImage = "/images/pancharama/ksheerarama.jpg";
+const pancharamaImages = [
+  "/images/pancharama/ksheerarama.jpg",
+  "/images/pancharama/amararama.jpg",
+  "/images/pancharama/draksharama.jpg",
+  "/images/pancharama/kumararama.jpg",
+  "/images/pancharama/somarama.jpg",
+  "/images/bus-services/miniBus.jpg",
+];
 const vehicleOptions = [
   { id: "4-seater", name: "4-seater", price: 22000 },
   { id: "ertiga", name: "Ertiga", price: 24600 },
@@ -12,7 +19,7 @@ const vehicleOptions = [
   { id: "17-seater", name: "17-seater", price: 47000 },
   { id: "24-seater", name: "24-seater", price: 71000 },
 ];
-export const pancharamaPackages: TourPackage[] = vehicleOptions.map((v) => ({
+export const pancharamaPackages: TourPackage[] = vehicleOptions.map((v, index) => ({
   id: `pancharama-${v.id}`,
   title: `Vizag to Pancharamam · ${v.name}`,
   days: 2,
@@ -21,7 +28,7 @@ export const pancharamaPackages: TourPackage[] = vehicleOptions.map((v) => ({
   price: v.price,
   priceBasis: "Vehicle option · confirm final quote",
   label: `${v.name} option`,
-  image: templeImage,
+  image: pancharamaImages[index]!,
   route: "Visakhapatnam · Pancharama temples",
   description: `Explore the two-day pilgrimage with the listed ${v.name} option. Discuss your group size, travel pace, overnight arrangements and inclusions before booking.`,
 }));

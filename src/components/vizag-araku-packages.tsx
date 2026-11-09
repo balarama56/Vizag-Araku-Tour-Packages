@@ -1,6 +1,5 @@
 import { PackageCollection } from "@/components/package-collection";
 import hero from "@/assets/hero.jpg";
-const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 export const vizagArakuPackages = [
   {
     id: "va-3d",
@@ -10,7 +9,7 @@ export const vizagArakuPackages = [
     nights: 2,
     price: 16900,
     label: "Coast meets valley",
-    image: `${uploads}/2024/01/vizag2.jpg`,
+    image: "/images/vizag-araku-annavaram/vizag.jpg",
     description: "A three-day escape bringing the city and valley together.",
     route: "Visakhapatnam · Araku Valley",
   },
@@ -22,7 +21,7 @@ export const vizagArakuPackages = [
     nights: 1,
     price: 11990,
     label: "A short escape",
-    image: `${uploads}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     description: "Make room for a quick getaway from the coast to the hills.",
     route: "Visakhapatnam · Araku Valley",
   },
@@ -34,7 +33,7 @@ export const vizagArakuPackages = [
     nights: 3,
     price: 23500,
     label: "More time to explore",
-    image: hero,
+    image: "/images/vizag-araku-annavaram/borra.jpg",
     description:
       "Choose a longer stay and discuss a pace that suits your group.",
     route: "Visakhapatnam · Araku Valley",
@@ -47,7 +46,7 @@ export const vizagArakuPackages = [
     nights: 3,
     price: 24500,
     label: "Nature & devotion",
-    image: `${uploads}/2024/01/araku-annvaram-820x520.jpg`,
+    image: "/images/vadapalli/annavaram.jpg",
     description: "Bring a valley escape and a temple visit into one holiday.",
     route: "Visakhapatnam · Araku · Annavaram",
   },

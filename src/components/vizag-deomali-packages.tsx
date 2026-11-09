@@ -2,8 +2,7 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const deomaliImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Vizag-araku-2d-1n-720x500-1.jpg";
+const deomaliImage = "/images/destinations/deomali.jpg";
 export const vizagDeomaliPackages: TourPackage[] = [
   {
     id: "vdd-1d",

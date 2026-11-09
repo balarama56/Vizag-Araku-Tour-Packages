@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://vizag-coastline-escapes.lovable.app/sitemap.xml

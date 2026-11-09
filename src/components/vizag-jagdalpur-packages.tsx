@@ -3,8 +3,7 @@ import {
   type TourPackage,
 } from "@/components/package-collection";
 import hero from "@/assets/hero.jpg";
-const waterfallImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Jagdalpur-Waterfallss-720x606-2-720x520.jpg";
+const waterfallImage = "/images/destinations/jagdalpur.jpg";
 export const vizagJagdalpurPackages: TourPackage[] = [
   {
     id: "aj-5d",

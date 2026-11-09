@@ -2,8 +2,7 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const forestImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/01/maredu.jpg";
+const forestImage = "/images/destinations/maredumilli.jpg";
 export const vizagMaredumilliPackages: TourPackage[] = [
   {
     id: "vm-3d",

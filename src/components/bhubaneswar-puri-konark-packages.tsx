@@ -2,8 +2,7 @@ import {
   PackageCollection,
   type TourPackage,
 } from "@/components/package-collection";
-const heritageImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Bhubaneswar-Puri-Konark-small2.jpg";
+const heritageImage = "/images/puri-konark/lingaraj.jpg";
 export const bhubaneswarPuriKonarkPackages: TourPackage[] = [
   {
     id: "bpk-3d",

@@ -8,18 +8,27 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState, useRef, useId, type ReactNode } from "react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import hero from "@/assets/hero.jpg";
 import {
   ContactActions,
   contactPhone,
   callUrl,
 } from "@/components/contact-actions";
 
-const U = "https://www.vizagarakutourpackages.com/wp-content/uploads";
+const templeTourSlugs = new Set([
+  "pancharama",
+  "vizag-annavaram",
+  "bhubaneswar-puri-konark",
+  "puri-konark",
+]);
+const templeTourItems = tourCategories.filter((item) =>
+  templeTourSlugs.has(item.slug),
+);
 export const destinations = [
-  { name: "Vizag Araku", tours: 5, img: `${U}/2024/01/vizag2.jpg` },
-  { name: "Papikondalu", tours: 1, img: `${U}/2024/01/papikondalu.jpg` },
-  { name: "Maredumilli", tours: 1, img: `${U}/2024/01/maredu.jpg` },
-  { name: "Temple Tours", tours: 4, img: `${U}/2024/01/temple.jpg` },
+  { name: "Vizag Araku", tours: 5, img: "/images/vizag-araku-annavaram/araku.jpg" },
+  { name: "Lambasingi", tours: 4, img: hero },
+  { name: "Maredumilli", tours: 1, img: "/images/destinations/maredumilli.jpg" },
+  { name: "Temple Tours", tours: 4, img: "/images/vadapalli/annavaram.jpg" },
 ];
 export const tours: {
   title: string;
@@ -34,14 +43,14 @@ export const tours: {
     itineraryUrl: "/tours/visakapatanam-to-papikondalu-tour-2-d-1-n/",
     dur: "2D / 1N",
     price: 15900,
-    img: `${U}/2020/11/papi-820x520.jpg`,
+    img: "/images/destinations/papikondalu.jpg",
   },
   {
     title: "Araku · Lambasingi · Vanjangi",
     itineraryUrl: "/tours/visakapatanam-araku-lambasingi-vanjangi-tour-5d-4n/",
     dur: "5D / 4N",
     price: 32500,
-    img: `${U}/2020/11/Sunset-Beach-720x571-1-720x520.jpg`,
+    img: hero,
     featured: true,
   },
   {
@@ -49,20 +58,20 @@ export const tours: {
     itineraryUrl: "/tours/araku-valley-tour-2-d-1-n/",
     dur: "2D / 1N",
     price: 10900,
-    img: `${U}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
+    img: "/images/vizag-araku-annavaram/araku.jpg",
   },
   {
     title: "Visakhapatnam · Puri · Konark",
     dur: "3D / 2N",
     price: 26600,
-    img: `${U}/2020/11/Vizag-araku-2d-1n-720x500-1.jpg`,
+    img: "/images/puri-konark/heritage.jpg",
   },
   {
     title: "Araku & Annavaram",
     itineraryUrl: "/tours/visakhapatnam-araku-annavaram-tour-4-d-3-n/",
     dur: "4D / 3N",
     price: 24500,
-    img: `${U}/2024/01/araku-annvaram-820x520.jpg`,
+    img: "/images/vadapalli/annavaram.jpg",
   },
 ];
 
@@ -253,7 +262,7 @@ export function Nav() {
       label: "Tour Packages",
       overview: "/tour-packages",
 
-      items: tourCategories,
+      items: tourCategories.filter((item) => !templeTourSlugs.has(item.slug)),
     },
     {
       id: "services",
@@ -392,6 +401,40 @@ export function Nav() {
                       >
                         {item.title}
                       </Link>
+                    ) : item.slug === "temple-tours" ? (
+                      <details key={item.slug} className="group/temple">
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100 [&::-webkit-details-marker]:hidden">
+                          {item.title}
+                          <ChevronDown
+                            size={14}
+                            aria-hidden="true"
+                            className="shrink-0 transition-transform group-open/temple:rotate-180"
+                          />
+                        </summary>
+                        <div className="ml-3 mt-1 grid gap-1 border-l border-sky-200 pl-2">
+                          <Link
+                            to="/tour/temple-tour-packages"
+                            onClick={close}
+                            className="rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-wide text-sky-800 hover:bg-sky-100"
+                          >
+                            View all temple tour packages ↗
+                          </Link>
+                          {templeTourItems.map((temple) => (
+                            <Link
+                              key={temple.slug}
+                              to={temple.path}
+                              onClick={close}
+                              activeProps={{
+                                "aria-current": "page",
+                                className: "bg-sky-100 text-sky-900",
+                              }}
+                              className="rounded-lg px-3 py-2.5 text-sm hover:bg-sky-100"
+                            >
+                              {temple.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </details>
                     ) : (
                       <Link
                         key={item.slug}
@@ -489,6 +532,16 @@ export function Footer() {
         © {new Date().getFullYear()} Vizag Araku Tourism. Crafted journeys
         across the Eastern Ghats.
       </p>
+      <details className="mx-auto mt-3 max-w-6xl text-xs text-muted-foreground">
+        <summary className="cursor-pointer">Destination photo credits</summary>
+        <p className="mt-2 leading-6">
+          <a className="underline" href="https://commons.wikimedia.org/wiki/File:Papikondalu-Andhra_Pradesh-India.jpg">Papikondalu: Geetha Grandhe</a>;{" "}
+          <a className="underline" href="https://commons.wikimedia.org/wiki/File:MAREDUMILLI_-_waterfalls.jpg">Maredumilli: S. Sri Harsha</a>;{" "}
+          <a className="underline" href="https://commons.wikimedia.org/wiki/File:The_Chitrakote_Falls.jpg">Chitrakote Falls: Shaswat Nimesh</a>;{" "}
+          <a className="underline" href="https://commons.wikimedia.org/wiki/File:Deomali_hilltop.jpg">Deomali: BubunTalk (exposure adjustment by R8cocin8)</a>.{" "}
+          <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Photos cropped to fit cards.
+        </p>
+      </details>
     </footer>
   );
 }

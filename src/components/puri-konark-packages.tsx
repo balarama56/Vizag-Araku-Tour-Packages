@@ -1,12 +1,10 @@
 import { PackageCollection } from "@/components/package-collection";
 import { templeTourPackages } from "@/components/temple-tour-packages";
-const heritageImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Bhubaneswar-Puri-Konark-small2.jpg";
+const heritageImage = "/images/puri-konark/heritage.jpg";
 export const puriKonarkPackages = templeTourPackages
   .filter((p) => ["puri-3d-a", "puri-3d-b"].includes(p.id))
   .map((p) => ({
     ...p,
-    image: heritageImage,
     priceBasis: "Per couple · subject to confirmation",
   }));
 export function PuriKonarkPackages() {

@@ -5,12 +5,20 @@ import { tours } from "@/components/site";
 import { itineraryPackages } from "@/lib/itinerary-packages";
 import { packageDuration } from "@/components/package-collection";
 
+const overviewImages: Record<string, string> = {
+  "val-3d": "/images/lambasingi-hotels/brundavanam-0.jpg",
+  "al-3d": "/images/lambasingi-hotels/rrr-0.jpg",
+  "val-4d": "/images/lambasingi-hotels/raghu-0.jpg",
+  "valv-5d": "/images/lambasingi-hotels/horizon-0.jpg",
+  "aj-5d": "/images/araku-hotels/0-0.jpg",
+};
+
 const packageCards = [
   ...itineraryPackages.map((tour) => ({
     title: tour.title,
     dur: packageDuration(tour),
     price: tour.price,
-    img: tour.image,
+    img: overviewImages[tour.id] ?? tour.image,
     itineraryUrl: tour.itineraryUrl,
   })),
   ...tours.filter((tour) => !tour.itineraryUrl),

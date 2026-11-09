@@ -3,7 +3,6 @@ import {
   type TourPackage,
 } from "@/components/package-collection";
 import hero from "@/assets/hero.jpg";
-const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 export const vizagLambasingiPackages: TourPackage[] = [
   {
     id: "val-3d",
@@ -13,7 +12,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
     nights: 2,
     price: 19500,
     label: "Coast to cloud country",
-    image: `${uploads}/2024/01/vizag2.jpg`,
+    image: "/images/vizag-araku-annavaram/vizag.jpg",
     route: "Visakhapatnam · Araku · Lambasingi",
     description:
       "Bring a coastal escape and two hill destinations together in a three-day break.",
@@ -26,7 +25,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
     nights: 2,
     price: 23500,
     label: "A hill-country escape",
-    image: hero,
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     route: "Araku Valley · Lambasingi",
     description:
       "Choose a valley-focused holiday with time for mountain views and quiet mornings.",
@@ -39,7 +38,7 @@ export const vizagLambasingiPackages: TourPackage[] = [
     nights: 3,
     price: 25500,
     label: "More room to unwind",
-    image: `${uploads}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
+    image: "/images/vizag-araku-annavaram/borra.jpg",
     route: "Visakhapatnam · Araku · Lambasingi",
     description:
       "Give your group an extra day to explore the coast and hills at a comfortable pace.",

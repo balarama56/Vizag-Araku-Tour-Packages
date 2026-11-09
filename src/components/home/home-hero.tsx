@@ -13,7 +13,7 @@ import {
 import { Tilt } from "@/components/site";
 import { vizagArakuPackages } from "@/components/vizag-araku-packages";
 import { vizagLambasingiPackages } from "@/components/vizag-lambasingi-packages";
-import { vizagPapikondalluPackages } from "@/components/vizag-papikondallu-packages";
+import { vizagJagdalpurPackages } from "@/components/vizag-jagdalpur-packages";
 import hero from "@/assets/hero.jpg";
 
 const heroPackages = [
@@ -38,14 +38,14 @@ const heroPackages = [
     atmosphere: "Vizag, Araku & Lambasingi",
   },
   {
-    id: "papikondalu",
-    label: "Papikondalu",
+    id: "jagdalpur",
+    label: "Jagdalpur",
     icon: Waves,
-    trip: vizagPapikondalluPackages[0]!,
-    to: "/tour/vizag-papikondallu-tour-packages" as const,
-    image: vizagPapikondalluPackages[0]!.image,
-    note: "Follow the river",
-    atmosphere: "A Godavari escape",
+    trip: vizagJagdalpurPackages[1]!,
+    to: "/tour/vizag-jagdalpur-tour-packages" as const,
+    image: vizagJagdalpurPackages[1]!.image,
+    note: "Discover waterfall country",
+    atmosphere: "Vizag, Araku & Jagdalpur",
   },
 ];
 

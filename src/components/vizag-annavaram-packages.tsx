@@ -1,7 +1,6 @@
 import { PackageCollection } from "@/components/package-collection";
 import { templeTourPackages } from "@/components/temple-tour-packages";
-const templeImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/01/araku-annvaram-820x520.jpg";
+const templeImage = "/images/vadapalli/annavaram.jpg";
 export const vizagAnnavaramPackages = templeTourPackages.filter((p) =>
   ["vadapalli-2d", "annavaram-4d-a", "annavaram-4d-b"].includes(p.id),
 );
