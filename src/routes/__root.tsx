@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -117,9 +118,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const canonicalPath = pathname.replace(/\/+$/, "") || "/";
+  const canonicalUrl = `https://www.vizagarakutourpackages.com${canonicalPath}`;
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="canonical" href={canonicalUrl} />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
