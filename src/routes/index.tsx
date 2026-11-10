@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HomeHero } from "@/components/home/home-hero";
 import {
@@ -153,7 +154,7 @@ function Index() {
                       if (event.currentTarget.getAttribute("src") !== hero)
                         event.currentTarget.src = hero;
                     }}
-                    alt={d.name}
+                    alt={imageAlt(d.img, d.name)}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
                   />
@@ -198,7 +199,7 @@ function Index() {
                         if (event.currentTarget.getAttribute("src") !== hero)
                           event.currentTarget.src = hero;
                       }}
-                      alt={t.title}
+                      alt={imageAlt(t.img, t.title)}
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />

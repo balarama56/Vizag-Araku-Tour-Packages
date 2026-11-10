@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, BookOpen, Search } from "lucide-react";
@@ -194,7 +195,7 @@ export function TravelBlog() {
                     <div className="group relative h-56 shrink-0 overflow-hidden">
                       <img
                         src={a.image}
-                        alt=""
+                        alt={imageAlt(a.image, a.title)}
                         width={768}
                         height={400}
                         loading="lazy"

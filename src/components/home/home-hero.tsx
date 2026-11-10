@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
@@ -150,7 +151,7 @@ export function HomeHero() {
                   <img
                     key={selected.id}
                     src={selected.image}
-                    alt={selected.atmosphere}
+                    alt={imageAlt(selected.image, selected.atmosphere)}
                     width={820}
                     height={520}
                     onError={(e) => {

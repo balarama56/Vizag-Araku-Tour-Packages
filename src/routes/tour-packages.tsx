@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/content-page";
 import { tourCategories } from "@/lib/booking-categories";
@@ -67,7 +68,7 @@ function Packages() {
           >
             <img
               src={tour.img}
-              alt={tour.title}
+              alt={imageAlt(tour.img, tour.title)}
               loading="lazy"
               className="h-52 w-full object-cover"
             />

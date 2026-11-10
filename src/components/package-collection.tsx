@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
@@ -67,7 +68,7 @@ export function PackageCollection({
         >
           <img
             src={heroImage}
-            alt={heroAlt}
+            alt={imageAlt(heroImage, heroAlt)}
             onError={(e) => {
               if (e.currentTarget.getAttribute("src") !== hero)
                 e.currentTarget.src = hero;
@@ -207,7 +208,7 @@ export function PackageCollection({
                   >
                     <img
                       src={p.image}
-                      alt={p.route}
+                      alt={imageAlt(p.image, p.route)}
                       loading="lazy"
                       width={820}
                       height={520}

@@ -282,8 +282,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
           <img
             src={images.heritage}
-            alt=""
-            aria-hidden="true"
+            alt="Konark Sun Temple and surrounding gardens in Odisha"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
             fetchPriority="high"
           />
