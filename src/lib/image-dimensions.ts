@@ -6,8 +6,8 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 410
   },
   "/images/vizag-araku-annavaram/borra.jpg": {
-    "width": 1200,
-    "height": 750
+    "width": 867,
+    "height": 542
   },
   "/images/vizag-araku-annavaram/vizag.jpg": {
     "width": 850,
@@ -30,8 +30,8 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 532
   },
   "/images/lambasingi-hotels/brundavanam-0.jpg": {
-    "width": 1024,
-    "height": 768
+    "width": 740,
+    "height": 555
   },
   "/images/lambasingi-hotels/brundavanam-1.jpg": {
     "width": 962,
@@ -62,8 +62,8 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 800
   },
   "/images/vadapalli/vadapalli.jpg": {
-    "width": 1600,
-    "height": 898
+    "width": 1156,
+    "height": 649
   },
   "/images/vadapalli/annavaram.jpg": {
     "width": 555,
@@ -74,20 +74,20 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 768
   },
   "/images/destinations/maredumilli.jpg": {
-    "width": 6000,
-    "height": 3152
+    "width": 983,
+    "height": 517
   },
   "/images/destinations/papikondalu.jpg": {
-    "width": 2560,
-    "height": 1920
+    "width": 1156,
+    "height": 867
   },
   "/images/destinations/jagdalpur.jpg": {
-    "width": 2387,
-    "height": 1394
+    "width": 983,
+    "height": 574
   },
   "/images/destinations/deomali.jpg": {
-    "width": 4032,
-    "height": 1860
+    "width": 1600,
+    "height": 738
   },
   "/images/araku-hotels/2-0.jpg": {
     "width": 720,
@@ -118,8 +118,8 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 853
   },
   "/images/araku-hotels/6-0.jpg": {
-    "width": 1600,
-    "height": 1200
+    "width": 836,
+    "height": 626
   },
   "/images/araku-hotels/1-0.jpg": {
     "width": 800,
@@ -138,12 +138,12 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 682
   },
   "/images/araku-hotels/7-0.jpg": {
-    "width": 1024,
-    "height": 682
+    "width": 870,
+    "height": 580
   },
   "/images/araku-hotels/5-0.jpg": {
-    "width": 1280,
-    "height": 886
+    "width": 1088,
+    "height": 753
   },
   "/images/araku-hotels/5-1.jpg": {
     "width": 3154,
@@ -162,28 +162,28 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 1281
   },
   "/images/vizag-hotels/8-0.jpg": {
-    "width": 1920,
-    "height": 1280
+    "width": 1156,
+    "height": 771
   },
   "/images/vizag-hotels/10-1.jpg": {
     "width": 5760,
     "height": 3840
   },
   "/images/vizag-hotels/10-0.jpg": {
-    "width": 5760,
-    "height": 3840
+    "width": 1600,
+    "height": 1067
   },
   "/images/vizag-hotels/2-0.jpg": {
-    "width": 1024,
-    "height": 683
+    "width": 870,
+    "height": 581
   },
   "/images/vizag-hotels/2-1.jpg": {
     "width": 1920,
     "height": 1280
   },
   "/images/vizag-hotels/4-0.jpg": {
-    "width": 1600,
-    "height": 1067
+    "width": 983,
+    "height": 655
   },
   "/images/vizag-hotels/4-1.jpg": {
     "width": 1600,
@@ -194,20 +194,20 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 600
   },
   "/images/vizag-hotels/6-0.jpg": {
-    "width": 2880,
-    "height": 1920
+    "width": 1600,
+    "height": 1067
   },
   "/images/vizag-hotels/1-1.jpg": {
     "width": 1280,
     "height": 853
   },
   "/images/vizag-hotels/1-0.jpg": {
-    "width": 1280,
-    "height": 720
+    "width": 1088,
+    "height": 612
   },
   "/images/vizag-hotels/3-0.jpg": {
-    "width": 1600,
-    "height": 1067
+    "width": 1156,
+    "height": 771
   },
   "/images/vizag-hotels/3-1.jpg": {
     "width": 1600,
@@ -218,20 +218,20 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 1063
   },
   "/images/vizag-hotels/7-0.jpg": {
-    "width": 1600,
-    "height": 1063
+    "width": 1360,
+    "height": 904
   },
   "/images/pancharama/somarama.jpg": {
     "width": 601,
     "height": 450
   },
   "/images/pancharama/kumararama.jpg": {
-    "width": 1280,
-    "height": 1117
+    "width": 786,
+    "height": 686
   },
   "/images/pancharama/draksharama.jpg": {
-    "width": 1704,
-    "height": 2272
+    "width": 867,
+    "height": 1156
   },
   "/images/pancharama/amararama.jpg": {
     "width": 640,
@@ -254,15 +254,15 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 774
   },
   "/images/bus-services/miniBus.jpg": {
-    "width": 1200,
-    "height": 1600
+    "width": 626,
+    "height": 836
   },
   "/images/bus-services/coach.jpg": {
     "width": 1200,
     "height": 554
   }
 };
-dimensions[hero] = {"width": 1920, "height": 1088};
+dimensions[hero] = {"width": 1156, "height": 655};
 
 export function imageDimensions(source: string) {
   const path = source.replace(/^https?:\/\/[^/]+/, "").split(/[?#]/)[0]!;

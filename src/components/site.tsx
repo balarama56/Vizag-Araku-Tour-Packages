@@ -547,7 +547,7 @@ export function Footer() {
           <a className="underline" href="https://commons.wikimedia.org/wiki/File:MAREDUMILLI_-_waterfalls.jpg">Maredumilli: S. Sri Harsha</a>;{" "}
           <a className="underline" href="https://commons.wikimedia.org/wiki/File:The_Chitrakote_Falls.jpg">Chitrakote Falls: Shaswat Nimesh</a>;{" "}
           <a className="underline" href="https://commons.wikimedia.org/wiki/File:Deomali_hilltop.jpg">Deomali: BubunTalk (exposure adjustment by R8cocin8)</a>.{" "}
-          <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Photos cropped to fit cards.
+          <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Photos resized, compressed and cropped to fit cards.
         </p>
       </details>
     </footer>
