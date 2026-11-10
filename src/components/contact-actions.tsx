@@ -1,6 +1,8 @@
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export const contactPhone = "+91 83411 46226";
+export const contactEmail = "vizagarakutourpackages@gmail.com";
+export const emailUrl = `mailto:${contactEmail}`;
 export const callUrl = "tel:+918341146226";
 export const whatsappUrl = "https://wa.me/918341146226";
 
@@ -30,6 +32,13 @@ export function ContactActions() {
       >
         <WhatsAppIcon />
         Chat on WhatsApp
+      </a>
+      <a
+        href={emailUrl}
+        className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-6 py-3 font-semibold hover:bg-primary/10"
+      >
+        <Mail size={18} aria-hidden="true" />
+        Email us
       </a>
     </div>
   );

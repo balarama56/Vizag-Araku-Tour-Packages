@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   ContactActions,
   contactPhone,
+  contactEmail,
+  emailUrl,
   callUrl,
   whatsappUrl,
   WhatsAppIcon,
@@ -39,7 +41,7 @@ function Contact() {
           Plan your <span className="text-gold italic">journey</span>
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Call us or chat on WhatsApp to discuss your dates, group size and preferred destinations.
+          Call, email or chat on WhatsApp to discuss your dates, group size and preferred destinations.
         </p>
         <section
           aria-label="Contact Vizag Araku Tourism"
@@ -51,8 +53,11 @@ function Contact() {
           <a href={callUrl} className="mt-3 block font-display text-3xl font-semibold">
             {contactPhone}
           </a>
+          <a href={emailUrl} className="mt-3 block break-words font-semibold text-primary underline underline-offset-4">
+            {contactEmail}
+          </a>
           <p className="mt-3 mb-6 text-sm leading-7 text-muted-foreground">
-            Speak with us directly or send your travel plans on WhatsApp.
+            Speak with us directly or send your travel plans by email or WhatsApp.
           </p>
           <ContactActions />
         </section>

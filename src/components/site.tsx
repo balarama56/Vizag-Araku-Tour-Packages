@@ -12,6 +12,8 @@ import hero from "@/assets/hero.jpg";
 import {
   ContactActions,
   contactPhone,
+  contactEmail,
+  emailUrl,
   callUrl,
 } from "@/components/contact-actions";
 
@@ -498,6 +500,12 @@ export function Footer() {
             className="mt-4 inline-block font-semibold text-primary"
           >
             {contactPhone}
+          </a>
+          <a
+            href={emailUrl}
+            className="mt-3 block break-words text-sm font-semibold text-primary underline underline-offset-4"
+          >
+            {contactEmail}
           </a>
           <div className="mt-4">
             <ContactActions />
