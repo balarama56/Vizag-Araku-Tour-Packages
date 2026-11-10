@@ -66,7 +66,7 @@ export function PackageCollection({
           className="image-surface relative flex min-h-[760px] h-[100svh] items-center justify-center overflow-hidden"
           style={{ perspective: 1200 }}
         >
-          <img
+          <img title={imageAlt(heroImage, heroAlt)}
             src={heroImage}
             alt={imageAlt(heroImage, heroAlt)}
             onError={(e) => {
@@ -206,7 +206,7 @@ export function PackageCollection({
                   <div
                     className={`image-surface group relative overflow-hidden ${packages.length === 1 ? "min-h-72 md:h-full" : "h-56"}`}
                   >
-                    <img
+                    <img title={imageAlt(p.image, p.route)}
                       src={p.image}
                       alt={imageAlt(p.image, p.route)}
                       loading="lazy"

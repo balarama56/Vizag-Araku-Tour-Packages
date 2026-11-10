@@ -74,7 +74,7 @@ export function TravelBlog() {
           className="image-surface relative flex min-h-[760px] h-[100svh] items-center justify-center overflow-hidden"
           style={{ perspective: 1200 }}
         >
-          <img
+          <img title="Araku Valley hills at sunrise"
             src={hero}
             alt="Araku Valley hills at sunrise"
             width={1920}
@@ -193,7 +193,7 @@ export function TravelBlog() {
                 <Tilt key={a.url}>
                   <article className="glass flex h-full flex-col overflow-hidden rounded-3xl shadow-deep">
                     <div className="group relative h-56 shrink-0 overflow-hidden">
-                      <img
+                      <img title={imageAlt(a.image, a.title)}
                         src={a.image}
                         alt={imageAlt(a.image, a.title)}
                         width={768}

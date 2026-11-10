@@ -59,7 +59,7 @@ export function HomeHero() {
       aria-labelledby="home-hero-title"
       className="home-hero image-surface relative isolate overflow-hidden"
     >
-      <img
+      <img title="Green Araku Valley hills at sunrise"
         src={hero}
         alt="Green Araku Valley hills at sunrise"
         width={1920}
@@ -148,7 +148,7 @@ export function HomeHero() {
                 className="overflow-hidden rounded-[1.75rem] border border-white/30 bg-white text-slate-900 shadow-[0_25px_75px_-25px_oklch(0.1_0.03_220_/_80%)]"
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-44">
-                  <img
+                  <img title={imageAlt(selected.image, selected.atmosphere)}
                     key={selected.id}
                     src={selected.image}
                     alt={imageAlt(selected.image, selected.atmosphere)}

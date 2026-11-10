@@ -158,7 +158,7 @@ function TravelImage({
   className?: string;
 }) {
   return (
-    <img
+    <img title={alt}
       src={src}
       alt={alt}
       className={className}
@@ -800,7 +800,15 @@ export function ArakuItinerary({
       <Nav />
       <main id="main-content" className="itinerary-page">
         <section className="itinerary-hero relative isolate overflow-hidden text-white">
-          <img
+          <img title={isForest
+                ? "Green forest scenery in Maredumilli"
+                : isDayTrip
+                  ? "Scenic landscape illustrating the Eastern Ghats route"
+                  : isJagdalpur
+                    ? "Waterfall scenery in the Jagdalpur region"
+                    : isRiver
+                      ? "Papikondalu hills along the Godavari River"
+                      : "Sunrise over the lush Eastern Ghats"}
             src={
               isForest
                 ? maredumilliImage

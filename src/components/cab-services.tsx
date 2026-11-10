@@ -175,7 +175,7 @@ export function CabServices() {
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img {...imageDimensions("/images/vizag-araku-annavaram/araku.jpg")}
+          <img title="Green hills and valley scenery in Araku Valley" {...imageDimensions("/images/vizag-araku-annavaram/araku.jpg")}
             src="/images/vizag-araku-annavaram/araku.jpg"
             alt="Green hills and valley scenery in Araku Valley"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
@@ -239,7 +239,7 @@ export function CabServices() {
               <div className="pancharama-orbit" aria-hidden="true" />
               <Tilt>
                 <div className="pancharama-postcard rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
-                  <img
+                  <img title={vehiclePhoto.alt}
                     src={vehiclePhoto.src}
                     alt={vehiclePhoto.alt}
                     width={1000}
@@ -405,7 +405,7 @@ export function CabServices() {
                 className="overflow-hidden rounded-3xl border border-border bg-card"
               >
                 <div className="relative">
-                  <img
+                  <img title={photos[photo].alt}
                     key={photo}
                     src={photos[photo].src}
                     alt={photos[photo].alt}

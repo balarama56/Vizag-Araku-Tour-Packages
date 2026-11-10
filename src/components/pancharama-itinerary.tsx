@@ -191,7 +191,7 @@ export function PancharamaItinerary() {
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img {...imageDimensions(images.ksheerarama)}
+          <img title="Ksheerarama temple tower in Palakollu" {...imageDimensions(images.ksheerarama)}
             src={images.ksheerarama}
             alt="Ksheerarama temple tower in Palakollu"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
@@ -260,7 +260,7 @@ export function PancharamaItinerary() {
               <div className="pancharama-orbit" aria-hidden="true" />
               <Tilt>
                 <div className="pancharama-postcard relative rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
-                  <img
+                  <img title="Amareswara temple at Amaravati"
                     src={images.amararama}
                     alt="Amareswara temple at Amaravati"
                     width={800}
@@ -281,7 +281,7 @@ export function PancharamaItinerary() {
                 </div>
               </Tilt>
               <div className="pancharama-mini absolute -bottom-2 -left-2 w-40 rounded-2xl border border-white/30 bg-slate-900/95 p-2 shadow-2xl sm:-left-8 sm:w-44">
-                <img
+                <img title="Somarama temple, Bhimavaram"
                   src={images.somarama}
                   alt="Somarama temple, Bhimavaram"
                   width={250}
@@ -382,7 +382,7 @@ export function PancharamaItinerary() {
             aria-live="polite"
           >
             {selected.image ? (
-              <img
+              <img title={selected.alt}
                 key={selected.image}
                 src={selected.image}
                 alt={selected.alt}
@@ -504,7 +504,7 @@ export function PancharamaItinerary() {
               <div>
                 <Tilt>
                   <div className="relative overflow-hidden rounded-3xl">
-                    <img
+                    <img title={days[day].alt}
                       src={days[day].image}
                       alt={days[day].alt}
                       loading="lazy"

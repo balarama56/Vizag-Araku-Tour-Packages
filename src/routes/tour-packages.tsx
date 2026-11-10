@@ -67,7 +67,7 @@ function Packages() {
             key={`${tour.title}-${tour.dur}`}
             className="overflow-hidden rounded-3xl border border-border bg-card"
           >
-            <img {...imageDimensions(tour.img)}
+            <img title={imageAlt(tour.img, tour.title)} {...imageDimensions(tour.img)}
               src={tour.img}
               alt={imageAlt(tour.img, tour.title)}
               loading="lazy"

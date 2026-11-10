@@ -95,7 +95,7 @@ export function HotelCollection({
           className="image-surface relative flex min-h-[760px] h-[100svh] items-center justify-center overflow-hidden"
           style={{ perspective: 1200 }}
         >
-          <img
+          <img title={heroAlt}
             src={heroImage}
             alt={heroAlt}
             onError={(e) => {
@@ -533,7 +533,7 @@ function HotelGallery({ hotel }: { hotel: HotelOption }) {
           <p className="text-sm">Hotel photos awaiting confirmation</p>
         </div>
       ) : (
-        <img
+        <img title={images[active].alt}
           key={images[active].src}
           src={images[active].src}
           alt={images[active].alt}

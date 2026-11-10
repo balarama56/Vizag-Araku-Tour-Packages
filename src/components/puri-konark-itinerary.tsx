@@ -281,7 +281,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img {...imageDimensions(images.heritage)}
+          <img title="Konark Sun Temple and surrounding gardens in Odisha" {...imageDimensions(images.heritage)}
             src={images.heritage}
             alt="Konark Sun Temple and surrounding gardens in Odisha"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
@@ -351,7 +351,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
               <div className="pancharama-orbit" aria-hidden="true" />
               <Tilt>
                 <div className="pancharama-postcard relative rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
-                  <img
+                  <img title="Konark Sun Temple surrounded by gardens"
                     src={images.heritage}
                     alt="Konark Sun Temple surrounded by gardens"
                     width={800}
@@ -372,7 +372,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
                 </div>
               </Tilt>
               <div className="pancharama-mini absolute -bottom-2 -left-2 w-40 rounded-2xl border border-white/30 bg-slate-900/95 p-2 shadow-2xl sm:-left-8 sm:w-44">
-                <img
+                <img title="Chilika Lake waters and island shrine"
                   src={images.chilika}
                   alt="Chilika Lake waters and island shrine"
                   width={250}
@@ -473,7 +473,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
             className="glass mt-6 grid overflow-hidden rounded-3xl md:grid-cols-2"
             aria-live="polite"
           >
-            <img
+            <img title={selected.alt}
               key={selected.image}
               src={selected.image}
               alt={selected.alt}
@@ -554,7 +554,7 @@ export function PuriKonarkItinerary({ option = 2 }: { option?: 1 | 2 }) {
               <div>
                 <Tilt>
                   <div className="relative overflow-hidden rounded-3xl">
-                    <img
+                    <img title={days[day].alt}
                       src={days[day].image}
                       alt={days[day].alt}
                       loading="lazy"

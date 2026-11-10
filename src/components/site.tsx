@@ -226,7 +226,7 @@ export function BrandLogo() {
           </filter>
         </defs>
       </svg>
-      <img
+      <img title="Vizag Araku Tourism"
         src="/vizag-araku-logo.jpg"
         alt="Vizag Araku Tourism"
         width={959}

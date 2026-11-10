@@ -288,7 +288,7 @@ export function VizagArakuAnnavaramItinerary({
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img {...imageDimensions(images.vizag)}
+          <img title="Visakhapatnam coastline and beach road" {...imageDimensions(images.vizag)}
             src={images.vizag}
             alt="Visakhapatnam coastline and beach road"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
@@ -358,7 +358,7 @@ export function VizagArakuAnnavaramItinerary({
               <div className="pancharama-orbit" aria-hidden="true" />
               <Tilt>
                 <div className="pancharama-postcard relative rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
-                  <img
+                  <img title="Visakhapatnam coastline and beach road"
                     src={images.vizag}
                     alt="Visakhapatnam coastline and beach road"
                     width={800}
@@ -379,7 +379,7 @@ export function VizagArakuAnnavaramItinerary({
                 </div>
               </Tilt>
               <div className="pancharama-mini absolute -bottom-2 -left-2 w-40 rounded-2xl border border-white/30 bg-slate-900/95 p-2 shadow-2xl sm:-left-8 sm:w-44">
-                <img
+                <img title="Araku Valley hills and railway"
                   src={images.araku}
                   alt="Araku Valley hills and railway"
                   width={250}
@@ -480,7 +480,7 @@ export function VizagArakuAnnavaramItinerary({
             className="glass mt-6 grid overflow-hidden rounded-3xl md:grid-cols-2"
             aria-live="polite"
           >
-            <img
+            <img title={selected.alt}
               key={selected.image}
               src={selected.image}
               alt={selected.alt}
@@ -561,7 +561,7 @@ export function VizagArakuAnnavaramItinerary({
               <div>
                 <Tilt>
                   <div className="relative overflow-hidden rounded-3xl">
-                    <img
+                    <img title={days[day].alt}
                       src={days[day].image}
                       alt={days[day].alt}
                       loading="lazy"

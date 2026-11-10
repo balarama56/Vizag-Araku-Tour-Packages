@@ -61,7 +61,7 @@ function ReviewerPhoto({
 }) {
   const [failed, setFailed] = useState(false);
   return photo && !failed ? (
-    <img
+    <img title={`${name} profile photo`}
       src={photo}
       alt={`${name} profile photo`}
       width={44}

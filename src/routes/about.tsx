@@ -48,7 +48,7 @@ export function About() {
           className="image-surface relative flex min-h-[760px] h-[100svh] items-center justify-center overflow-hidden"
           style={{ perspective: 1200 }}
         >
-          <img
+          <img title="Araku Valley at sunrise"
             src={hero}
             alt="Araku Valley at sunrise"
             width={1920}
@@ -123,7 +123,7 @@ export function About() {
           className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr] md:items-center md:py-28"
         >
           <div className="relative overflow-hidden rounded-3xl">
-            <img
+            <img title="Green hills and valleys near Araku"
               src={hero}
               alt="Green hills and valleys near Araku"
               width={1920}

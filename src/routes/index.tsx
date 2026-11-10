@@ -74,7 +74,7 @@ function Index() {
           className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr] md:items-center md:py-28"
         >
           <div className="relative overflow-hidden rounded-3xl">
-            <img
+            <img title="Green hills and valleys near Araku"
               src={hero}
               alt="Green hills and valleys near Araku"
               width={1920}
@@ -149,7 +149,7 @@ function Index() {
                   className="image-surface group relative h-96 overflow-hidden rounded-3xl shadow-deep"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <img {...imageDimensions(d.img)}
+                  <img title={imageAlt(d.img, d.name)} {...imageDimensions(d.img)}
                     src={d.img}
                     onError={(event) => {
                       if (event.currentTarget.getAttribute("src") !== hero)
@@ -194,7 +194,7 @@ function Index() {
               <Tilt key={t.title} className="reveal">
                 <article className="glass h-full overflow-hidden rounded-3xl shadow-deep">
                   <div className="relative h-56 overflow-hidden">
-                    <img {...imageDimensions(t.img)}
+                    <img title={imageAlt(t.img, t.title)} {...imageDimensions(t.img)}
                       src={t.img}
                       onError={(event) => {
                         if (event.currentTarget.getAttribute("src") !== hero)
