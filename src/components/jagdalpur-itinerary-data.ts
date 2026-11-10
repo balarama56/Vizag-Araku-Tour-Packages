@@ -2,7 +2,7 @@ import { Compass, Mountain, Waves, Coffee } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
 export const jagdalpurImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Jagdalpur-Waterfallss-720x606-2-720x520.jpg";
+  "/images/destinations/jagdalpur.jpg";
 export const jagdalpurPlan = [
   {
     title: "A railway journey into your holiday.",

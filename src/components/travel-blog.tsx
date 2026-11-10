@@ -6,7 +6,6 @@ import { Nav, Footer, Tilt } from "@/components/site";
 import { planningGuides } from "@/lib/blog-guides";
 import hero from "@/assets/hero.jpg";
 const origin = "https://www.vizagarakutourpackages.com";
-const uploads = `${origin}/wp-content/uploads`;
 export const travelArticles = [
   {
     title: "Araku, Lambasingi & Vanjangi: a hill escape",
@@ -20,7 +19,7 @@ export const travelArticles = [
     title: "Build your Vizag sightseeing wish list",
     topic: "Vizag",
     url: `${origin}/10-attractions-to-include-in-your-vizag-tour-package/`,
-    image: `${uploads}/2025/06/Vizag-Tour-Package-768x768.jpg`,
+    image: "/images/vizag-araku-annavaram/vizag.jpg",
     summary:
       "Explore ideas for your city break and decide which sights deserve a place in your travel plans.",
   },
@@ -44,7 +43,7 @@ export const travelArticles = [
     title: "Make time for Vizag’s beaches",
     topic: "Vizag",
     url: `${origin}/amazing-beaches-in-vizag-to-visit/`,
-    image: `${uploads}/2024/02/Amazing-Beaches-in-Vizag-to-Visit-768x400.webp`,
+    image: "/images/vizag-araku-annavaram/vizag.jpg",
     summary:
       "Bring a little coastal time into your trip. Browse beach inspiration and plan the stops that suit your pace.",
   },

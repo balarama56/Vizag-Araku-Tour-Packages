@@ -9,7 +9,7 @@ export const vizagJagdalpurPlan = [
     tag: "Proposed Day 1",
     icon: Waves,
     image:
-      "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/01/vizag2.jpg",
+      "/images/vizag-araku-annavaram/vizag.jpg",
     alt: "Visakhapatnam coastal scenery",
     stay: "Proposed night 1 in Vizag · confirm with operator",
     intro:

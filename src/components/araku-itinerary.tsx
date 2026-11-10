@@ -42,14 +42,13 @@ import {
   riverImage,
 } from "@/components/papikondalu-itinerary-data";
 
-const uploads = "https://www.vizagarakutourpackages.com/wp-content/uploads";
 const days = [
   {
     title: "Hello, coastal living.",
     place: "Visakhapatnam",
     tag: "The coast",
     icon: Waves,
-    image: `${uploads}/2024/01/vizag2.jpg`,
+    image: "/images/vizag-araku-annavaram/vizag.jpg",
     alt: "Visakhapatnam coastal scenery",
     stay: "Night in Vizag",
     intro:
@@ -117,7 +116,7 @@ const days = [
     place: "Araku → Vizag",
     tag: "The memories",
     icon: Coffee,
-    image: `${uploads}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     alt: "Scenic Araku Valley landscape",
     stay: "Return to Vizag",
     intro:
@@ -178,7 +177,7 @@ const twoDayPlan = [
     place: "Vizag → Araku → Vizag",
     tag: "The valley by rail",
     icon: Mountain,
-    image: `${uploads}/2020/11/Araku-Train-View-720x606-1-720x520.jpg`,
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     alt: "Scenic railway journey through the Araku hills",
     stay: "Return to Vizag · no second overnight stay",
     intro:
@@ -343,7 +342,7 @@ const annavaramPlan = [
     place: "Vizag → Annavaram → Vizag",
     tag: "The temple trail",
     icon: Compass,
-    image: `${uploads}/2024/01/araku-annvaram-820x520.jpg`,
+    image: "/images/vadapalli/annavaram.jpg",
     alt: "Temple scenery on the Annavaram tour route",
     intro:
       "Set aside the day for temple visits, returning to your Vizag hotel.",
@@ -981,8 +980,8 @@ export function ArakuItinerary({
                                 : isArakuOnly || isHillPair
                                   ? hero
                                   : isAnnavaram
-                                    ? `${uploads}/2024/01/araku-annvaram-820x520.jpg`
-                                    : `${uploads}/2024/01/vizag2.jpg`
+                                    ? "/images/vadapalli/annavaram.jpg"
+                                    : "/images/vizag-araku-annavaram/vizag.jpg"
                       }
                       alt={
                         isForest

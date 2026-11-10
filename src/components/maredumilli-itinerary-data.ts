@@ -1,7 +1,7 @@
 import { Mountain, Waves, Compass } from "lucide-react";
 
 export const maredumilliImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/01/maredu.jpg";
+  "/images/destinations/maredumilli.jpg";
 export const maredumilliPlan = [
   {
     title: "Leave the city. Find the forest.",

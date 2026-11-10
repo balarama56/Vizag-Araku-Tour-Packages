@@ -2,7 +2,7 @@ import { Waves, Compass, Coffee, Mountain } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
 const coast =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2024/01/vizag2.jpg";
+  "/images/vizag-araku-annavaram/vizag.jpg";
 export const vanjangiPlan = [
   {
     title: "A coastal welcome.",

@@ -1,7 +1,7 @@
 import { Waves, Compass } from "lucide-react";
 
 export const riverImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/papi-820x520.jpg";
+  "/images/destinations/papikondalu.jpg";
 export const papikondaluPlan = [
   {
     title: "Let the river set the pace.",

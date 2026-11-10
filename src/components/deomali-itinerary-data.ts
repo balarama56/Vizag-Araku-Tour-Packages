@@ -1,7 +1,7 @@
 import { Mountain } from "lucide-react";
 
 export const deomaliImage =
-  "https://www.vizagarakutourpackages.com/wp-content/uploads/2020/11/Vizag-araku-2d-1n-720x500-1.jpg";
+  "/images/destinations/deomali.jpg";
 export const deomaliPlan = [
   {
     title: "One day. A whole new perspective.",
