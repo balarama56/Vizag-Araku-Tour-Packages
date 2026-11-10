@@ -3,6 +3,7 @@ import hero from "@/assets/hero.jpg";
 const imageDescriptions: Record<string, string> = {
   [hero]: "Misty green hills and a winding railway in Araku Valley at sunrise",
   "/images/vizag-araku-annavaram/araku.jpg": "Green hills and valley scenery in Araku Valley",
+  "/images/vizag-araku-annavaram/borra.jpg": "Limestone formations inside Borra Caves near Araku Valley",
   "/images/vadapalli/annavaram.jpg": "Sri Veera Venkata Satyanarayana Swamy temple complex in Annavaram",
   "/images/vizag-araku-annavaram/vizag.jpg": "Visakhapatnam coastline and beach road",
   "/images/vadapalli/vadapalli.jpg": "Sri Venkateswara Swamy Temple in Vadapalli",

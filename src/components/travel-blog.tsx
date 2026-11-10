@@ -12,7 +12,7 @@ export const travelArticles = [
     title: "Araku, Lambasingi & Vanjangi: a hill escape",
     topic: "Hill escapes",
     url: `${origin}/araku-lambasingi-vanjangi-tour-package/`,
-    image: `${uploads}/2025/12/Araku-Lambasingi-Vanjangi-Tour-Package-768x768.png`,
+    image: hero,
     summary:
       "Find inspiration for a journey through the valleys and hills, then discuss the right route for your group.",
   },
@@ -36,7 +36,7 @@ export const travelArticles = [
     title: "Choosing help for your Araku holiday",
     topic: "Planning",
     url: `${origin}/best-travel-agency-for-araku-valley-tour-packages/`,
-    image: `${uploads}/2024/02/Best-Travel-Agency-Araku-Valley-Tour-Packages-768x400.webp`,
+    image: "/images/vizag-araku-annavaram/araku.jpg",
     summary:
       "Consider what you need from a travel team before discussing transport, accommodation and your route.",
   },
@@ -52,7 +52,7 @@ export const travelArticles = [
     title: "Discover places for your Araku wish list",
     topic: "Hill escapes",
     url: `${origin}/what-are-the-best-tourist-places-to-visit-in-araku/`,
-    image: `${uploads}/2024/02/Best-Tourist-places-to-visit-in-Araku-768x400.webp`,
+    image: "/images/vizag-araku-annavaram/borra.jpg",
     summary:
       "Look beyond a destination name and explore ideas for your next valley getaway with family or friends.",
   },
