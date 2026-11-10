@@ -1,3 +1,4 @@
+import { imageAlt } from "@/lib/image-alt";
 import { imageDimensions } from "@/lib/image-dimensions";
 import { useState, type FormEvent } from "react";
 import {
@@ -717,7 +718,8 @@ export function CabServices() {
                   >
                     <img
                       src={item.image}
-                      alt=""
+                      alt={imageAlt(item.image, item.name)}
+                      title={imageAlt(item.image, item.name)}
                       loading="lazy"
                       width={600}
                       height={400}
