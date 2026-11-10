@@ -1,3 +1,4 @@
+import { imageDimensions } from "@/lib/image-dimensions";
 import { useState, type FormEvent } from "react";
 import {
   ArrowDown,
@@ -190,7 +191,7 @@ export function VadapalliItinerary() {
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img
+          <img {...imageDimensions(images.vadapalli)}
             src={images.vadapalli}
             alt="Sri Venkateswara Swamy Temple in Vadapalli"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"

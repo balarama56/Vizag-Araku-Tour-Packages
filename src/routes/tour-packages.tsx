@@ -1,3 +1,4 @@
+import { imageDimensions } from "@/lib/image-dimensions";
 import { imageAlt } from "@/lib/image-alt";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/content-page";
@@ -66,7 +67,7 @@ function Packages() {
             key={`${tour.title}-${tour.dur}`}
             className="overflow-hidden rounded-3xl border border-border bg-card"
           >
-            <img
+            <img {...imageDimensions(tour.img)}
               src={tour.img}
               alt={imageAlt(tour.img, tour.title)}
               loading="lazy"

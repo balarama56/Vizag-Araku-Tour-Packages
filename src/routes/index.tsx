@@ -1,3 +1,4 @@
+import { imageDimensions } from "@/lib/image-dimensions";
 import { imageAlt } from "@/lib/image-alt";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HomeHero } from "@/components/home/home-hero";
@@ -148,7 +149,7 @@ function Index() {
                   className="image-surface group relative h-96 overflow-hidden rounded-3xl shadow-deep"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <img
+                  <img {...imageDimensions(d.img)}
                     src={d.img}
                     onError={(event) => {
                       if (event.currentTarget.getAttribute("src") !== hero)
@@ -193,7 +194,7 @@ function Index() {
               <Tilt key={t.title} className="reveal">
                 <article className="glass h-full overflow-hidden rounded-3xl shadow-deep">
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <img {...imageDimensions(t.img)}
                       src={t.img}
                       onError={(event) => {
                         if (event.currentTarget.getAttribute("src") !== hero)

@@ -1,3 +1,4 @@
+import { imageDimensions } from "@/lib/image-dimensions";
 import { useState, type FormEvent } from "react";
 import {
   ArrowDown,
@@ -174,7 +175,7 @@ export function CabServices() {
       <Nav />
       <main id="main-content">
         <section className="pancharama-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-          <img
+          <img {...imageDimensions("/images/vizag-araku-annavaram/araku.jpg")}
             src="/images/vizag-araku-annavaram/araku.jpg"
             alt="Green hills and valley scenery in Araku Valley"
             className="pancharama-backdrop absolute inset-0 -z-20 h-full w-full object-cover"
