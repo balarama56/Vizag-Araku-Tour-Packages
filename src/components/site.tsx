@@ -1,3 +1,4 @@
+import { agencyAddress, agencyMapUrl } from "@/lib/business-details";
 import { ChevronDown } from "lucide-react";
 import {
   tourCategories,
@@ -351,6 +352,7 @@ export function Nav() {
           >
             About us
           </Link>
+          <Link to="/testimonials" onClick={close} activeProps={{ "aria-current": "page", className: "bg-sky-100 text-sky-900" }} className="rounded-lg px-3 py-2 hover:bg-sky-50">Testimonials</Link>
           {groups.map((group) => (
             <div key={group.id} className="relative">
               <button
@@ -515,6 +517,8 @@ export function Footer() {
           <h2 className="text-lg font-semibold">Explore</h2>
           <div className="mt-4 grid gap-3 text-sm text-muted-foreground">
             <Link to="/about">About us</Link>
+<a href={agencyMapUrl} target="_blank" rel="noopener noreferrer"><address className="not-italic text-sm leading-7">{agencyAddress}</address>Find us on Google Maps</a>
+            <Link to="/testimonials">Testimonials</Link>
             <Link to="/tour-packages">Tour Packages</Link>
             <Link to="/services">Services</Link>
             <Link to="/hotel-booking">Hotel booking</Link>

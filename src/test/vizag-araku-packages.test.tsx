@@ -612,17 +612,17 @@ describe("Araku hotel booking cards", () => {
     ).not.toBeInTheDocument();
   });
 });
-import { TravelBlog } from "@/components/travel-blog";
+import { TravelBlog, travelArticles } from "@/components/travel-blog";
 
 describe("Travel blog article cards", () => {
-  it("filters the six reference articles by topic", () => {
+  it("filters the current travel articles by topic", () => {
     render(<TravelBlog />);
     expect(screen.getByRole("status")).toHaveTextContent(
-      "Showing 6 of 6 articles",
+      `Showing ${travelArticles.length} of ${travelArticles.length} articles`,
     );
     fireEvent.click(screen.getByRole("button", { name: "Vizag" }));
     expect(screen.getByRole("status")).toHaveTextContent(
-      "Showing 2 of 6 articles",
+      `Showing 2 of ${travelArticles.length} articles`,
     );
     expect(
       screen.getAllByRole("link", { name: /Read full article:/ }),
@@ -636,7 +636,7 @@ describe("Travel blog article cards", () => {
       { target: { value: "  VANJANGI  " } },
     );
     expect(screen.getByRole("status")).toHaveTextContent(
-      "Showing 1 of 6 articles",
+      `Showing 1 of ${travelArticles.length} articles`,
     );
     expect(
       screen.getByRole("link", { name: /Read full article:/ }),
@@ -652,7 +652,7 @@ describe("Travel blog article cards", () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
     expect(screen.getByRole("status")).toHaveTextContent(
-      "Showing 6 of 6 articles",
+      `Showing ${travelArticles.length} of ${travelArticles.length} articles`,
     );
     expect(screen.getByRole("searchbox")).toHaveValue("");
   });
@@ -663,7 +663,7 @@ describe("Travel blog article cards", () => {
     })) {
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
-      expect(new URL(link.getAttribute("href")!).hostname).toBe(
+      expect(new URL(link.getAttribute("href")!, "https://www.vizagarakutourpackages.com").hostname).toBe(
         "www.vizagarakutourpackages.com",
       );
     }
@@ -691,14 +691,14 @@ describe("Home hero package spotlight", () => {
     expect(
       screen.getByRole("link", { name: "View Lambasingi packages" }),
     ).toHaveAttribute("href", "/tour/vizag-lambasinghi-tour-packages");
-    fireEvent.click(screen.getByRole("button", { name: "Papikondalu" }));
-    expect(screen.getByText("₹15,900")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Jagdalpur" }));
+    expect(screen.getByText("₹36,800")).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-      "Visakhapatnam to Papikondalu",
+      "Vizag, Araku & Jagdalpur",
     );
     expect(
-      screen.getByRole("link", { name: "View Papikondalu packages" }),
-    ).toHaveAttribute("href", "/tour/vizag-papikondallu-tour-packages");
+      screen.getByRole("link", { name: "View Jagdalpur packages" }),
+    ).toHaveAttribute("href", "/tour/vizag-jagdalpur-tour-packages");
     expect(screen.queryByText("₹19,500")).not.toBeInTheDocument();
   });
   it("provides clear links to tours, personal trip planning and hotel enquiries", () => {

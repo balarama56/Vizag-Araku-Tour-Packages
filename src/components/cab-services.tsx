@@ -26,7 +26,7 @@ import {
   WhatsAppIcon,
 } from "@/components/contact-actions";
 
-const photos = [
+const photos: { src: string; srcSet?: string; alt: string; title: string; caption: string; credit: string }[] = [
   {
     src: "/images/cab-services/sedan.jpg",
     alt: "Silver Toyota sedan on a hill road from the business Google Maps gallery",
@@ -48,6 +48,22 @@ const photos = [
     caption: "SUV / MUV · Innova Crysta",
     credit:
       "Representative vehicle photo · Justdial. Exact vehicle confirmed with your quote.",
+  },
+  {
+    src: "/images/cab-services/tempo-12-seater-exterior-1200.jpg",
+    srcSet: "/images/cab-services/tempo-12-seater-exterior-640.jpg 640w, /images/cab-services/tempo-12-seater-exterior-1200.jpg 1200w",
+    alt: "Exterior of the white and blue 12-seater Tempo traveller",
+    title: "Your group. One comfortable ride.",
+    caption: "12-seater Tempo traveller · exterior",
+    credit: "Photo supplied by our team. Confirm availability for your travel dates.",
+  },
+  {
+    src: "/images/cab-services/tempo-12-seater-interior-1200.jpg",
+    srcSet: "/images/cab-services/tempo-12-seater-interior-640.jpg 640w, /images/cab-services/tempo-12-seater-interior-1200.jpg 1200w",
+    alt: "Interior of the 12-seater Tempo traveller with individual seats, curtains and overhead lighting",
+    title: "A look inside your journey.",
+    caption: "12-seater Tempo traveller · interior",
+    credit: "Photo supplied by our team. Confirm seating and luggage space with your quote.",
   },
 ];
 const tripTypes = [
@@ -93,7 +109,7 @@ const vehicles = [
   {
     name: "Tempo traveller",
     icon: Users,
-    copy: "Keep your group together. Confirm the seating layout, luggage capacity and air-conditioning in your quote.",
+    copy: "Explore our 12-seater Tempo traveller. Browse exterior and interior photos, and confirm seating, luggage capacity and air-conditioning in your quote.",
   },
 ];
 const routes = [
@@ -121,7 +137,7 @@ export function CabServices() {
   const [trip, setTrip] = useState(0);
   const [photo, setPhoto] = useState(0);
   const [vehicle, setVehicle] = useState("Sedan");
-  const vehiclePhoto = photos[vehicle === "SUV / MUV" ? 2 : vehicle === "Tempo traveller" ? 1 : 0];
+  const vehiclePhoto = photos[vehicle === "SUV / MUV" ? 2 : vehicle === "Tempo traveller" ? 3 : 0];
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -142,7 +158,7 @@ export function CabServices() {
   function chooseVehicle(value: string) {
     setVehicle(value);
     if (value === "Sedan") setPhoto(0);
-    if (value === "Tempo traveller") setPhoto(1);
+    if (value === "Tempo traveller") setPhoto(3);
     if (value === "SUV / MUV") setPhoto(2);
     resetQuote();
   }
@@ -242,6 +258,9 @@ export function CabServices() {
                 <div className="pancharama-postcard rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
                   <img title={vehiclePhoto.alt}
                     src={vehiclePhoto.src}
+                    srcSet={vehiclePhoto.srcSet}
+                    sizes="(min-width: 1024px) 448px, (max-width: 495px) calc(100vw - 48px), 448px"
+                    decoding="async"
                     alt={vehiclePhoto.alt}
                     width={1000}
                     height={750}
@@ -385,7 +404,7 @@ export function CabServices() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-7 text-muted-foreground">
-                Sedan and traveller photos from our Google Maps listing, plus a
+                Our 12-seater Tempo traveller inside and out, Google Maps photos and a
                 representative Innova image. Confirm the vehicle, model and
                 condition for your travel dates.
               </p>
@@ -409,6 +428,9 @@ export function CabServices() {
                   <img title={photos[photo].alt}
                     key={photo}
                     src={photos[photo].src}
+                    srcSet={photos[photo].srcSet}
+                    sizes="(min-width: 1200px) 610px, (min-width: 1024px) 55vw, calc(100vw - 48px)"
+                    decoding="async"
                     alt={photos[photo].alt}
                     width={1000}
                     height={750}
@@ -761,7 +783,7 @@ export function CabServices() {
               ],
               [
                 "Is the photographed vehicle guaranteed?",
-                "The gallery includes Google Maps photographs and a representative Innova image. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
+                "The gallery includes our 12-seater Tempo traveller exterior and interior, Google Maps photographs and a representative Innova image. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
               ],
               [
                 "Does sending an enquiry confirm my cab?",

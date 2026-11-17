@@ -119,7 +119,7 @@ it("shows the matching photo from vehicle cards and the enquiry dropdown", () =>
   fireEvent.click(screen.getByRole("button", { name: /^Tempo traveller/ }));
   expect(within(gallery).getByRole("img")).toHaveAttribute(
     "src",
-    "/images/cab-services/traveller.jpg",
+    "/images/cab-services/tempo-12-seater-exterior-1200.jpg",
   );
   fireEvent.change(screen.getByLabelText("Vehicle preference"), {
     target: { value: "SUV / MUV" },
@@ -135,4 +135,14 @@ it("shows the matching photo from vehicle cards and the enquiry dropdown", () =>
     "src",
     "/images/cab-services/sedan.jpg",
   );
+});
+
+it("browses the 12-seater interior after selecting its exterior", () => {
+  render(<CabServices />);
+  const gallery = screen.getByRole("region", { name: "Cab photo gallery" });
+  fireEvent.change(screen.getByLabelText("Vehicle preference"), { target: { value: "Tempo traveller" } });
+  expect(within(gallery).getByRole("img")).toHaveAttribute("srcSet", expect.stringContaining("exterior-640.jpg 640w"));
+  fireEvent.click(within(gallery).getByRole("button", { name: "Next cab photo" }));
+  expect(within(gallery).getByRole("img")).toHaveAttribute("src", "/images/cab-services/tempo-12-seater-interior-1200.jpg");
+  expect(within(gallery).getByRole("img")).toHaveAttribute("loading", "lazy");
 });

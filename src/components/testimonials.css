@@ -1,0 +1,13 @@
+.testimonial-scene { perspective: 1200px; }
+.testimonial-float { transform-style: preserve-3d; }
+.testimonial-dialog { width: min(1100px, 94vw); max-height: 94svh; margin: auto; }
+.testimonial-dialog::backdrop { background: #020617df; }
+@media (prefers-reduced-motion: no-preference) {
+  .testimonial-float { animation: testimonial-float 9s ease-in-out infinite; }
+  .testimonial-token { animation: testimonial-bob 7s ease-in-out infinite; }
+}
+@keyframes testimonial-float { 0%,100% { transform: rotateY(-7deg) rotateX(3deg) translateY(0); } 50% { transform: rotateY(3deg) rotateX(-2deg) translateY(-12px); } }
+@keyframes testimonial-bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(8px) rotate(1deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-page *, .testimonials-page *::before, .testimonials-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

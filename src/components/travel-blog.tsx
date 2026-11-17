@@ -8,6 +8,20 @@ import hero from "@/assets/hero.jpg";
 const origin = "https://www.vizagarakutourpackages.com";
 export const travelArticles = [
   {
+    title: "Complete guide to the Pancharama Kshetras in Andhra Pradesh",
+    topic: "Planning",
+    url: "/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh",
+    image: "/images/pancharama/ksheerarama.jpg",
+    summary: "Meet the five Shiva temples, compare locations and plan a thoughtful pilgrimage with route advice, a checklist and darshan FAQs.",
+  },
+  {
+    title: "Explore the beauty of Andhra Pradesh with Vizag Araku tour packages",
+    topic: "Planning",
+    url: "/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages",
+    image: "/images/vizag-araku-annavaram/araku.jpg",
+    summary: "A coast-to-coffee travel guide with Vizag beaches, Borra Caves, Araku Valley and a suggested three-day itinerary.",
+  },
+  {
     title: "Araku, Lambasingi & Vanjangi: a hill escape",
     topic: "Hill escapes",
     url: `${origin}/araku-lambasingi-vanjangi-tour-package/`,
@@ -24,12 +38,12 @@ export const travelArticles = [
       "Explore ideas for your city break and decide which sights deserve a place in your travel plans.",
   },
   {
-    title: "Planning a two-day Vizag–Araku break",
+    title: "Vizag Araku tour package for 2 days: price and itinerary",
     topic: "Planning",
-    url: `${origin}/vizag-araku-tour-package-for-2-days-with-low-prices/`,
+    url: "/vizag-araku-tour-package-for-2-days-with-low-prices",
     image: hero,
     summary:
-      "Start thinking about a short escape, your available time and the details to check when requesting a quote.",
+      "Compare the listed couple rate, follow the two-day plan and check hotels, transport and extras before booking.",
   },
   {
     title: "Choosing help for your Araku holiday",
@@ -143,8 +157,8 @@ export function TravelBlog() {
             Where will curiosity take you?
           </h2>
           <p className="mt-5 max-w-2xl leading-8 text-muted-foreground">
-            Browse articles from our travel journal, then open the full story on
-            our original website. For current prices and availability, speak
+            Browse destination stories and practical guides from our travel journal. Plan
+            at your own pace. For current prices and availability, speak
             with our team.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-between gap-5 border-y border-border py-5">

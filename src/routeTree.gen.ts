@@ -14,11 +14,15 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as ArakuHotelsRouteImport } from './routes/araku-hotels'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRouteImport } from './routes/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRouteImport } from './routes/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
 import { Route as LambasingiHotelsRouteImport } from './routes/lambasingi-hotels'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TourPackagesRouteImport } from './routes/tour-packages'
+import { Route as VizagArakuTourPackageFor2DaysWithLowPricesRouteImport } from './routes/vizag-araku-tour-package-for-2-days-with-low-prices'
 import { Route as VizagHotelsRouteImport } from './routes/vizag-hotels'
 import { Route as HotelBookingDestinationRouteImport } from './routes/hotel-booking_.$destination'
 import { Route as ServicesServiceRouteImport } from './routes/services_.$service'
@@ -80,11 +84,23 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute =
+  CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRouteImport.update({
+    id: '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh',
+    path: '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute =
+  ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRouteImport.update({
+    id: '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages',
+    path: '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HotelBookingRoute = HotelBookingRouteImport.update({
   id: '/hotel-booking',
   path: '/hotel-booking',
@@ -100,11 +116,22 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TourPackagesRoute = TourPackagesRouteImport.update({
   id: '/tour-packages',
   path: '/tour-packages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VizagArakuTourPackageFor2DaysWithLowPricesRoute =
+  VizagArakuTourPackageFor2DaysWithLowPricesRouteImport.update({
+    id: '/vizag-araku-tour-package-for-2-days-with-low-prices',
+    path: '/vizag-araku-tour-package-for-2-days-with-low-prices',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const VizagHotelsRoute = VizagHotelsRouteImport.update({
   id: '/vizag-hotels',
   path: '/vizag-hotels',
@@ -317,11 +344,15 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
+  '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh': typeof CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute
   '/contact': typeof ContactRoute
+  '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages': typeof ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/lambasingi-hotels': typeof LambasingiHotelsRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-araku-tour-package-for-2-days-with-low-prices': typeof VizagArakuTourPackageFor2DaysWithLowPricesRoute
   '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
@@ -364,11 +395,15 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
+  '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh': typeof CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute
   '/contact': typeof ContactRoute
+  '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages': typeof ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/lambasingi-hotels': typeof LambasingiHotelsRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-araku-tour-package-for-2-days-with-low-prices': typeof VizagArakuTourPackageFor2DaysWithLowPricesRoute
   '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking/$destination': typeof HotelBookingDestinationRoute
   '/services/$service': typeof ServicesServiceRoute
@@ -412,11 +447,15 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/araku-hotels': typeof ArakuHotelsRoute
   '/blog': typeof BlogRoute
+  '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh': typeof CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute
   '/contact': typeof ContactRoute
+  '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages': typeof ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/lambasingi-hotels': typeof LambasingiHotelsRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/tour-packages': typeof TourPackagesRoute
+  '/vizag-araku-tour-package-for-2-days-with-low-prices': typeof VizagArakuTourPackageFor2DaysWithLowPricesRoute
   '/vizag-hotels': typeof VizagHotelsRoute
   '/hotel-booking_/$destination': typeof HotelBookingDestinationRoute
   '/services_/$service': typeof ServicesServiceRoute
@@ -461,11 +500,15 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/araku-hotels'
     | '/blog'
+    | '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
     | '/contact'
+    | '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
     | '/hotel-booking'
     | '/lambasingi-hotels'
     | '/services'
+    | '/testimonials'
     | '/tour-packages'
+    | '/vizag-araku-tour-package-for-2-days-with-low-prices'
     | '/vizag-hotels'
     | '/hotel-booking/$destination'
     | '/services/$service'
@@ -508,11 +551,15 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/araku-hotels'
     | '/blog'
+    | '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
     | '/contact'
+    | '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
     | '/hotel-booking'
     | '/lambasingi-hotels'
     | '/services'
+    | '/testimonials'
     | '/tour-packages'
+    | '/vizag-araku-tour-package-for-2-days-with-low-prices'
     | '/vizag-hotels'
     | '/hotel-booking/$destination'
     | '/services/$service'
@@ -555,11 +602,15 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/araku-hotels'
     | '/blog'
+    | '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
     | '/contact'
+    | '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
     | '/hotel-booking'
     | '/lambasingi-hotels'
     | '/services'
+    | '/testimonials'
     | '/tour-packages'
+    | '/vizag-araku-tour-package-for-2-days-with-low-prices'
     | '/vizag-hotels'
     | '/hotel-booking_/$destination'
     | '/services_/$service'
@@ -603,11 +654,15 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   ArakuHotelsRoute: typeof ArakuHotelsRoute
   BlogRoute: typeof BlogRoute
+  CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute: typeof CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute
   ContactRoute: typeof ContactRoute
+  ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute: typeof ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute
   HotelBookingRoute: typeof HotelBookingRoute
   LambasingiHotelsRoute: typeof LambasingiHotelsRoute
   ServicesRoute: typeof ServicesRoute
+  TestimonialsRoute: typeof TestimonialsRoute
   TourPackagesRoute: typeof TourPackagesRoute
+  VizagArakuTourPackageFor2DaysWithLowPricesRoute: typeof VizagArakuTourPackageFor2DaysWithLowPricesRoute
   VizagHotelsRoute: typeof VizagHotelsRoute
   HotelBookingDestinationRoute: typeof HotelBookingDestinationRoute
   ServicesServiceRoute: typeof ServicesServiceRoute
@@ -682,11 +737,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh': {
+      id: '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
+      path: '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
+      fullPath: '/complete-guide-on-the-pancharama-kshetras-in-andhra-pradesh'
+      preLoaderRoute: typeof CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages': {
+      id: '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
+      path: '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
+      fullPath: '/explore-the-beauty-of-andhra-pradesh-with-vizag-araku-tour-packages'
+      preLoaderRoute: typeof ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hotel-booking': {
@@ -710,11 +779,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tour-packages': {
       id: '/tour-packages'
       path: '/tour-packages'
       fullPath: '/tour-packages'
       preLoaderRoute: typeof TourPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vizag-araku-tour-package-for-2-days-with-low-prices': {
+      id: '/vizag-araku-tour-package-for-2-days-with-low-prices'
+      path: '/vizag-araku-tour-package-for-2-days-with-low-prices'
+      fullPath: '/vizag-araku-tour-package-for-2-days-with-low-prices'
+      preLoaderRoute: typeof VizagArakuTourPackageFor2DaysWithLowPricesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vizag-hotels': {
@@ -971,11 +1054,18 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   ArakuHotelsRoute: ArakuHotelsRoute,
   BlogRoute: BlogRoute,
+  CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute:
+    CompleteGuideOnThePancharamaKshetrasInAndhraPradeshRoute,
   ContactRoute: ContactRoute,
+  ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute:
+    ExploreTheBeautyOfAndhraPradeshWithVizagArakuTourPackagesRoute,
   HotelBookingRoute: HotelBookingRoute,
   LambasingiHotelsRoute: LambasingiHotelsRoute,
   ServicesRoute: ServicesRoute,
+  TestimonialsRoute: TestimonialsRoute,
   TourPackagesRoute: TourPackagesRoute,
+  VizagArakuTourPackageFor2DaysWithLowPricesRoute:
+    VizagArakuTourPackageFor2DaysWithLowPricesRoute,
   VizagHotelsRoute: VizagHotelsRoute,
   HotelBookingDestinationRoute: HotelBookingDestinationRoute,
   ServicesServiceRoute: ServicesServiceRoute,

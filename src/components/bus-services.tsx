@@ -25,14 +25,15 @@ import {
   WhatsAppIcon,
 } from "@/components/contact-actions";
 
-const photos = [
+const photos: { src: string; srcSet?: string; alt: string; title: string; caption: string; credit: string }[] = [
   {
-    src: "/images/cab-services/traveller.jpg",
-    alt: "Tempo traveller from the Vizag Araku Tour Packages Google Maps gallery",
+    src: "/images/bus-services/tempo-17-seater/front-900.jpg",
+    srcSet: "/images/bus-services/tempo-17-seater/front-480.jpg 480w, /images/bus-services/tempo-17-seater/front-900.jpg 900w",
+    alt: "Front view of the 17-seater Tempo Traveller",
     title: "A small group. A shared adventure.",
-    caption: "12-seater preference · traveller category",
+    caption: "17-seater preference · traveller category",
     credit:
-      "Photo: Google Maps business gallery · actual seating confirmed with your quote.",
+      "Photo supplied by our team · confirm availability with your quote.",
   },
   {
     src: "/images/bus-services/miniBus.jpg",
@@ -49,6 +50,28 @@ const photos = [
     caption: "40-seater preference · coach category",
     credit:
       "Photo: shiva thadi · Google Maps · actual seating confirmed with your quote.",
+  },
+  {
+    src: "/images/bus-services/tempo-17-seater/front-side-900.jpg",
+    srcSet: "/images/bus-services/tempo-17-seater/front-side-480.jpg 480w, /images/bus-services/tempo-17-seater/front-side-900.jpg 719w",
+    alt: "Front-side view of the 17-seater Tempo Traveller",
+    title: "See your Tempo Traveller.",
+    caption: "17-seater Tempo Traveller · Front-side view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },  {
+    src: "/images/bus-services/tempo-17-seater/back-900.jpg",
+    srcSet: "/images/bus-services/tempo-17-seater/back-480.jpg 480w, /images/bus-services/tempo-17-seater/back-900.jpg 719w",
+    alt: "Rear view of the 17-seater Tempo Traveller",
+    title: "See your Tempo Traveller.",
+    caption: "17-seater Tempo Traveller · Rear view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },  {
+    src: "/images/bus-services/tempo-17-seater/side-900.jpg",
+    srcSet: "/images/bus-services/tempo-17-seater/side-480.jpg 480w, /images/bus-services/tempo-17-seater/side-900.jpg 900w",
+    alt: "Side view of the 17-seater Tempo Traveller",
+    title: "See your Tempo Traveller.",
+    caption: "17-seater Tempo Traveller · Side view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
   },
 ];
 const tripTypes = [
@@ -82,10 +105,10 @@ const tripTypes = [
 ];
 const vehicles = [
   {
-    name: "12 seater",
-    capacity: 12,
+    name: "17 seater",
+    capacity: 17,
     icon: Users,
-    copy: "For a smaller group. Request a traveller with 12 passenger seats and confirm luggage space and air-conditioning.",
+    copy: "For a smaller group. Request a traveller with 17 passenger seats and confirm luggage space and air-conditioning.",
   },
   {
     name: "24 seater",
@@ -219,7 +242,7 @@ export function BusServices() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-200">
                 <span className="pancharama-pill">
-                  <Users size={16} /> 12 seats
+                  <Users size={16} /> 17 seats
                 </span>
                 <span className="pancharama-pill">
                   <BusFront size={16} /> 24 seats
@@ -253,6 +276,9 @@ export function BusServices() {
                 <div className="pancharama-postcard rounded-[1.8rem] border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-md">
                   <img title={vehiclePhoto.alt}
                     src={vehiclePhoto.src}
+                    srcSet={vehiclePhoto.srcSet}
+                    sizes="(min-width: 1024px) 448px, 90vw"
+                    decoding="async"
                     alt={vehiclePhoto.alt}
                     width={1000}
                     height={750}
@@ -292,7 +318,7 @@ export function BusServices() {
               [Route, "A route that fits", "Choose your stops and travel pace"],
               [
                 Users,
-                "12 / 24 / 40-seat requests",
+                "17 / 24 / 40-seat requests",
                 "Choose the seating your group needs",
               ],
               [
@@ -396,9 +422,9 @@ export function BusServices() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-7 text-muted-foreground">
-                Vehicle photos from our Google Maps listing illustrate
+                Our 17-seater Tempo Traveller photos and Google Maps images illustrate
                 traveller, mini-bus and coach categories. Confirm the actual
-                12-, 24- or 40-seat layout and vehicle for your date.
+                17-, 24- or 40-seat layout and vehicle for your date.
               </p>
             </div>
             <div className="mt-9 grid gap-7 lg:grid-cols-[1.2fr_.8fr]">
@@ -420,6 +446,9 @@ export function BusServices() {
                   <img title={photos[photo].alt}
                     key={photo}
                     src={photos[photo].src}
+                    srcSet={photos[photo].srcSet}
+                    sizes="(min-width: 1024px) 610px, 90vw"
+                    decoding="async"
                     alt={photos[photo].alt}
                     width={1000}
                     height={750}
@@ -500,6 +529,25 @@ export function BusServices() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="mx-auto max-w-6xl px-6 py-16" aria-labelledby="traveller-videos-title">
+          <h2 id="traveller-videos-title" className="text-3xl font-semibold">17-seater Tempo Traveller videos</h2>
+          <p className="mt-4 text-sm text-muted-foreground">Explore the exterior, rear and interior. Choose a video to play.</p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              { name: "Exterior walkaround", file: "exterior", poster: "side" },
+              { name: "Rear view", file: "rear", poster: "back" },
+              { name: "Interior tour", file: "interior", poster: "front" },
+            ].map((clip) => (
+              <figure key={clip.file} className="overflow-hidden rounded-2xl border border-border bg-card">
+                <video controls playsInline preload="none" aria-label={`17-seater Tempo Traveller ${clip.name.toLowerCase()}`} poster={`/images/bus-services/tempo-17-seater/${clip.poster}-480.jpg`} className="aspect-[9/16] max-h-[480px] w-full bg-black object-contain">
+                  <source src={`/images/bus-services/tempo-17-seater/${clip.file}.mp4`} type="video/mp4" />
+                  Your browser does not support video. <a href={`/images/bus-services/tempo-17-seater/${clip.file}.mp4`}>Download the video</a>.
+                </video>
+                <figcaption className="p-4 font-semibold">{clip.name}</figcaption>
+              </figure>
+            ))}
           </div>
         </section>
         <section
@@ -772,8 +820,8 @@ export function BusServices() {
                 "Share your preferred stops and overnight plans. The team will discuss a practical route and confirm driving hours, distance limits and extra charges.",
               ],
               [
-                "Are 12, 24 and 40 seats guaranteed in these photos?",
-                "The photos show vehicles from the business Google Maps listing; they do not verify exact seat counts. The 12-, 24- and 40-seat options are booking preferences. Confirm the actual passenger seating layout, vehicle model, air-conditioning, luggage capacity and condition for your date.",
+                "Are 17, 24 and 40 seats guaranteed in these photos?",
+                "The gallery includes supplied 17-seater Tempo Traveller photos and vehicles from the business Google Maps listing. The 17-, 24- and 40-seat options are booking preferences. Confirm the actual passenger seating layout, vehicle model, air-conditioning, luggage capacity and condition for your date.",
               ],
               [
                 "Does sending an enquiry confirm our bus?",

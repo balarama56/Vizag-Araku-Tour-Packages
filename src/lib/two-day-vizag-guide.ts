@@ -1,0 +1,26 @@
+import { vizagArakuPackages } from "@/components/vizag-araku-packages";
+export const shortBreakSlug = "vizag-araku-tour-package-for-2-days-with-low-prices";
+export const shortBreakTitle = "Vizag Araku Tour Package for 2 Days: Prices, Itinerary & Budget Tips";
+export const shortBreakDescription = "Plan a 2-day, 1-night Vizag Araku trip. Compare the listed couple price, explore a practical itinerary and check hotels, transport and extras before booking.";
+export const shortBreakPrice = vizagArakuPackages.find(p => p.id === "va-2d")!.price;
+export const shortBreakSections = [
+ {id:"two-day-plan", title:"Two days, one overnight stay: make the time count", paragraphs:["A short holiday should feel like a break, not a race between attractions. A two-day Vizag Araku tour works best when you arrive with enough time for the coast, spend the night in Visakhapatnam and reserve the next day for the hills before returning to the city.","This is a compact introduction to two very different landscapes. It suits travellers who are happy with a full second day and a selected set of stops. If you want an overnight stay in Araku, a slower cave visit and plenty of time in the valley, compare a longer itinerary before choosing only on price."]},
+ {id:"day-one", title:"Day 1: settle into Vizag and explore the coast", image:"vizag", alt:"Visakhapatnam coastline and beach road", paragraphs:["Start with your agreed airport, railway station or city pickup. Hotel check-in depends on the property, so ask about arrival arrangements if your train or flight reaches Vizag early. Freshening up and a meal break make the rest of the day easier to enjoy.","Choose a coastal drive, a beach-road walk and the city sights that matter most to your group. Rushikonda, RK Beach, Kailasagiri and the museums are options to discuss, not a promise to fit everything into an afternoon. Late arrivals should mean fewer stops, not a rushed day. Return to your Vizag hotel and confirm the next morning's departure."]},
+ {id:"day-two", title:"Day 2: Borra Caves, coffee country and the return", image:"borra", alt:"Limestone formations inside Borra Caves near Araku", paragraphs:["The existing package outline proposes a train towards Borra Guhalu, followed by a road journey through selected valley sights and a return to Vizag. Train tickets and station transfers need confirmation; discuss the road alternative before paying. Do not assume that a Vistadome coach is included.","Borra Caves, coffee-growing slopes and a viewpoint can form the core of the day. Museum, garden and extra photo stops depend on the remaining time. Cave steps and uneven ground deserve consideration when travelling with older family members. Confirm the expected Vizag return before booking an onward connection; a tight evening departure can remove the flexibility this day needs."]},
+];
+export const shortBreakFaqs = [
+ ["What is the starting price for a 2-day Vizag Araku package?", "The current website listing provides a starting couple rate shown above. It is a reference for an enquiry, not a guaranteed fare for every date. Request a written quote confirming the price basis, hotel, vehicle, inclusions and taxes."],
+ ["Is the listed amount per person or per couple?", "The linked two-day package describes its rate as per couple. Do not treat it as a per-person or whole-group fare. Ask for a separate quote for your exact number of adults and children, room arrangements and vehicle needs."],
+ ["Does this itinerary include a night in Araku?", "The described two-day Vizag-Araku package has one overnight stay in Vizag and returns from the valley on the second day. If you want to sleep in Araku, request an alternative itinerary and check how it affects sightseeing, travel time and price."],
+ ["Are train tickets and Vistadome seats guaranteed?", "No. Confirm the train, class, ticket status, transfers and any extra cost before booking. Ask what changes if seats are unavailable. A scenic rail journey should not be assumed to include a particular coach."],
+ ["How can a family keep the total cost lower?", "Compare room and vehicle arrangements, consider alternate dates and choose a realistic set of stops. Check child charges, extra beds, meals and tickets. The lowest headline rate may not give the lowest total after extras."],
+ ["Can I add Lambasingi or extra waterfalls in two days?", "Ask whether a longer trip would be more practical. Additional detours increase driving and can shorten time at your main sights. The existing two-day outline excludes Katiki; any additional activity needs separate confirmation."],
+];
+export const budgetChecks = [
+ ["Price basis", "Per couple, per person or per vehicle?", "Compare quotes using the same number of travellers."],
+ ["Hotel", "Property, room type, overnight location and check-in?", "Extra beds and early check-in can change the total."],
+ ["Transport", "Vehicle, luggage space, pickup and final drop?", "Ask about route changes, waiting and distance limits."],
+ ["Rail journey", "Train, class, confirmed tickets and transfers?", "Check the fallback plan and its price."],
+ ["Meals and tickets", "Which meals and entry charges are included?", "Budget for anything payable directly during the trip."],
+ ["Other charges", "Tolls, parking, driver allowance and taxes?", "Request one total alongside the itemised breakdown."],
+];

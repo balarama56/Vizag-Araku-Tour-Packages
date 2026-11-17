@@ -41,12 +41,12 @@ function submit() {
       .closest("form")!,
   );
 }
-it("matches 12, 24 and 40 seating preferences to gallery and hero photos from either control", () => {
+it("matches 17, 24 and 40 seating preferences to gallery and hero photos from either control", () => {
   render(<BusServices />);
   const gallery = screen.getByRole("region", { name: "Bus photo gallery" });
   const hero = screen.getByLabelText("Bus journey postcard");
   for (const [name, path] of [
-    ["12 seater", "/images/cab-services/traveller.jpg"],
+    ["17 seater", "/images/bus-services/tempo-17-seater/front-900.jpg"],
     ["24 seater", "/images/bus-services/miniBus.jpg"],
     ["40 seater", "/images/bus-services/coach.jpg"],
   ]) {
@@ -58,11 +58,11 @@ it("matches 12, 24 and 40 seating preferences to gallery and hero photos from ei
     expect(screen.getByLabelText("Seating preference")).toHaveValue(name);
   }
   fireEvent.change(screen.getByLabelText("Seating preference"), {
-    target: { value: "12 seater" },
+    target: { value: "17 seater" },
   });
   expect(within(gallery).getByRole("img")).toHaveAttribute(
     "src",
-    "/images/cab-services/traveller.jpg",
+    "/images/bus-services/tempo-17-seater/front-900.jpg",
   );
 });
 it("prepares a group-specific bus quote and clears it when the seating or journey changes", () => {
@@ -114,4 +114,36 @@ it("rejects a group larger than the selected seating preference and a past trave
   expect(screen.getByRole("alert")).toHaveTextContent(
     "date from today onwards",
   );
+});
+
+it("accepts 17 passengers and rejects 18 for the Tempo Traveller", () => {
+  render(<BusServices />);
+  fireEvent.change(screen.getByLabelText("Seating preference"), { target: { value: "17 seater" } });
+  fill("17");
+  submit();
+  expect(new URL(screen.getByRole("link", { name: "Send bus enquiry on WhatsApp" }).getAttribute("href")!).searchParams.get("text")).toContain("17 seater");
+  fill("18");
+  submit();
+  expect(screen.getByRole("alert")).toHaveTextContent("Choose a larger seating option");
+});
+
+it("offers all four traveller photos and three videos without preloading video data", () => {
+  const { container } = render(<BusServices />);
+  const gallery = screen.getByRole("region", { name: "Bus photo gallery" });
+  fireEvent.change(screen.getByLabelText("Seating preference"), { target: { value: "17 seater" } });
+  const paths = new Set<string>();
+  for (let index = 0; index < 6; index++) {
+    paths.add(within(gallery).getByRole("img").getAttribute("src")!);
+    fireEvent.click(within(gallery).getByRole("button", { name: "Next bus photo" }));
+  }
+  for (const view of ["front", "front-side", "back", "side"]) {
+    expect(paths.has(`/images/bus-services/tempo-17-seater/${view}-900.jpg`)).toBe(true);
+  }
+  const videos = container.querySelectorAll("video");
+  expect(videos).toHaveLength(3);
+  videos.forEach((video) => {
+    expect(video).toHaveAttribute("preload", "none");
+    expect(video).toHaveAttribute("controls");
+    expect(video).not.toHaveAttribute("autoplay");
+  });
 });
