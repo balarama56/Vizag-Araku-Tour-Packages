@@ -246,8 +246,8 @@ const dimensions: Record<string, { width: number; height: number }> = {
     "height": 900
   },
   "/images/cab-services/innova.jpg": {
-    "width": 720,
-    "height": 720
+    "width": 1200,
+    "height": 1600
   },
   "/images/cab-services/sedan.jpg": {
     "width": 1032,

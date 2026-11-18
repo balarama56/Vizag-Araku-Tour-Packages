@@ -43,11 +43,11 @@ const photos: { src: string; srcSet?: string; alt: string; title: string; captio
   },
   {
     src: "/images/cab-services/innova.jpg",
-    alt: "White Toyota Innova Crysta — representative SUV / MUV photo",
+    alt: "Front and side view of a white Toyota Innova Crysta",
     title: "More room for the journey.",
     caption: "SUV / MUV · Innova Crysta",
     credit:
-      "Representative vehicle photo · Justdial. Exact vehicle confirmed with your quote.",
+      "Photo supplied by our team. Confirm vehicle availability with your quote.",
   },
   {
     src: "/images/cab-services/tempo-12-seater-exterior-1200.jpg",
@@ -265,7 +265,7 @@ export function CabServices() {
                     width={1000}
                     height={750}
                     fetchPriority="high"
-                    className="h-72 w-full rounded-2xl object-cover sm:h-80"
+                    className={`h-72 w-full rounded-2xl sm:h-80 ${vehicle === "SUV / MUV" ? "bg-slate-950/30 object-contain" : "object-cover"}`}
                   />
                   <div className="px-3 pb-5 pt-4 text-white">
                     <p className="text-xs uppercase tracking-[.18em] text-amber-200">
@@ -405,7 +405,7 @@ export function CabServices() {
               </div>
               <p className="max-w-sm text-sm leading-7 text-muted-foreground">
                 Our 12-seater Tempo traveller inside and out, Google Maps photos and a
-                representative Innova image. Confirm the vehicle, model and
+                photo of our Innova Crysta. Confirm the vehicle, model and
                 condition for your travel dates.
               </p>
             </div>
@@ -783,7 +783,7 @@ export function CabServices() {
               ],
               [
                 "Is the photographed vehicle guaranteed?",
-                "The gallery includes our 12-seater Tempo traveller exterior and interior, Google Maps photographs and a representative Innova image. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
+                "The gallery includes our 12-seater Tempo traveller exterior and interior, Google Maps photographs and a photo of our Innova Crysta. Request your preferred category; the exact vehicle, seating, condition and availability must be confirmed for your travel date.",
               ],
               [
                 "Does sending an enquiry confirm my cab?",

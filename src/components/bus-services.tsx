@@ -73,6 +73,48 @@ const photos: { src: string; srcSet?: string; alt: string; title: string; captio
     caption: "17-seater Tempo Traveller · Side view",
     credit: "Photo supplied by our team · confirm availability for your date.",
   },
+  {
+    src: "/images/bus-services/urbania/three-quarter.jpg",
+    alt: "Front and side view of the Force Urbania",
+    title: "Meet the Force Urbania.",
+    caption: "Force Urbania · New to our fleet",
+    credit: "Confirm passenger seating and availability for your travel date.",
+  },
+  {
+    src: "/images/bus-services/20-seater/front-cross.jpg",
+    alt: "Front and side view of the 20-seater BharatBenz bus",
+    title: "20-seater BharatBenz bus",
+    caption: "Front and side view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },
+  {
+    src: "/images/bus-services/20-seater/front.jpg",
+    alt: "Front view of the 20-seater BharatBenz bus",
+    title: "20-seater BharatBenz bus",
+    caption: "Front view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },
+  {
+    src: "/images/bus-services/20-seater/front-other-side.jpg",
+    alt: "Front and opposite side view of the 20-seater BharatBenz bus",
+    title: "20-seater BharatBenz bus",
+    caption: "Front and opposite side view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },
+  {
+    src: "/images/bus-services/20-seater/rear.jpg",
+    alt: "Rear view of the 20-seater BharatBenz bus",
+    title: "20-seater BharatBenz bus",
+    caption: "Rear view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },
+  {
+    src: "/images/bus-services/20-seater/rear-side.jpg",
+    alt: "Rear and side view of the 20-seater BharatBenz bus",
+    title: "20-seater BharatBenz bus",
+    caption: "Rear and side view",
+    credit: "Photo supplied by our team · confirm availability for your date.",
+  },
 ];
 const tripTypes = [
   {
@@ -105,20 +147,37 @@ const tripTypes = [
 ];
 const vehicles = [
   {
+    name: "Force Urbania",
+    capacity: 16,
+    photoIndex: 6,
+    icon: BusFront,
+    copy: "New to our fleet. Seats 16 passengers plus the driver (16+D). Confirm luggage space and availability with our team.",
+  },
+  {
     name: "17 seater",
     capacity: 17,
+    photoIndex: 0,
     icon: Users,
     copy: "For a smaller group. Request a traveller with 17 passenger seats and confirm luggage space and air-conditioning.",
   },
   {
+    name: "20 seater",
+    capacity: 20,
+    photoIndex: 7,
+    icon: BusFront,
+    copy: "Request the 20-seater BharatBenz bus for group transfers, outings and tours. Confirm luggage space and availability with our team.",
+  },
+  {
     name: "24 seater",
     capacity: 24,
+    photoIndex: 1,
     icon: BusFront,
     copy: "For family outings or a medium-sized group. Confirm the mini-bus seating layout, luggage capacity and amenities.",
   },
   {
     name: "40 seater",
     capacity: 40,
+    photoIndex: 2,
     icon: Compass,
     copy: "For larger groups and organised outings. Confirm coach seating, air-conditioning, luggage space and pickup access.",
   },
@@ -149,7 +208,7 @@ export function BusServices() {
   const [photo, setPhoto] = useState(1);
   const [vehicle, setVehicle] = useState("24 seater");
   const selectedVehicle = vehicles.find((item) => item.name === vehicle)!;
-  const vehiclePhoto = photos[vehicles.indexOf(selectedVehicle)];
+  const vehiclePhoto = photos[selectedVehicle.photoIndex];
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -168,8 +227,10 @@ export function BusServices() {
     resetQuote();
   }
   function chooseVehicle(value: string) {
-    setVehicle(value);
-    setPhoto(vehicles.findIndex((item) => item.name === value));
+    const option = vehicles.find((item) => item.name === value);
+    if (!option) return;
+    setVehicle(option.name);
+    setPhoto(option.photoIndex);
     resetQuote();
   }
   function prepare(event: FormEvent<HTMLFormElement>) {
@@ -245,12 +306,13 @@ export function BusServices() {
                   <Users size={16} /> 17 seats
                 </span>
                 <span className="pancharama-pill">
-                  <BusFront size={16} /> 24 seats
+                  <BusFront size={16} /> 20 or 24 seats
                 </span>
                 <span className="pancharama-pill">
                   <Compass size={16} /> 40 seats
                 </span>
               </div>
+              <a href="#urbania" className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/50 bg-amber-200/10 px-4 py-3 text-sm font-semibold text-amber-200 hover:bg-amber-200/20">New to our fleet · Explore the Force Urbania <ArrowDown size={16} aria-hidden="true" /></a>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
                   href="#bus-enquiry"
@@ -312,13 +374,67 @@ export function BusServices() {
             </div>
           </div>
         </section>
+        <section id="urbania" className="scroll-mt-28 border-y border-border bg-secondary/40 px-6 py-16" aria-labelledby="urbania-title">
+          <div className="mx-auto max-w-6xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">New to our fleet</p>
+            <h2 id="urbania-title" className="text-3xl font-semibold">Meet the Force Urbania</h2>
+            <p className="mt-4 text-sm text-muted-foreground">
+              See the Force Urbania inside and out. It seats 16 passengers plus the driver (16+D).
+            </p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
+              {[
+                { file: "three-quarter", label: "Front and side view", width: 1280, height: 960 },
+                { file: "side", label: "Side view", width: 1280, height: 960 },
+                { file: "front", label: "Front view", width: 960, height: 1280 },
+              ].map((photo) => (
+                <figure key={photo.file} className="overflow-hidden rounded-2xl border border-border bg-card">
+                  <img
+                    src={`/images/bus-services/urbania/${photo.file}.jpg`}
+                    alt={`Force Urbania, ${photo.label.toLowerCase()}`}
+                    width={photo.width}
+                    height={photo.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/3] w-full bg-secondary object-contain"
+                  />
+                  <figcaption className="p-4 font-semibold">{photo.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {[
+                { file: "exterior-and-interior", label: "Exterior and interior tour", poster: "three-quarter" },
+                { file: "exterior", label: "Exterior walkaround", poster: "side" },
+              ].map((clip) => (
+                <figure key={clip.file} className="overflow-hidden rounded-2xl border border-border bg-card">
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    aria-label={`Force Urbania ${clip.label.toLowerCase()}`}
+                    poster={`/images/bus-services/urbania/${clip.poster}.jpg`}
+                    className="aspect-square max-h-[480px] w-full bg-black object-contain"
+                  >
+                    <source src={`/images/bus-services/urbania/${clip.file}.mp4`} type="video/mp4" />
+                    Your browser does not support video.{" "}
+                    <a href={`/images/bus-services/urbania/${clip.file}.mp4`}>Download the video</a>.
+                  </video>
+                  <figcaption className="p-4 font-semibold">{clip.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <a href="#bus-enquiry" className="mt-6 inline-flex font-semibold text-primary underline underline-offset-4">
+              Ask about the Urbania
+            </a>
+          </div>
+        </section>
         <section className="border-y border-border bg-card/70 px-6 py-7">
           <div className="mx-auto grid max-w-6xl gap-6 text-sm sm:grid-cols-3">
             {[
               [Route, "A route that fits", "Choose your stops and travel pace"],
               [
                 Users,
-                "17 / 24 / 40-seat requests",
+                "16 / 17 / 20 / 24 / 40-seat requests",
                 "Choose the seating your group needs",
               ],
               [
@@ -422,9 +538,9 @@ export function BusServices() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-7 text-muted-foreground">
-                Our 17-seater Tempo Traveller photos and Google Maps images illustrate
+                Our Force Urbania, 17-seater Tempo Traveller and 20-seater BharatBenz photos, along with Google Maps images, illustrate
                 traveller, mini-bus and coach categories. Confirm the actual
-                17-, 24- or 40-seat layout and vehicle for your date.
+                vehicle and seating layout for your date.
               </p>
             </div>
             <div className="mt-9 grid gap-7 lg:grid-cols-[1.2fr_.8fr]">
@@ -493,7 +609,7 @@ export function BusServices() {
               </div>
               <div>
                 <p className="text-sm font-semibold">
-                  Choose your seating preference
+                  Choose your vehicle or seating preference
                 </p>
                 <div
                   role="group"
@@ -524,7 +640,7 @@ export function BusServices() {
                   ))}
                 </div>
                 <p className="mt-4 text-xs leading-6 text-muted-foreground">
-                  Choose your requested seating capacity. Our team confirms
+                  Request a vehicle or seating capacity. Our team confirms
                   passenger seats, luggage space and vehicle availability.
                 </p>
               </div>
@@ -821,7 +937,7 @@ export function BusServices() {
               ],
               [
                 "Are 17, 24 and 40 seats guaranteed in these photos?",
-                "The gallery includes supplied 17-seater Tempo Traveller photos and vehicles from the business Google Maps listing. The 17-, 24- and 40-seat options are booking preferences. Confirm the actual passenger seating layout, vehicle model, air-conditioning, luggage capacity and condition for your date.",
+                "The gallery includes supplied Force Urbania, 17-seater Tempo Traveller and 20-seater BharatBenz photos and vehicles from the business Google Maps listing. The 17-, 20-, 24- and 40-seat options are booking preferences. Confirm the actual passenger seating layout, vehicle model, air-conditioning, luggage capacity and condition for your date.",
               ],
               [
                 "Does sending an enquiry confirm our bus?",
